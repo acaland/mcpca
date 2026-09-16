@@ -14,11 +14,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 import sys
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from markupsafe import Markup, escape
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
@@ -34,6 +36,36 @@ PAGES = [
     {"key": "index", "template": "index.html.j2", "slug": "", "og": "og-{lang}.png"},
     {"key": "case", "template": "case-study.html.j2", "slug": "case-study", "og": "og-case-{lang}.png"},
 ]
+
+
+# Marcatori ammessi nei testi di content/*.json. Servono a spezzare i blocchi
+# lunghi: **portante**, _inciso_, ==frase da notare==, `codice`. Non è Markdown
+# completo ed è di proposito: niente HTML nei contenuti, niente link nascosti.
+INLINE = [
+    (re.compile(r"\*\*(.+?)\*\*", re.S), r"<strong>\1</strong>"),
+    (re.compile(r"==(.+?)==", re.S), r'<span class="hl">\1</span>'),
+    (re.compile(r"(?<![\w*])_(.+?)_(?![\w*])", re.S), r"<em>\1</em>"),
+    (re.compile(r"`([^`]+)`"), r"<code>\1</code>"),
+]
+
+
+def rich(value: str) -> Markup:
+    """Testo di contenuto -> HTML sicuro: prima si scappa, poi si marca."""
+    out = str(escape(value))
+    for pattern, repl in INLINE:
+        out = pattern.sub(repl, out)
+    return Markup(out)
+
+
+def enrich(node):
+    """Applica rich() a ogni stringa dell'albero dei contenuti."""
+    if isinstance(node, str):
+        return rich(node)
+    if isinstance(node, list):
+        return [enrich(v) for v in node]
+    if isinstance(node, dict):
+        return {k: enrich(v) for k, v in node.items()}
+    return node
 
 
 def load(lang: str) -> dict:
@@ -97,15 +129,17 @@ def build() -> None:
 
     langs = languages()
     for lang in langs:
-        t = load(lang)
-        other = t["other_lang"]["code"]
+        raw = load(lang)
+        t = enrich(raw)
+        other = raw["other_lang"]["code"]
         for page in PAGES:
             slug = page["slug"]
             here = page_dir(lang, slug)
             out_dir = DIST / here if here else DIST
             out_dir.mkdir(parents=True, exist_ok=True)
 
-            meta = t["meta"] if page["key"] == "index" else t[page["key"]]["meta"]
+            # I meta finiscono in attributi e nelle anteprime: testo semplice.
+            meta = raw["meta"] if page["key"] == "index" else raw[page["key"]]["meta"]
             html = env.get_template(page["template"]).render(
                 t=t,
                 lang=lang,

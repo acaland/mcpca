@@ -1,7 +1,11 @@
 {
   "lang": "it",
   "dir": "",
-  "other_lang": {"code": "en", "label": "English", "href": "en/"},
+  "other_lang": {
+    "code": "en",
+    "label": "English",
+    "href": "en/"
+  },
   "meta": {
     "title": "MCPCA · I tuoi corsi Moodle, conversando in Teams, Copilot, ChatGPT o Claude",
     "description": "MCPCA è un plugin per Moodle, la piattaforma di formazione a distanza usata da università, scuole, aziende sanitarie ed enti di formazione. Permette a docenti, formatori e discenti di costruire e consultare i corsi conversando con l'assistente AI già in uso, con gli stessi permessi di Moodle.",
@@ -13,14 +17,38 @@
   },
   "nav": {
     "items": [
-      {"href": "#cosa", "label": "Cos'è"},
-      {"href": "#settori", "label": "Dove si usa"},
-      {"href": "#casi", "label": "Casi d'uso"},
-      {"href": "#funzioni", "label": "Funzioni"},
-      {"href": "@case", "label": "Caso reale"},
-      {"href": "#sicurezza", "label": "Sicurezza"},
-      {"href": "#moodlecraft", "label": "Moodlecraft"},
-      {"href": "#tecnici", "label": "Per i tecnici"}
+      {
+        "href": "#cosa",
+        "label": "Cos'è"
+      },
+      {
+        "href": "#settori",
+        "label": "Dove si usa"
+      },
+      {
+        "href": "#casi",
+        "label": "Casi d'uso"
+      },
+      {
+        "href": "#funzioni",
+        "label": "Funzioni"
+      },
+      {
+        "href": "@case",
+        "label": "Caso reale"
+      },
+      {
+        "href": "#sicurezza",
+        "label": "Sicurezza"
+      },
+      {
+        "href": "#moodlecraft",
+        "label": "Moodlecraft"
+      },
+      {
+        "href": "#tecnici",
+        "label": "Per i tecnici"
+      }
     ],
     "cta": "Contattami",
     "menu_label": "Menu"
@@ -29,101 +57,221 @@
     "badge": "Plugin Moodle · Teams e Copilot · ChatGPT · Claude",
     "title_a": "I tuoi corsi Moodle,",
     "title_b_prefix": "conversando in",
-    "title_words": ["Teams", "Copilot", "ChatGPT", "Claude"],
-    "lead": "Moodle è la piattaforma di formazione a distanza più diffusa: la usano università, istituti scolastici, aziende sanitarie ed enti di formazione professionale. MCPCA la collega agli assistenti AI già in uso, Microsoft Copilot in Teams in primo luogo, ma anche ChatGPT e Claude. Un docente descrive a parole una pagina, un quiz o l'intera struttura di un corso e li ritrova pronti sulla piattaforma. Chi studia chiede dei materiali e riceve risposte tratte dal corso reale, non inventate.",
-    "lead2": "Chi lo usa non installa nulla e nessun dato lascia l'organizzazione. Ognuno accede con il proprio account istituzionale e può compiere soltanto le operazioni che Moodle già gli consente.",
+    "title_words": [
+      "Teams",
+      "Copilot",
+      "ChatGPT",
+      "Claude"
+    ],
+    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano università, istituti scolastici, aziende sanitarie ed enti di formazione professionale. MCPCA la collega agli assistenti AI già in uso, Microsoft Copilot in Teams in primo luogo, ma anche ChatGPT e Claude. Un docente descrive a parole una pagina, un quiz o l'intera struttura di un corso e ==li ritrova pronti sulla piattaforma==. Chi studia chiede dei materiali e riceve risposte tratte dal corso reale, _non inventate_.",
+    "lead2": "Chi lo usa **non installa nulla** e **nessun dato lascia l'organizzazione**. Ognuno accede con il proprio account istituzionale e può compiere soltanto le operazioni che Moodle già gli consente.",
     "cta_primary": "Vedi cosa può fare",
     "cta_case": "Il primo caso reale",
     "chat": {
       "window_title": "Assistente Corsi Moodle · Teams",
       "messages": [
-        {"role": "user", "text": "Trasforma questi appunti in una pagina della sezione 3 di Infermieristica clinica, con spunta di completamento manuale."},
-        {"role": "agent", "tools": ["get_my_courses", "create_page"], "text": "Pagina «La somministrazione sicura dei farmaci: le sette regole» creata nella sezione 3, con l'elenco delle regole formattato e la spunta di completamento. Desideri che aggiunga un quiz di autovalutazione di 5 domande?"},
-        {"role": "user", "text": "Sì, ma nascosto finché non lo rivedo."}
+        {
+          "role": "user",
+          "text": "Trasforma questi appunti in una pagina della sezione 3 di Infermieristica clinica, con spunta di completamento manuale."
+        },
+        {
+          "role": "agent",
+          "tools": [
+            "get_my_courses",
+            "create_page"
+          ],
+          "blocks": [
+            {
+              "type": "title",
+              "text": "Pagina creata nella sezione 3: «La somministrazione sicura dei farmaci: le sette regole»."
+            },
+            {
+              "type": "p",
+              "text": "Ho impaginato il testo così:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "le **sette regole** in elenco numerato",
+                "una tabella con _forma farmaceutica_ e via di somministrazione",
+                "il richiamo alla procedura di reparto in fondo"
+              ]
+            },
+            {
+              "type": "note",
+              "text": "Spunta di completamento manuale attiva. Aggiungo un quiz di autovalutazione di 5 domande?"
+            }
+          ]
+        },
+        {
+          "role": "user",
+          "text": "Sì, ma nascosto finché non lo rivedo."
+        }
       ],
       "typing": "Sto creando il quiz…"
     },
     "flow": {
       "caption": "Tutto dentro l'infrastruttura della tua organizzazione",
       "nodes": [
-        {"label": "Teams · Copilot · ChatGPT · Claude", "sub": "gli assistenti già in uso"},
-        {"label": "MCPCA", "sub": "plugin dentro Moodle"},
-        {"label": "Il tuo Moodle", "sub": "corsi, materiali, verifiche"}
+        {
+          "label": "Teams · Copilot · ChatGPT · Claude",
+          "sub": "gli assistenti già in uso"
+        },
+        {
+          "label": "MCPCA",
+          "sub": "plugin dentro Moodle"
+        },
+        {
+          "label": "Il tuo Moodle",
+          "sub": "corsi, materiali, verifiche"
+        }
       ]
     }
   },
   "what": {
     "kicker": "In breve",
     "title": "Cos'è, senza tecnicismi",
-    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma non conoscono i corsi della tua organizzazione e non possono intervenirvi. MCPCA è il collegamento che manca.",
+    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. MCPCA è il collegamento che manca.",
     "cards": [
       {
         "icon": "plugin",
         "title": "È un plugin per Moodle",
-        "text": "Moodle è la piattaforma open source su cui si tiene gran parte della formazione a distanza in Italia: corsi, materiali, verifiche e tracciamento delle presenze online. MCPCA si installa al suo interno come qualunque altro componente: nessun server aggiuntivo, nessun servizio esterno."
+        "text": "Moodle è la piattaforma open source su cui si tiene **gran parte della formazione a distanza in Italia**: corsi, materiali, verifiche e tracciamento delle presenze online. MCPCA si installa al suo interno come qualunque altro componente: **nessun server aggiuntivo, nessun servizio esterno**."
       },
       {
         "icon": "chat",
         "title": "Parla la lingua degli assistenti AI",
-        "text": "Usa MCP, uno standard aperto adottato da Microsoft Copilot, ChatGPT e Claude. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle sui quali l'utente collegato ha i permessi, e soltanto su richiesta esplicita di quell'utente."
+        "text": "Usa MCP, uno standard aperto adottato da Microsoft Copilot, ChatGPT e Claude. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle **sui quali l'utente collegato ha i permessi**, e _soltanto su richiesta esplicita di quell'utente_."
       },
       {
         "icon": "shield",
         "title": "Con i permessi di Moodle",
-        "text": "Ognuno accede con il proprio account istituzionale. Il plugin esegue soltanto le operazioni che quella persona potrebbe compiere dall'interfaccia web di Moodle: un docente crea e modifica nei corsi che tiene, un discente consulta quelli a cui è iscritto."
+        "text": "Ognuno accede con il proprio account istituzionale. Il plugin esegue soltanto le operazioni che quella persona potrebbe compiere dall'interfaccia web di Moodle: **un docente crea e modifica nei corsi che tiene, un discente consulta quelli a cui è iscritto**."
       }
     ],
     "glossary_title": "Quattro termini che incontrerete",
     "glossary": [
-      {"term": "Moodle", "def": "La piattaforma e-learning open source più diffusa al mondo, usata da atenei, scuole, aziende sanitarie ed enti di formazione. Se nella vostra organizzazione esiste un «portale della formazione», una «piattaforma FAD» o un «portale e-learning», quasi certamente è Moodle."},
-      {"term": "MCP (Model Context Protocol)", "def": "Uno standard aperto con cui un assistente AI chiede a un'applicazione «cosa sai fare?» e poi le chiede di farlo. È la stessa tecnologia con cui Copilot, ChatGPT e Claude si collegano a SharePoint, Jira o Google Drive."},
-      {"term": "Copilot Studio", "def": "Lo strumento Microsoft con cui si costruisce un assistente e lo si pubblica in Teams e in Microsoft 365 Copilot. È incluso in molte licenze già in uso presso atenei, scuole e aziende."},
-      {"term": "Entra ID", "def": "Il servizio di identità Microsoft con cui il personale e i discenti già accedono a Teams e alla posta. MCPCA lo usa per riconoscere chi sta conversando."}
+      {
+        "term": "Moodle",
+        "def": "La piattaforma e-learning open source più diffusa al mondo, usata da atenei, scuole, aziende sanitarie ed enti di formazione. Se nella vostra organizzazione esiste un «portale della formazione», una «piattaforma FAD» o un «portale e-learning», quasi certamente è Moodle."
+      },
+      {
+        "term": "MCP (Model Context Protocol)",
+        "def": "Uno standard aperto con cui un assistente AI chiede a un'applicazione «cosa sai fare?» e poi le chiede di farlo. È la stessa tecnologia con cui Copilot, ChatGPT e Claude si collegano a SharePoint, Jira o Google Drive."
+      },
+      {
+        "term": "Copilot Studio",
+        "def": "Lo strumento Microsoft con cui si costruisce un assistente e lo si pubblica in Teams e in Microsoft 365 Copilot. È incluso in molte licenze già in uso presso atenei, scuole e aziende."
+      },
+      {
+        "term": "Entra ID",
+        "def": "Il servizio di identità Microsoft con cui il personale e i discenti già accedono a Teams e alla posta. MCPCA lo usa per riconoscere chi sta conversando."
+      }
     ]
   },
   "sectors": {
     "kicker": "Dove si usa",
     "title": "Ovunque si faccia formazione a distanza",
-    "lead": "Il plugin non conosce il settore: conosce Moodle. Il primo corso è nato in un'università, ma gli stessi strumenti servono chiunque debba produrre e mantenere contenuti didattici online.",
+    "lead": "**Il plugin non conosce il settore: conosce Moodle.** Il primo corso è nato in un'università, ma gli stessi strumenti servono chiunque debba produrre e mantenere contenuti didattici online.",
     "items": [
-      {"icon": "student", "title": "Università e ITS", "text": "Corsi di laurea, laboratori, corsi di specializzazione. Materiali da aggiornare ogni anno accademico e prove d'esame da rinnovare a ogni appello."},
-      {"icon": "school", "title": "Istituti scolastici", "text": "Classi virtuali, recuperi, compiti e verifiche. Il docente prepara la lezione a parole e la ritrova pubblicata, senza passare da dieci schermate di configurazione."},
-      {"icon": "hospital", "title": "Aziende sanitarie, pubbliche e private", "text": "Formazione del personale, procedure e protocolli, corsi a crediti. Il tracciamento del completamento e le prove con domande diverse per ogni partecipante sono esattamente ciò che serve qui."},
-      {"icon": "award", "title": "Enti di formazione accreditati", "text": "Corsi certificati e formazione a distanza asincrona, dove ogni modulo va documentato, superato e registrato. Costruire e replicare le edizioni diventa un'operazione di pochi minuti."},
-      {"icon": "briefcase", "title": "Imprese", "text": "Inserimento di nuovi assunti, sicurezza sul lavoro, aggiornamento su prodotti e procedure. Chi scrive i contenuti è spesso chi fa il lavoro, non un esperto della piattaforma."},
-      {"icon": "building", "title": "Enti pubblici e ordini professionali", "text": "Formazione obbligatoria e aggiornamento continuo, con la necessità di dimostrare chi ha seguito cosa e quando."}
+      {
+        "icon": "student",
+        "title": "Università e ITS",
+        "text": "Corsi di laurea, laboratori, corsi di specializzazione. Materiali da aggiornare ogni anno accademico e prove d'esame da rinnovare a ogni appello."
+      },
+      {
+        "icon": "school",
+        "title": "Istituti scolastici",
+        "text": "Classi virtuali, recuperi, compiti e verifiche. Il docente prepara la lezione a parole e la ritrova pubblicata, senza passare da dieci schermate di configurazione."
+      },
+      {
+        "icon": "hospital",
+        "title": "Aziende sanitarie, pubbliche e private",
+        "text": "Formazione del personale, procedure e protocolli, corsi a crediti. Il **tracciamento del completamento** e le **prove con domande diverse per ogni partecipante** sono esattamente ciò che serve qui."
+      },
+      {
+        "icon": "award",
+        "title": "Enti di formazione accreditati",
+        "text": "Corsi certificati e formazione a distanza asincrona, dove ogni modulo va documentato, superato e registrato. Costruire e replicare le edizioni diventa un'operazione di pochi minuti."
+      },
+      {
+        "icon": "briefcase",
+        "title": "Imprese",
+        "text": "Inserimento di nuovi assunti, sicurezza sul lavoro, aggiornamento su prodotti e procedure. _Chi scrive i contenuti è spesso chi fa il lavoro, non un esperto della piattaforma._"
+      },
+      {
+        "icon": "building",
+        "title": "Enti pubblici e ordini professionali",
+        "text": "Formazione obbligatoria e aggiornamento continuo, con la necessità di dimostrare chi ha seguito cosa e quando."
+      }
     ],
-    "note": "In tutti questi contesti il requisito è lo stesso: un'istanza Moodle raggiungibile in HTTPS e un assistente AI. Il resto non cambia."
+    "note": "In tutti questi contesti il requisito è lo stesso: **un'istanza Moodle raggiungibile in HTTPS e un assistente AI**. Il resto non cambia."
   },
   "usecases": {
     "kicker": "Casi d'uso",
     "title": "Cosa cambia, per chi",
-    "lead": "Lo stesso assistente, tre modi di usarlo. Il plugin applica il ruolo di ciascuno: chi può scrivere scrive, chi può soltanto leggere legge.",
+    "lead": "Lo stesso assistente, tre modi di usarlo. Il plugin applica il ruolo di ciascuno: **chi può scrivere scrive, chi può soltanto leggere legge**.",
     "tabs": [
       {
         "id": "docenti",
         "label": "Docenti e formatori",
-        "intro": "La parte che distingue MCPCA: non soltanto consultare Moodle, ma costruire e mantenere il corso conversando.",
+        "intro": "La parte che distingue MCPCA: non soltanto consultare Moodle, ma ==costruire e mantenere il corso conversando==.",
         "items": [
-          {"title": "Un corso intero, da zero", "text": "«Imposta il corso sulla sicurezza in reparto: otto sezioni, una per modulo, ciascuna con una pagina introduttiva e un quiz di autovalutazione.» La struttura nasce da un'unica richiesta, partendo da un corso vuoto; poi si rifinisce sezione per sezione."},
-          {"title": "Su un corso già esistente", "text": "«Aggiungi alla sezione 4 una pagina sulle scale di valutazione del dolore e sposta il quiz in fondo.» Si interviene su ciò che c'è, senza rifare nulla."},
-          {"title": "Dagli appunti alla pagina", "text": "«Trasforma questi appunti in una pagina della sezione 3.» L'assistente formatta il testo, crea la pagina e, se richiesto, attiva il tracciamento del completamento."},
-          {"title": "Quiz in pochi minuti", "text": "«Crea 10 domande a scelta multipla sulla pagina «Le fasi del travaglio», con un feedback per ogni risposta.» Domande in banca, quiz nel corso, soglia di superamento impostata."},
-          {"title": "Prove diverse per ogni partecipante", "text": "«40 domande in banca e una prova che ne estrae 10 a caso.» Ognuno riceve una combinazione diversa; la correzione è automatica. È il modo normale di gestire un esame o un test di fine modulo."},
-          {"title": "Domande a correzione automatica", "text": "Scelta multipla, risposta breve, numerica con tolleranza (il calcolo di una dose, per esempio), Cloze con risposte incorporate nel testo. Inoltre saggio a correzione manuale e blocchi descrittivi."},
-          {"title": "Materiali al posto giusto", "text": "«Carica queste slide nella sezione 2, con apertura in una nuova finestra.» File, etichette, sezioni nuove o rinominate, visibilità."},
-          {"title": "Rilettura e correzione", "text": "«Leggimi le domande della categoria «Modulo 3» e correggi la terza.» La banca domande si consulta e si modifica conversando, senza cercare nei menu."}
+          {
+            "title": "Un corso intero, da zero",
+            "text": "«Imposta il corso sulla sicurezza in reparto: otto sezioni, una per modulo, ciascuna con una pagina introduttiva e un quiz di autovalutazione.» La struttura nasce da un'unica richiesta, partendo da un corso vuoto; poi si rifinisce sezione per sezione."
+          },
+          {
+            "title": "Su un corso già esistente",
+            "text": "«Aggiungi alla sezione 4 una pagina sulle scale di valutazione del dolore e sposta il quiz in fondo.» Si interviene su ciò che c'è, senza rifare nulla."
+          },
+          {
+            "title": "Dagli appunti alla pagina",
+            "text": "«Trasforma questi appunti in una pagina della sezione 3.» L'assistente formatta il testo, crea la pagina e, se richiesto, attiva il tracciamento del completamento."
+          },
+          {
+            "title": "Quiz in pochi minuti",
+            "text": "«Crea 10 domande a scelta multipla sulla pagina «Le fasi del travaglio», con un feedback per ogni risposta.» Domande in banca, quiz nel corso, soglia di superamento impostata."
+          },
+          {
+            "title": "Prove diverse per ogni partecipante",
+            "text": "«40 domande in banca e una prova che ne estrae 10 a caso.» Ognuno riceve una combinazione diversa; la correzione è automatica. È il modo normale di gestire un esame o un test di fine modulo."
+          },
+          {
+            "title": "Domande a correzione automatica",
+            "text": "Scelta multipla, risposta breve, numerica con tolleranza (il calcolo di una dose, per esempio), Cloze con risposte incorporate nel testo. Inoltre saggio a correzione manuale e blocchi descrittivi."
+          },
+          {
+            "title": "Materiali al posto giusto",
+            "text": "«Carica queste slide nella sezione 2, con apertura in una nuova finestra.» File, etichette, sezioni nuove o rinominate, visibilità."
+          },
+          {
+            "title": "Rilettura e correzione",
+            "text": "«Leggimi le domande della categoria «Modulo 3» e correggi la terza.» La banca domande si consulta e si modifica conversando, senza cercare nei menu."
+          }
         ]
       },
       {
         "id": "studenti",
         "label": "Studenti e corsisti",
-        "intro": "Sempre in sola lettura, sempre e soltanto sui corsi a cui sono iscritti.",
+        "intro": "**Sempre in sola lettura**, sempre e soltanto sui corsi a cui sono iscritti.",
         "items": [
-          {"title": "Orientarsi nei corsi", "text": "«A quali corsi sono iscritto?» «Cosa contiene la sezione 2?» Struttura, materiali e quiz disponibili, dallo stesso Teams che usano ogni giorno."},
-          {"title": "Spiegazioni dal corso reale", "text": "«Spiegami la pagina sulle fasi del travaglio con un esempio.» L'assistente legge il contenuto scritto dal docente e risponde su quello, senza inventare."},
-          {"title": "Ripasso guidato", "text": "«Interrogami sulla sezione 2.» Domande costruite sui materiali del corso, con correzione e rimando alla pagina giusta."},
-          {"title": "I propri risultati", "text": "«Come è andato il mio ultimo quiz? Cosa ho sbagliato?» Voto, tentativi e revisione delle proprie risposte. Soltanto le proprie."}
+          {
+            "title": "Orientarsi nei corsi",
+            "text": "«A quali corsi sono iscritto?» «Cosa contiene la sezione 2?» Struttura, materiali e quiz disponibili, dallo stesso Teams che usano ogni giorno."
+          },
+          {
+            "title": "Spiegazioni dal corso reale",
+            "text": "«Spiegami la pagina sulle fasi del travaglio con un esempio.» L'assistente legge il contenuto scritto dal docente e risponde su quello, senza inventare."
+          },
+          {
+            "title": "Ripasso guidato",
+            "text": "«Interrogami sulla sezione 2.» Domande costruite sui materiali del corso, con correzione e rimando alla pagina giusta."
+          },
+          {
+            "title": "I propri risultati",
+            "text": "«Come è andato il mio ultimo quiz? Cosa ho sbagliato?» Voto, tentativi e revisione delle proprie risposte. Soltanto le proprie."
+          }
         ]
       },
       {
@@ -131,10 +279,22 @@
         "label": "Organizzazione e IT",
         "intro": "Per chi organizza la piattaforma, per chi risponde della formazione e per chi deve garantirne il controllo.",
         "items": [
-          {"title": "Strutture di corso in blocco", "text": "Creazione di categorie e corsi per il nuovo semestre o la nuova edizione, aggiornamento massivo di impostazioni e visibilità, riordino delle sezioni."},
-          {"title": "Verifiche rapide", "text": "Chi è iscritto a un corso, lo stato delle attività, il contenuto di un corso prima di una revisione o di una migrazione."},
-          {"title": "Controllo puntuale", "text": "Ogni strumento si può disattivare singolarmente nell'assistente. Durante un pilota, per esempio, si disattivano quelli distruttivi."},
-          {"title": "Tracciabilità", "text": "Ogni chiamata è un evento nel registro di Moodle, con utente e strumento. Nessun registro da cercare altrove."}
+          {
+            "title": "Strutture di corso in blocco",
+            "text": "Creazione di categorie e corsi per il nuovo semestre o la nuova edizione, aggiornamento massivo di impostazioni e visibilità, riordino delle sezioni."
+          },
+          {
+            "title": "Verifiche rapide",
+            "text": "Chi è iscritto a un corso, lo stato delle attività, il contenuto di un corso prima di una revisione o di una migrazione."
+          },
+          {
+            "title": "Controllo puntuale",
+            "text": "Ogni strumento si può disattivare singolarmente nell'assistente. Durante un pilota, per esempio, si disattivano quelli distruttivi."
+          },
+          {
+            "title": "Tracciabilità",
+            "text": "Ogni chiamata è un evento nel registro di Moodle, con utente e strumento. Nessun registro da cercare altrove."
+          }
         ]
       }
     ]
@@ -142,23 +302,109 @@
   "features": {
     "kicker": "Funzionalità",
     "title": "Disponibili oggi",
-    "lead": "Tutto ciò che segue è implementato e provato sul campo: il corso descritto più sotto è stato costruito con questi strumenti. Le funzioni in lavorazione sono più avanti, separate.",
+    "lead": "Tutto ciò che segue è **implementato e provato sul campo**: il corso descritto più sotto è stato costruito con questi strumenti. Le funzioni in lavorazione sono più avanti, separate.",
     "groups": [
-      {"icon": "page", "title": "Pagine ed etichette", "items": ["Creazione e modifica", "Testo in Markdown o HTML", "Tracciamento del completamento"]},
-      {"icon": "sections", "title": "Sezioni e struttura", "items": ["Struttura completa di un corso in un'unica richiesta", "Nuove sezioni, in coda o in posizione", "Rinomina, visibilità, ordinamento, eliminazione"]},
-      {"icon": "file", "title": "File e risorse", "items": ["Caricamento di file nel corso", "Scelta della modalità di apertura", "Lettura dei file esistenti"]},
-      {"icon": "quiz", "title": "Quiz e prove", "items": ["Creazione e modifica complete", "Comportamento delle domande, navigazione, valutazione", "Voto massimo, soglia di superamento, date", "Sezioni interne con rimescolamento"]},
-      {"icon": "question", "title": "Sei tipi di domanda", "items": ["Scelta multipla, risposta breve", "Numerica con tolleranza, Cloze", "Saggio, descrizione", "Feedback per risposta, Markdown o HTML"]},
-      {"icon": "bank", "title": "Banca domande", "items": ["Categorie: creazione, elenco, eliminazione", "Elenco delle domande con definizione completa", "Modifica in place di ogni tipo"]},
-      {"icon": "shuffle", "title": "Prove randomizzate", "items": ["N domande casuali da una categoria", "Sottocategorie incluse", "Punteggio per ogni slot"]},
-      {"icon": "student", "title": "Consultazione per i discenti", "items": ["I miei corsi, struttura, pagine", "Risorse e quiz disponibili", "Propri tentativi, voto migliore, revisione"]},
-      {"icon": "admin", "title": "Amministrazione", "items": ["Corsi e categorie: creazione, ricerca, aggiornamento", "Stato e ordinamento delle sezioni", "Elenco degli iscritti"]}
+      {
+        "icon": "page",
+        "title": "Pagine ed etichette",
+        "items": [
+          "Creazione e modifica",
+          "Testo in Markdown o HTML",
+          "Tracciamento del completamento"
+        ]
+      },
+      {
+        "icon": "sections",
+        "title": "Sezioni e struttura",
+        "items": [
+          "Struttura completa di un corso in un'unica richiesta",
+          "Nuove sezioni, in coda o in posizione",
+          "Rinomina, visibilità, ordinamento, eliminazione"
+        ]
+      },
+      {
+        "icon": "file",
+        "title": "File e risorse",
+        "items": [
+          "Caricamento di file nel corso",
+          "Scelta della modalità di apertura",
+          "Lettura dei file esistenti"
+        ]
+      },
+      {
+        "icon": "quiz",
+        "title": "Quiz e prove",
+        "items": [
+          "Creazione e modifica complete",
+          "Comportamento delle domande, navigazione, valutazione",
+          "Voto massimo, soglia di superamento, date",
+          "Sezioni interne con rimescolamento"
+        ]
+      },
+      {
+        "icon": "question",
+        "title": "Sei tipi di domanda",
+        "items": [
+          "Scelta multipla, risposta breve",
+          "Numerica con tolleranza, Cloze",
+          "Saggio, descrizione",
+          "Feedback per risposta, Markdown o HTML"
+        ]
+      },
+      {
+        "icon": "bank",
+        "title": "Banca domande",
+        "items": [
+          "Categorie: creazione, elenco, eliminazione",
+          "Elenco delle domande con definizione completa",
+          "Modifica in place di ogni tipo"
+        ]
+      },
+      {
+        "icon": "shuffle",
+        "title": "Prove randomizzate",
+        "items": [
+          "N domande casuali da una categoria",
+          "Sottocategorie incluse",
+          "Punteggio per ogni slot"
+        ]
+      },
+      {
+        "icon": "student",
+        "title": "Consultazione per i discenti",
+        "items": [
+          "I miei corsi, struttura, pagine",
+          "Risorse e quiz disponibili",
+          "Propri tentativi, voto migliore, revisione"
+        ]
+      },
+      {
+        "icon": "admin",
+        "title": "Amministrazione",
+        "items": [
+          "Corsi e categorie: creazione, ricerca, aggiornamento",
+          "Stato e ordinamento delle sezioni",
+          "Elenco degli iscritti"
+        ]
+      }
     ],
     "stats": [
-      {"value": "26", "label": "strumenti propri"},
-      {"value": "22", "label": "funzioni native Moodle"},
-      {"value": "6", "label": "tipi di domanda"},
-      {"value": "0", "label": "server esterni"}
+      {
+        "value": "26",
+        "label": "strumenti propri"
+      },
+      {
+        "value": "22",
+        "label": "funzioni native Moodle"
+      },
+      {
+        "value": "6",
+        "label": "tipi di domanda"
+      },
+      {
+        "value": "0",
+        "label": "server esterni"
+      }
     ]
   },
   "roadmap": {
@@ -166,12 +412,30 @@
     "title": "Sviluppi previsti",
     "lead": "Non ancora disponibili. È l'ordine in cui contiamo di lavorarvi, aperto alle richieste di chi lo sta usando.",
     "items": [
-      {"title": "Compiti e forum", "text": "Creare consegne e discussioni dalla conversazione, come oggi si fa con pagine e quiz."},
-      {"title": "Riepilogo per chi tiene il corso", "text": "«Chi non ha ancora completato il modulo obbligatorio?» «Qual è la media dell'ultima prova?»"},
-      {"title": "Da documento a corso", "text": "Un file Word o PDF trasformato in una sequenza di pagine nella sezione scelta."},
-      {"title": "Scadenze per i discenti", "text": "«Cosa devo consegnare questa settimana?» con date e collegamenti alle attività."},
-      {"title": "Libro e glossario", "text": "Due attività molto usate nei corsi, oggi non ancora coperte."},
-      {"title": "Conferma a due passi lato server", "text": "Oggi la conferma prima di ogni modifica è garantita dalle istruzioni dell'assistente; diventerà un vincolo del plugin."}
+      {
+        "title": "Compiti e forum",
+        "text": "Creare consegne e discussioni dalla conversazione, come oggi si fa con pagine e quiz."
+      },
+      {
+        "title": "Riepilogo per chi tiene il corso",
+        "text": "«Chi non ha ancora completato il modulo obbligatorio?» «Qual è la media dell'ultima prova?»"
+      },
+      {
+        "title": "Da documento a corso",
+        "text": "Un file Word o PDF trasformato in una sequenza di pagine nella sezione scelta."
+      },
+      {
+        "title": "Scadenze per i discenti",
+        "text": "«Cosa devo consegnare questa settimana?» con date e collegamenti alle attività."
+      },
+      {
+        "title": "Libro e glossario",
+        "text": "Due attività molto usate nei corsi, oggi non ancora coperte."
+      },
+      {
+        "title": "Conferma a due passi lato server",
+        "text": "Oggi la conferma prima di ogni modifica è garantita dalle istruzioni dell'assistente; diventerà un vincolo del plugin."
+      }
     ]
   },
   "dialogues": {
@@ -184,10 +448,50 @@
         "audience": "Docente",
         "title": "Un quiz a partire da una pagina del corso",
         "messages": [
-          {"role": "user", "text": "Crea un quiz di 10 domande a scelta multipla sulla pagina «Le join SQL» della sezione 3 di Basi di dati, con un feedback per ogni risposta."},
-          {"role": "agent", "tools": ["get_my_courses", "core_course_get_contents", "get_page_content"], "text": "Ho letto la pagina «Le join SQL»: INNER, LEFT, RIGHT, FULL, CROSS e self join. Sto per creare in Basi di dati, sezione 3: la categoria «Join SQL» nella banca domande con 10 domande a scelta multipla, ciascuna con feedback, e il quiz «Verifica: le join SQL» con soglia di superamento 6 su 10. Procedo?"},
-          {"role": "user", "text": "Sì."},
-          {"role": "agent", "tools": ["create_question_category", "create_question ×10", "create_quiz", "add_question_to_quiz"], "text": "Fatto. Il quiz «Verifica: le join SQL» è nella sezione 3, ancora nascosto agli studenti. Le 10 domande sono nella categoria «Join SQL» e restano modificabili dalla banca domande. Desideri che lo renda visibile?"}
+          {
+            "role": "user",
+            "text": "Crea un quiz di 10 domande a scelta multipla sulla pagina «Le join SQL» della sezione 3 di Basi di dati, con un feedback per ogni risposta."
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "get_my_courses",
+              "core_course_get_contents",
+              "get_page_content"
+            ],
+            "text": "Ho letto la pagina «Le join SQL»: INNER, LEFT, RIGHT, FULL, CROSS e self join. Sto per creare in Basi di dati, sezione 3: la categoria «Join SQL» nella banca domande con 10 domande a scelta multipla, ciascuna con feedback, e il quiz «Verifica: le join SQL» con soglia di superamento 6 su 10. Procedo?"
+          },
+          {
+            "role": "user",
+            "text": "Sì."
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "create_question_category",
+              "create_question ×10",
+              "create_quiz",
+              "add_question_to_quiz"
+            ],
+            "blocks": [
+              {
+                "type": "title",
+                "text": "Fatto."
+              },
+              {
+                "type": "ul",
+                "items": [
+                  "quiz «Verifica: le join SQL» nella sezione 3, **ancora nascosto** agli studenti",
+                  "10 domande nella categoria «Join SQL», modificabili dalla banca",
+                  "soglia di superamento **6 su 10**"
+                ]
+              },
+              {
+                "type": "note",
+                "text": "Desideri che lo renda visibile?"
+              }
+            ]
+          }
         ]
       },
       {
@@ -195,10 +499,49 @@
         "audience": "Docente",
         "title": "Una prova con domande diverse per ogni partecipante",
         "messages": [
-          {"role": "user", "text": "Per la prova di Farmacologia voglio 40 domande in banca sui moduli 1–4, comprese domande di calcolo delle dosi, e un compito che ne estragga 10 a caso per ogni partecipante. Chi non raggiunge 6 non supera la prova."},
-          {"role": "agent", "tools": ["get_page_content ×4"], "text": "Riassumo: creo la categoria «Farmacologia – prova finale» con 40 domande, 10 per modulo: a scelta multipla su meccanismi d'azione ed effetti avversi, e numeriche sul calcolo delle dosi con tolleranza dell'1%. Poi il quiz «Prova finale di Farmacologia» con 10 slot casuali dalla categoria, 1 punto ciascuno, voto massimo 10, soglia 6, un solo tentativo, 60 minuti. Confermi?"},
-          {"role": "user", "text": "Confermo, ma lascialo nascosto."},
-          {"role": "agent", "tools": ["create_question_category", "create_question ×40", "create_quiz", "add_random_questions_to_quiz"], "text": "Creato e nascosto. Ognuno riceverà 10 domande diverse estratte dalle 40; la correzione è automatica, anche per i calcoli. Le domande sono nella banca: puoi chiedermi di rileggerle o di correggerne una."}
+          {
+            "role": "user",
+            "text": "Per la prova di Farmacologia voglio 40 domande in banca sui moduli 1–4, comprese domande di calcolo delle dosi, e un compito che ne estragga 10 a caso per ogni partecipante. Chi non raggiunge 6 non supera la prova."
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "get_page_content ×4"
+            ],
+            "blocks": [
+              {
+                "type": "title",
+                "text": "Riassumo che cosa sto per creare."
+              },
+              {
+                "type": "ol",
+                "items": [
+                  "categoria «Farmacologia – prova finale» con **40 domande**, 10 per modulo",
+                  "a scelta multipla su meccanismi d'azione ed effetti avversi",
+                  "numeriche sul calcolo delle dosi, con **tolleranza dell'1%**",
+                  "quiz con **10 slot casuali**, voto massimo 10, soglia 6, un tentativo, 60 minuti"
+                ]
+              },
+              {
+                "type": "note",
+                "text": "Confermi?"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "text": "Confermo, ma lascialo nascosto."
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "create_question_category",
+              "create_question ×40",
+              "create_quiz",
+              "add_random_questions_to_quiz"
+            ],
+            "text": "Creato e nascosto. Ognuno riceverà 10 domande diverse estratte dalle 40; la correzione è automatica, anche per i calcoli. Le domande sono nella banca: puoi chiedermi di rileggerle o di correggerne una."
+          }
         ]
       },
       {
@@ -206,10 +549,27 @@
         "audience": "Studente",
         "title": "Un ripasso costruito sui materiali della docente",
         "messages": [
-          {"role": "user", "text": "Interrogami sulla sezione 2 di Fisiologia della gravidanza e del parto."},
-          {"role": "agent", "tools": ["get_my_courses", "core_course_get_contents", "get_page_content ×2"], "text": "La sezione 2 contiene «Le fasi del travaglio» e «L'assistenza nel periodo espulsivo». Prima domanda: quali sono i periodi del travaglio e che cosa segna il passaggio dal primo al secondo?"},
-          {"role": "user", "text": "Dilatante, espulsivo e secondamento. Il secondo inizia con la dilatazione completa."},
-          {"role": "agent", "text": "Esatto. Nella pagina del corso la docente distingue inoltre, nel periodo dilatante, la fase latente dalla fase attiva. Seconda domanda: che cosa si intende per secondamento e entro quale intervallo di tempo è atteso in condizioni fisiologiche?"}
+          {
+            "role": "user",
+            "text": "Interrogami sulla sezione 2 di Fisiologia della gravidanza e del parto."
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "get_my_courses",
+              "core_course_get_contents",
+              "get_page_content ×2"
+            ],
+            "text": "La sezione 2 contiene «Le fasi del travaglio» e «L'assistenza nel periodo espulsivo». Prima domanda: quali sono i periodi del travaglio e che cosa segna il passaggio dal primo al secondo?"
+          },
+          {
+            "role": "user",
+            "text": "Dilatante, espulsivo e secondamento. Il secondo inizia con la dilatazione completa."
+          },
+          {
+            "role": "agent",
+            "text": "Esatto. Nella pagina del corso la docente distingue inoltre, nel periodo dilatante, la fase latente dalla fase attiva. Seconda domanda: che cosa si intende per secondamento e entro quale intervallo di tempo è atteso in condizioni fisiologiche?"
+          }
         ]
       },
       {
@@ -217,18 +577,61 @@
         "audience": "Studente",
         "title": "Il proprio risultato, e che cosa rivedere",
         "messages": [
-          {"role": "user", "text": "Come è andato il mio quiz sulle join?"},
-          {"role": "agent", "tools": ["mod_quiz_get_user_best_grade", "mod_quiz_get_user_attempts", "mod_quiz_get_attempt_review"], "text": "Il tuo miglior tentativo è 8 su 10, sopra la soglia di 6. Hai sbagliato la domanda 4 (una LEFT JOIN restituisce anche le righe della tabella di sinistra senza corrispondenza) e la 9 (una CROSS JOIN produce il prodotto cartesiano). Desideri ripassare le join esterne con l'esempio della pagina del corso?"},
-          {"role": "user", "text": "E come sono andati gli altri?"},
-          {"role": "agent", "text": "Non posso mostrare i risultati di altri studenti. Per confronti e statistiche puoi rivolgerti al docente."}
+          {
+            "role": "user",
+            "text": "Come è andato il mio quiz sulle join?"
+          },
+          {
+            "role": "agent",
+            "tools": [
+              "mod_quiz_get_user_best_grade",
+              "mod_quiz_get_user_attempts",
+              "mod_quiz_get_attempt_review"
+            ],
+            "blocks": [
+              {
+                "type": "p",
+                "text": "Il tuo miglior tentativo è **8 su 10**, sopra la soglia di 6. Le due sbagliate:"
+              },
+              {
+                "type": "table",
+                "head": [
+                  "Domanda",
+                  "Cosa non tornava"
+                ],
+                "rows": [
+                  [
+                    "4",
+                    "una `LEFT JOIN` restituisce anche le righe della tabella di sinistra senza corrispondenza"
+                  ],
+                  [
+                    "9",
+                    "una `CROSS JOIN` produce il prodotto cartesiano"
+                  ]
+                ]
+              },
+              {
+                "type": "note",
+                "text": "Desideri ripassare le join esterne con l'esempio della pagina del corso?"
+              }
+            ]
+          },
+          {
+            "role": "user",
+            "text": "E come sono andati gli altri?"
+          },
+          {
+            "role": "agent",
+            "text": "Non posso mostrare i risultati di altri studenti. Per confronti e statistiche puoi rivolgerti al docente."
+          }
         ]
       }
     ]
   },
   "case_band": {
     "kicker": "Caso reale",
-    "title": "Il primo corso costruito così: SQL e Oracle APEX per Ostetricia",
-    "text": "Laboratorio di Informatica, corso di laurea in Ostetricia dell'Università di Catania, anno accademico 2025/2026. Sette lezioni, 73 pagine, un deposito d'esame di ottanta domande e due prove con estrazione casuale, costruite con MCPCA e Moodlecraft e pubblicate sulla piattaforma di ateneo.",
+    "title": "Il primo corso costruito così: gestione dei dati per Ostetricia",
+    "text": "Laboratorio di Informatica, corso di laurea in Ostetricia dell'Università di Catania, anno accademico 2025/2026: **progettare e interrogare una base di dati**, e costruirci sopra una semplice applicazione web. Sette lezioni, 73 pagine, un deposito d'esame di ottanta domande e due prove con estrazione casuale, costruite con MCPCA e Moodlecraft.",
     "bullets": [
       "Lezioni ricavate dalle slide e dai video registrati, con indice e minutaggi",
       "Esercizi e soluzioni su un dataset clinico di pazienti, parti e personale",
@@ -236,10 +639,22 @@
     ],
     "cta": "Leggi il caso completo",
     "facts": [
-      {"k": "Insegnamento", "v": "Laboratorio di Informatica"},
-      {"k": "Corso di laurea", "v": "Ostetricia (L/SNT1)"},
-      {"k": "Ateneo", "v": "Università di Catania"},
-      {"k": "Anno accademico", "v": "2025/2026"}
+      {
+        "k": "Insegnamento",
+        "v": "Laboratorio di Informatica"
+      },
+      {
+        "k": "Corso di laurea",
+        "v": "Ostetricia (L/SNT1)"
+      },
+      {
+        "k": "Ateneo",
+        "v": "Università di Catania"
+      },
+      {
+        "k": "Anno accademico",
+        "v": "2025/2026"
+      }
     ]
   },
   "steps": {
@@ -247,34 +662,86 @@
     "title": "Dall'installazione alla prima conversazione",
     "lead": "Quattro passi, tutti a carico di chi gestisce i sistemi. Docenti e discenti non installano nulla: trovano l'assistente in Teams, oppure collegano il server MCP al proprio ChatGPT o Claude.",
     "items": [
-      {"num": "01", "title": "Installare il plugin", "text": "Come qualunque plugin Moodle, dall'amministrazione del sito. Richiede Moodle 4.3 o successivo."},
-      {"num": "02", "title": "Registrare l'app in Entra ID", "text": "Uno script fornito crea la registrazione nel tenant dell'organizzazione. È ciò che consente l'accesso con l'account Microsoft."},
-      {"num": "03", "title": "Collegare il server in Copilot Studio", "text": "Con il wizard nativo per MCP: si incolla un indirizzo, si scelgono gli strumenti da tenere attivi, si incollano le istruzioni fornite."},
-      {"num": "04", "title": "Pubblicare in Teams", "text": "L'assistente compare in Teams e in Microsoft 365 Copilot per le persone scelte: un dipartimento, un singolo corso, l'intera organizzazione."}
+      {
+        "num": "01",
+        "title": "Installare il plugin",
+        "text": "Come qualunque plugin Moodle, dall'amministrazione del sito. Richiede Moodle 4.3 o successivo."
+      },
+      {
+        "num": "02",
+        "title": "Registrare l'app in Entra ID",
+        "text": "Uno script fornito crea la registrazione nel tenant dell'organizzazione. È ciò che consente l'accesso con l'account Microsoft."
+      },
+      {
+        "num": "03",
+        "title": "Collegare il server in Copilot Studio",
+        "text": "Con il wizard nativo per MCP: si incolla un indirizzo, si scelgono gli strumenti da tenere attivi, si incollano le istruzioni fornite."
+      },
+      {
+        "num": "04",
+        "title": "Pubblicare in Teams",
+        "text": "L'assistente compare in Teams e in Microsoft 365 Copilot per le persone scelte: un dipartimento, un singolo corso, l'intera organizzazione."
+      }
     ]
   },
   "security": {
     "kicker": "Sicurezza e governance",
     "title": "Identità, permessi, dati: le risposte per chi gestisce i sistemi",
-    "lead": "Il plugin non aggiunge un sistema di permessi: usa quello di Moodle, che l'organizzazione già governa.",
+    "lead": "Il plugin non aggiunge un sistema di permessi: **usa quello di Moodle, che l'organizzazione già governa**.",
     "items": [
-      {"icon": "id", "title": "Identità", "text": "Accesso con l'account Microsoft dell'organizzazione (Entra ID). Funziona soltanto per chi ha già effettuato almeno un accesso a Moodle con Microsoft; nessun account viene creato automaticamente."},
-      {"icon": "lock", "title": "Autorizzazioni", "text": "Le capability di Moodle, valutate a ogni singola chiamata. Un docente scrive soltanto nei corsi in cui è docente; un discente non scrive mai. L'elenco degli strumenti visibili all'assistente è filtrato per ruolo."},
-      {"icon": "building", "title": "Residenza dei dati", "text": "Il plugin è eseguito dentro Moodle e non contatta servizi esterni. L'unico terzo è l'assistente AI scelto: con Copilot, il tenant Microsoft dell'organizzazione."},
-      {"icon": "log", "title": "Tracciabilità", "text": "Ogni chiamata genera un evento nel registro di Moodle, con utente, strumento e parametri. Nessun registro da consultare fuori dalla piattaforma."},
-      {"icon": "toggle", "title": "Perimetro", "text": "Ogni strumento si attiva o disattiva singolarmente nell'assistente. In un pilota si tengono disattivati quelli distruttivi e quelli che espongono dati di terzi."},
-      {"icon": "check", "title": "Conferma delle modifiche", "text": "L'assistente riassume ciò che sta per fare e chiede conferma, una modifica alla volta. Ciò che trova scritto nei contenuti del corso lo tratta come dati, non come istruzioni."}
+      {
+        "icon": "id",
+        "title": "Identità",
+        "text": "Accesso con l'account Microsoft dell'organizzazione (Entra ID). Funziona soltanto per chi ha già effettuato almeno un accesso a Moodle con Microsoft; **nessun account viene creato automaticamente**."
+      },
+      {
+        "icon": "lock",
+        "title": "Autorizzazioni",
+        "text": "Le capability di Moodle, **valutate a ogni singola chiamata**. Un docente scrive soltanto nei corsi in cui è docente; un discente non scrive mai. L'elenco degli strumenti visibili all'assistente è filtrato per ruolo."
+      },
+      {
+        "icon": "building",
+        "title": "Residenza dei dati",
+        "text": "Il plugin è eseguito dentro Moodle e non contatta servizi esterni. L'unico terzo è l'assistente AI scelto: con Copilot, il tenant Microsoft dell'organizzazione."
+      },
+      {
+        "icon": "log",
+        "title": "Tracciabilità",
+        "text": "Ogni chiamata genera un evento nel registro di Moodle, con utente, strumento e parametri. Nessun registro da consultare fuori dalla piattaforma."
+      },
+      {
+        "icon": "toggle",
+        "title": "Perimetro",
+        "text": "Ogni strumento si attiva o disattiva singolarmente nell'assistente. In un pilota si tengono disattivati quelli distruttivi e quelli che espongono dati di terzi."
+      },
+      {
+        "icon": "check",
+        "title": "Conferma delle modifiche",
+        "text": "L'assistente riassume ciò che sta per fare e chiede conferma, una modifica alla volta. Ciò che trova scritto nei contenuti del corso lo tratta come **dati, non come istruzioni**."
+      }
     ]
   },
   "moodlecraft": {
     "kicker": "Ecosistema",
     "title": "Alla base di Moodlecraft: interi corsi definiti, versionati, riproducibili",
-    "lead": "MCPCA non è soltanto il tramite per gli assistenti AI. È anche il motore di Moodlecraft, uno strumento a riga di comando che tratta un corso Moodle come si tratta il codice: definito in file di testo, versionato, applicabile a qualunque istanza.",
+    "lead": "MCPCA non è soltanto il tramite per gli assistenti AI. È anche il motore di Moodlecraft, uno strumento a riga di comando che tratta un corso Moodle **come si tratta il codice**: definito in file di testo, versionato, applicabile a qualunque istanza.",
     "items": [
-      {"title": "Il corso è una cartella", "text": "Un file con le impostazioni del corso, una cartella per sezione, le pagine in Markdown, quiz e banche domande in YAML, gli allegati accanto. Tutto leggibile e modificabile con un editor qualsiasi."},
-      {"title": "Prima plan, poi apply", "text": "Come Terraform per l'infrastruttura: Moodlecraft confronta la definizione con lo stato del corso su Moodle, mostra che cosa cambierebbe e applica soltanto le differenze. Rieseguirlo non duplica nulla."},
-      {"title": "Versionato con git", "text": "Ogni modifica ha autore, data e motivazione. Si torna a una versione precedente, si lavora in più persone sullo stesso corso, si revisiona prima di pubblicare."},
-      {"title": "Riproducibile", "text": "Lo stesso corso sull'istanza di test e su quella di produzione, o replicato per la nuova edizione cambiando soltanto le date. Domande d'esame estratte a caso, diagrammi e codice evidenziato nascono dalla stessa definizione."}
+      {
+        "title": "Il corso è una cartella",
+        "text": "Un file con le impostazioni del corso, una cartella per sezione, le pagine in Markdown, quiz e banche domande in YAML, gli allegati accanto. Tutto leggibile e modificabile con un editor qualsiasi."
+      },
+      {
+        "title": "Prima plan, poi apply",
+        "text": "Come Terraform per l'infrastruttura: Moodlecraft confronta la definizione con lo stato del corso su Moodle, mostra che cosa cambierebbe e applica soltanto le differenze. _Rieseguirlo non duplica nulla._"
+      },
+      {
+        "title": "Versionato con git",
+        "text": "Ogni modifica ha autore, data e motivazione. Si torna a una versione precedente, si lavora in più persone sullo stesso corso, si revisiona prima di pubblicare."
+      },
+      {
+        "title": "Riproducibile",
+        "text": "Lo stesso corso sull'istanza di test e su quella di produzione, o ==replicato per la nuova edizione cambiando soltanto le date==. Domande d'esame estratte a caso, diagrammi e codice evidenziato nascono dalla stessa definizione."
+      }
     ],
     "tree_title": "Un corso, visto da Moodlecraft",
     "tree": [
@@ -297,24 +764,61 @@
   "tech": {
     "kicker": "Per i tecnici",
     "title": "Architettura e requisiti",
-    "lead": "Un web service plugin Moodle che espone un server MCP, più un adattatore REST e una specifica OpenAPI per i client che non parlano MCP.",
+    "lead": "Un web service plugin Moodle che espone **un server MCP**, più un adattatore REST e una specifica OpenAPI per i client che non parlano MCP.",
     "diagram": {
       "clients_title": "Client",
-      "clients": ["Teams / M365 Copilot via Copilot Studio", "ChatGPT (connettore MCP)", "Claude (connettore MCP)", "VS Code, Cursor, altri client MCP", "Moodlecraft CLI"],
+      "clients": [
+        "Teams / M365 Copilot via Copilot Studio",
+        "ChatGPT (connettore MCP)",
+        "Claude (connettore MCP)",
+        "VS Code, Cursor, altri client MCP",
+        "Moodlecraft CLI"
+      ],
       "auth_title": "Identità",
-      "auth": ["Microsoft Entra ID (OAuth 2.0)", "oppure token web service Moodle"],
+      "auth": [
+        "Microsoft Entra ID (OAuth 2.0)",
+        "oppure token web service Moodle"
+      ],
       "moodle_title": "Il tuo Moodle",
-      "moodle": ["webservice_mcpca", "API interne Moodle", "Database"]
+      "moodle": [
+        "webservice_mcpca",
+        "API interne Moodle",
+        "Database"
+      ]
     },
     "specs": [
-      {"k": "Protocollo", "v": "MCP Streamable HTTP, JSON-RPC 2.0. Negozia le versioni 2024-11-05, 2025-03-26 e 2025-06-18."},
-      {"k": "Endpoint", "v": "/webservice/mcpca/server.php (MCP), /rest.php (REST), /openapi.php (OpenAPI 3.0), /token.php (token self-service)."},
-      {"k": "Autenticazione", "v": "Token Entra ID validati per firma, issuer, audience e scope; identità risolta sull'account Moodle collegato tramite auth_oauth2. In alternativa, token web service Moodle."},
-      {"k": "Autorizzazione", "v": "Capability dedicata webservice/mcpca:use; ogni strumento verifica le capability Moodle del contesto (corso, modulo). tools/list filtrato per utente."},
-      {"k": "Strumenti", "v": "26 strumenti propri (authoring: pagine, sezioni, file, quiz, domande, banca) + 22 funzioni native Moodle esposte come strumenti, 48 in totale."},
-      {"k": "Client", "v": "Copilot Studio verificato in esercizio (Teams e M365 Copilot). Qualunque client MCP con OAuth o token: Claude, ChatGPT, VS Code, Cursor. REST e OpenAPI per ChatGPT Actions e integrazioni proprie."},
-      {"k": "Requisiti", "v": "Moodle 4.3+, PHP 8.0+, HTTPS raggiungibile dal cloud dell'assistente scelto. Nessun servizio esterno."},
-      {"k": "Privacy", "v": "Privacy provider dichiarato; il plugin memorizza soltanto l'ultimo accesso del token e scrive nel registro standard di Moodle."}
+      {
+        "k": "Protocollo",
+        "v": "MCP Streamable HTTP, JSON-RPC 2.0. Negozia le versioni 2024-11-05, 2025-03-26 e 2025-06-18."
+      },
+      {
+        "k": "Endpoint",
+        "v": "/webservice/mcpca/server.php (MCP), /rest.php (REST), /openapi.php (OpenAPI 3.0), /token.php (token self-service)."
+      },
+      {
+        "k": "Autenticazione",
+        "v": "Token Entra ID validati per firma, issuer, audience e scope; identità risolta sull'account Moodle collegato tramite auth_oauth2. In alternativa, token web service Moodle."
+      },
+      {
+        "k": "Autorizzazione",
+        "v": "Capability dedicata webservice/mcpca:use; ogni strumento verifica le capability Moodle del contesto (corso, modulo). tools/list filtrato per utente."
+      },
+      {
+        "k": "Strumenti",
+        "v": "26 strumenti propri (authoring: pagine, sezioni, file, quiz, domande, banca) + 22 funzioni native Moodle esposte come strumenti, 48 in totale."
+      },
+      {
+        "k": "Client",
+        "v": "Copilot Studio verificato in esercizio (Teams e M365 Copilot). Qualunque client MCP con OAuth o token: Claude, ChatGPT, VS Code, Cursor. REST e OpenAPI per ChatGPT Actions e integrazioni proprie."
+      },
+      {
+        "k": "Requisiti",
+        "v": "Moodle 4.3+, PHP 8.0+, HTTPS raggiungibile dal cloud dell'assistente scelto. Nessun servizio esterno."
+      },
+      {
+        "k": "Privacy",
+        "v": "Privacy provider dichiarato; il plugin memorizza soltanto l'ultimo accesso del token e scrive nel registro standard di Moodle."
+      }
     ],
     "note": "Il codice sarà rilasciato con licenza GPL v3, la stessa di Moodle. Il collegamento al repository comparirà qui alla pubblicazione."
   },
@@ -322,16 +826,46 @@
     "kicker": "Domande frequenti",
     "title": "In breve",
     "items": [
-      {"q": "Devo installare qualcosa sul mio computer?", "a": "No. L'assistente compare in Microsoft Teams e in Microsoft 365 Copilot, già in uso in molte organizzazioni. Chi preferisce ChatGPT o Claude collega il server MCP dalle impostazioni del proprio assistente, con l'accesso istituzionale. L'installazione riguarda soltanto il server Moodle e la configurazione in Copilot Studio, a cura di chi gestisce i sistemi."},
-      {"q": "Serve solo alle università?", "a": "No. È nato in un'università, ed è lì che è stato provato per primo, ma il plugin conosce Moodle, non il settore. Scuole, aziende sanitarie, enti di formazione accreditati e imprese usano lo stesso Moodle e hanno lo stesso problema: produrre e tenere aggiornati contenuti e verifiche. Il caso reale raccontato in queste pagine è universitario; i meccanismi che descrive sono gli stessi ovunque."},
-      {"q": "Posso creare un corso da zero?", "a": "Sì. Partendo da un corso vuoto, l'assistente costruisce sezioni, pagine, materiali e verifiche in un'unica conversazione; oppure interviene su un corso che esiste già. La creazione del contenitore del corso dipende dai permessi: in molte organizzazioni è riservata all'amministrazione, che lo predispone in pochi secondi. Per corsi da versionare e replicare a ogni edizione c'è Moodlecraft."},
-      {"q": "Un discente può modificare un corso?", "a": "No. Il plugin applica i permessi di Moodle a ogni richiesta: chi è iscritto come studente può soltanto consultare i corsi a cui è iscritto. Anche se chiedesse all'assistente di creare qualcosa, Moodle rifiuterebbe."},
-      {"q": "Dove finiscono i dati dei corsi?", "a": "Restano su Moodle. Il plugin non contatta servizi esterni. Le conversazioni passano per l'assistente scelto: con Copilot, il tenant Microsoft dell'organizzazione che già ospita Teams e la posta."},
-      {"q": "L'assistente può inventare contenuti?", "a": "Le risposte sui corsi sono costruite leggendo i contenuti reali tramite gli strumenti del plugin, e le istruzioni dell'assistente gli impongono di dichiarare quando un'informazione non è nel corso. Come per ogni assistente AI, la revisione di chi insegna su ciò che viene creato resta necessaria: per questo i quiz nascono nascosti."},
-      {"q": "Funziona senza Teams?", "a": "Sì. Qualunque client MCP può collegarsi: ChatGPT e Claude tramite i rispettivi connettori MCP, VS Code, Cursor. Teams e Copilot sono la via consigliata perché molte organizzazioni ne dispongono già e l'accesso è quello istituzionale."},
-      {"q": "Cosa serve per provarlo?", "a": "Un Moodle 4.3 o successivo raggiungibile in HTTPS, l'accesso Microsoft già attivo su Moodle, le licenze Copilot Studio di cui molte organizzazioni dispongono, e qualche ora di chi gestisce i sistemi per i quattro passi descritti sopra. Un pilota su un singolo corso è il modo migliore per iniziare."},
-      {"q": "Quanto costa? È open source?", "a": "Il codice sarà rilasciato con licenza GPL v3, la stessa di Moodle, quindi senza costi di licenza. Nella fase pilota è disponibile su richiesta alle organizzazioni interessate."},
-      {"q": "Chi lo mantiene?", "a": "Il progetto è sviluppato da Antonio Calanducci ed è in uso su corsi reali. Segnalazioni e richieste arrivano all'indirizzo in fondo alla pagina."}
+      {
+        "q": "Devo installare qualcosa sul mio computer?",
+        "a": "No. L'assistente compare in Microsoft Teams e in Microsoft 365 Copilot, già in uso in molte organizzazioni. Chi preferisce ChatGPT o Claude collega il server MCP dalle impostazioni del proprio assistente, con l'accesso istituzionale. L'installazione riguarda soltanto il server Moodle e la configurazione in Copilot Studio, a cura di chi gestisce i sistemi."
+      },
+      {
+        "q": "Serve solo alle università?",
+        "a": "No. È nato in un'università, ed è lì che è stato provato per primo, ma **il plugin conosce Moodle, non il settore**. Scuole, aziende sanitarie, enti di formazione accreditati e imprese usano lo stesso Moodle e hanno lo stesso problema: produrre e tenere aggiornati contenuti e verifiche. Il caso reale raccontato in queste pagine è universitario; i meccanismi che descrive sono gli stessi ovunque."
+      },
+      {
+        "q": "Posso creare un corso da zero?",
+        "a": "Sì. Partendo da un corso vuoto, l'assistente costruisce sezioni, pagine, materiali e verifiche in un'unica conversazione; oppure interviene su un corso che esiste già. La creazione del contenitore del corso dipende dai permessi: in molte organizzazioni è riservata all'amministrazione, che lo predispone in pochi secondi. Per corsi da versionare e replicare a ogni edizione c'è Moodlecraft."
+      },
+      {
+        "q": "Un discente può modificare un corso?",
+        "a": "No. Il plugin applica i permessi di Moodle a ogni richiesta: chi è iscritto come studente può soltanto consultare i corsi a cui è iscritto. Anche se chiedesse all'assistente di creare qualcosa, Moodle rifiuterebbe."
+      },
+      {
+        "q": "Dove finiscono i dati dei corsi?",
+        "a": "Restano su Moodle. Il plugin non contatta servizi esterni. Le conversazioni passano per l'assistente scelto: con Copilot, il tenant Microsoft dell'organizzazione che già ospita Teams e la posta."
+      },
+      {
+        "q": "L'assistente può inventare contenuti?",
+        "a": "Le risposte sui corsi sono costruite leggendo i contenuti reali tramite gli strumenti del plugin, e le istruzioni dell'assistente gli impongono di dichiarare quando un'informazione non è nel corso. Come per ogni assistente AI, **la revisione di chi insegna su ciò che viene creato resta necessaria**: per questo i quiz nascono nascosti."
+      },
+      {
+        "q": "Funziona senza Teams?",
+        "a": "Sì. Qualunque client MCP può collegarsi: ChatGPT e Claude tramite i rispettivi connettori MCP, VS Code, Cursor. Teams e Copilot sono la via consigliata perché molte organizzazioni ne dispongono già e l'accesso è quello istituzionale."
+      },
+      {
+        "q": "Cosa serve per provarlo?",
+        "a": "Un Moodle 4.3 o successivo raggiungibile in HTTPS, l'accesso Microsoft già attivo su Moodle, le licenze Copilot Studio di cui molte organizzazioni dispongono, e qualche ora di chi gestisce i sistemi per i quattro passi descritti sopra. Un pilota su un singolo corso è il modo migliore per iniziare."
+      },
+      {
+        "q": "Quanto costa? È open source?",
+        "a": "Il codice sarà rilasciato con licenza GPL v3, la stessa di Moodle, quindi senza costi di licenza. Nella fase pilota è disponibile su richiesta alle organizzazioni interessate."
+      },
+      {
+        "q": "Chi lo mantiene?",
+        "a": "Il progetto è sviluppato da Antonio Calanducci ed è in uso su corsi reali. Segnalazioni e richieste arrivano all'indirizzo in fondo alla pagina."
+      }
     ]
   },
   "contact": {
@@ -348,24 +882,48 @@
   },
   "case": {
     "meta": {
-      "title": "Caso reale · Un corso di SQL per Ostetricia costruito con MCPCA",
+      "title": "Caso reale · Un corso di gestione dei dati costruito con MCPCA",
       "description": "Come è stato costruito con MCPCA e Moodlecraft il Laboratorio di Informatica del corso di laurea in Ostetricia dell'Università di Catania: sette lezioni, 73 pagine, banca domande e prove d'esame con estrazione casuale.",
       "og_locale": "it_IT"
     },
     "back": "Torna alla pagina principale",
     "kicker": "Caso reale · Università di Catania",
-    "title": "Un corso di SQL e Oracle APEX per Ostetricia, costruito conversando",
-    "lead": "Laboratorio di Informatica, corso di laurea in Ostetricia, anno accademico 2025/2026. Sette lezioni, 73 pagine, una banca domande e due prove d'esame: tutto costruito con MCPCA e Moodlecraft e pubblicato su Studium, l'installazione Moodle dell'Università di Catania. L'ho tenuto io come docente, ed è il primo corso completo nato con questi strumenti.",
+    "title": "Un corso di gestione dei dati per Ostetricia, costruito conversando",
+    "lead": "Laboratorio di Informatica, corso di laurea in Ostetricia, anno accademico 2025/2026. Il corso insegna **come sono organizzati i dati, come si interrogano e come ci si costruisce sopra una semplice applicazione web**: in concreto, basi di dati, SQL e Oracle APEX. Sette lezioni, 73 pagine, una banca domande e due prove d'esame, tutto costruito con MCPCA e Moodlecraft e pubblicato su Studium, l'installazione Moodle dell'Università di Catania. L'ho tenuto io come docente, ed è ==il primo corso completo nato con questi strumenti==.",
     "facts_title": "La scheda",
     "facts": [
-      {"k": "Ateneo", "v": "Università di Catania"},
-      {"k": "Dipartimento", "v": "Chirurgia generale e specialità medico-chirurgiche"},
-      {"k": "Corso di laurea", "v": "Ostetricia (abilitante alla professione sanitaria di Ostetrica/o), L/SNT1"},
-      {"k": "Insegnamento", "v": "Laboratorio di Informatica (1001448), terzo anno"},
-      {"k": "Anno accademico", "v": "2025/2026"},
-      {"k": "Piattaforma", "v": "Studium, l'installazione Moodle dell'ateneo"},
-      {"k": "Strumenti", "v": "MCPCA e Moodlecraft"},
-      {"k": "Docente", "v": "Antonio Calanducci"}
+      {
+        "k": "Ateneo",
+        "v": "Università di Catania"
+      },
+      {
+        "k": "Dipartimento",
+        "v": "Chirurgia generale e specialità medico-chirurgiche"
+      },
+      {
+        "k": "Corso di laurea",
+        "v": "Ostetricia (abilitante alla professione sanitaria di Ostetrica/o), L/SNT1"
+      },
+      {
+        "k": "Insegnamento",
+        "v": "Laboratorio di Informatica (1001448), terzo anno"
+      },
+      {
+        "k": "Anno accademico",
+        "v": "2025/2026"
+      },
+      {
+        "k": "Piattaforma",
+        "v": "Studium, l'installazione Moodle dell'ateneo"
+      },
+      {
+        "k": "Strumenti",
+        "v": "MCPCA e Moodlecraft"
+      },
+      {
+        "k": "Docente",
+        "v": "Antonio Calanducci"
+      }
     ],
     "link": {
       "label": "Apri il corso su Studium",
@@ -376,19 +934,37 @@
       "kicker": "Il punto di partenza",
       "title": "Insegnare basi di dati a chi farà l'ostetrica",
       "paras": [
-        "Il corso introduce SQL, la progettazione di una base di dati e Oracle APEX a studentesse e studenti del terzo anno di Ostetricia. Non sono informatici e non lo diventeranno: l'obiettivo è che capiscano come sono organizzati i dati clinici con cui lavoreranno ogni giorno, e che sappiano interrogarli senza dover chiedere a qualcun altro.",
-        "Il materiale di partenza erano le slide delle lezioni e i video registrati. Trasformarlo in un corso navigabile, con esercizi, soluzioni e prove d'esame, è il lavoro che di solito non si fa: si allegano le slide, si mette un quiz alla fine e si va avanti, perché costruire il resto a mano costa troppe ore.",
-        "Con MCPCA ho descritto a parole quello che volevo e l'ho ottenuto dentro Moodle. Con Moodlecraft lo stesso corso è diventato una cartella di file di testo versionata con git: l'anno prossimo si riapplica cambiando le date e il dataset, senza ricominciare da capo."
+        "Il corso introduce **la gestione dei dati** a studentesse e studenti del terzo anno di Ostetricia: come si progetta una base di dati, come si estraggono le informazioni che servono, come ci si costruisce sopra un'applicazione da usare tutti i giorni. Gli strumenti concreti sono SQL e Oracle APEX. Non sono informatici e non lo diventeranno: ==il punto è che capiscano come sono organizzati i dati clinici con cui lavoreranno==, e che sappiano interrogarli senza dover chiedere a qualcun altro.",
+        "Il materiale di partenza erano le slide delle lezioni e i video registrati. Trasformarlo in un corso navigabile, con esercizi, soluzioni e prove d'esame, è **il lavoro che di solito non si fa**: si allegano le slide, si mette un quiz alla fine e si va avanti, _perché costruire il resto a mano costa troppe ore_.",
+        "Con MCPCA ho descritto a parole quello che volevo e l'ho ottenuto dentro Moodle. Con Moodlecraft lo stesso corso è diventato **una cartella di file di testo versionata con git**: l'anno prossimo si riapplica cambiando le date e il dataset, ==senza ricominciare da capo==."
       ]
     },
     "metrics": {
       "items": [
-        {"value": "7", "label": "lezioni"},
-        {"value": "73", "label": "pagine pubblicate"},
-        {"value": "32", "label": "esercizi e soluzioni"},
-        {"value": "80", "label": "domande nel deposito d'esame"},
-        {"value": "2", "label": "prove d'esame"},
-        {"value": "35", "label": "elaborati corretti"}
+        {
+          "value": "7",
+          "label": "lezioni"
+        },
+        {
+          "value": "73",
+          "label": "pagine pubblicate"
+        },
+        {
+          "value": "32",
+          "label": "esercizi e soluzioni"
+        },
+        {
+          "value": "80",
+          "label": "domande nel deposito d'esame"
+        },
+        {
+          "value": "2",
+          "label": "prove d'esame"
+        },
+        {
+          "value": "35",
+          "label": "elaborati corretti"
+        }
       ],
       "note": "Numeri rilevati sul corso il 27 luglio 2026, quando la struttura è stata mappata l'ultima volta."
     },
@@ -400,47 +976,78 @@
         {
           "title": "Dalle slide alle lezioni",
           "text": "Le slide di ciascuna lezione sono diventate pagine Markdown: un argomento per pagina, con tabelle, esempi di codice e riepiloghi. Ogni lezione si apre con un indice cliccabile che elenca le sue pagine nell'ordine in cui vanno seguite.",
-          "tools": ["create_section", "create_page", "update_page"]
+          "tools": [
+            "create_section",
+            "create_page",
+            "update_page"
+          ]
         },
         {
           "title": "Dai video alle pagine con indice",
-          "text": "Le lezioni registrate avevano una trascrizione. Da quella l'assistente ha ricavato un indice con i minutaggi e il testo delle singole sezioni: non la trascrizione grezza, ma il contenuto riscritto e sintetizzato, con il video sempre in cima alla pagina.",
-          "tools": ["get_page_content", "update_page"]
+          "text": "Le lezioni registrate avevano una trascrizione. Da quella l'assistente ha ricavato un indice con i minutaggi e il testo delle singole sezioni: **non la trascrizione grezza, ma il contenuto riscritto e sintetizzato**, con il video sempre in cima alla pagina.",
+          "tools": [
+            "get_page_content",
+            "update_page"
+          ]
         },
         {
           "title": "Un filo narrativo per gli esercizi",
           "text": "La Lezione II è un caso investigativo: una tabella di 500 sospetti e una serie di indizi da tradurre in query, fino a restringere la lista a un solo nome. Quindici esercizi e diciassette soluzioni, ciascuno una pagina, creati insieme al testo della lezione.",
-          "tools": ["create_page"]
+          "tools": [
+            "create_page"
+          ]
         },
         {
           "title": "Il dataset clinico",
           "text": "Per gli esercizi d'esame ho usato un dataset di ambito ostetrico: pazienti, parti, personale. Il file SQL è caricato nel corso come risorsa scaricabile, così ognuno ricrea le tabelle nel proprio ambiente Oracle APEX.",
-          "tools": ["create_resource", "core_files_upload"]
+          "tools": [
+            "create_resource",
+            "core_files_upload"
+          ]
         },
         {
           "title": "La banca domande",
-          "text": "Un deposito per lezione, venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. Per ogni appello se ne prepara una serie nuova, così chi ripete l'esame non ritrova le stesse domande. Restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
-          "tools": ["create_question_category", "create_question", "list_questions", "update_question"]
+          "text": "Un deposito per lezione, venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. **Per ogni appello se ne prepara una serie nuova**, così chi ripete l'esame non ritrova le stesse domande. Restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
+          "tools": [
+            "create_question_category",
+            "create_question",
+            "list_questions",
+            "update_question"
+          ]
         },
         {
           "title": "Le prove d'esame",
           "text": "Ogni prova estrae a caso ventidue domande dai quattro depositi — sei dalla Lezione II, sei dalla III, cinque dalla IV, cinque dalla V — e aggiunge quattro esercizi pratici da risolvere in Oracle APEX. Trenta punti in tutto, idoneità a diciotto, un solo tentativo, un'ora di tempo.",
-          "tools": ["create_quiz", "create_quiz_section", "add_random_questions_to_quiz", "add_question_to_quiz"]
+          "tools": [
+            "create_quiz",
+            "create_quiz_section",
+            "add_random_questions_to_quiz",
+            "add_question_to_quiz"
+          ]
         },
         {
           "title": "La correzione",
-          "text": "Le domande a scelta multipla le corregge Moodle da sé, con il feedback già scritto in banca. Per gli esercizi pratici ho esportato le risposte in un foglio di calcolo, le ho valutate una per una con punteggio e commento, e le ho reimportate nel registro: trentacinque elaborati, otto risposte ciascuno. L'esportazione e la reimportazione le fanno gli script del progetto, non il plugin.",
-          "tools": ["mod_quiz_get_user_attempts", "mod_quiz_get_attempt_review"]
+          "text": "Le domande a scelta multipla le corregge Moodle da sé, con il feedback già scritto in banca. Per gli esercizi pratici ho esportato le risposte in un foglio di calcolo, le ho valutate una per una con punteggio e commento, e le ho reimportate nel registro: trentacinque elaborati, otto risposte ciascuno. _L'esportazione e la reimportazione le fanno gli script del progetto, non il plugin._",
+          "tools": [
+            "mod_quiz_get_user_attempts",
+            "mod_quiz_get_attempt_review"
+          ]
         },
         {
           "title": "Il syllabus",
           "text": "Anche la scheda dell'insegnamento per il portale docenti — risultati di apprendimento attesi, programma, modalità di verifica — è nata dallo stesso materiale, rileggendo il corso già pubblicato invece di riscrivere tutto in un modulo da compilare.",
-          "tools": ["core_course_get_contents", "get_page_content"]
+          "tools": [
+            "core_course_get_contents",
+            "get_page_content"
+          ]
         },
         {
           "title": "Tutto versionato",
-          "text": "Il corso è una cartella con git: `plan` mostra che cosa cambierebbe, `apply` applica solo le differenze. La prova del secondo appello è dichiarata nascosta nel file, così nessuna riapplicazione può pubblicarla per sbaglio prima della data d'esame.",
-          "tools": ["moodlecraft plan", "moodlecraft apply"]
+          "text": "Il corso è una cartella con git: `plan` mostra che cosa cambierebbe, `apply` applica solo le differenze. La prova del secondo appello è dichiarata nascosta nel file, ==così nessuna riapplicazione può pubblicarla per sbaglio prima della data d'esame==.",
+          "tools": [
+            "moodlecraft plan",
+            "moodlecraft apply"
+          ]
         }
       ]
     },
@@ -449,12 +1056,37 @@
       "title": "Il corso pubblicato",
       "lead": "Schermate prese dal corso reale sulla piattaforma dell'ateneo.",
       "items": [
-        {"file": "course-home.png", "alt": "Home del corso con l'elenco delle sezioni", "caption": "La home del corso: le sette lezioni più il materiale e la sezione degli esami.", "wide": true},
-        {"file": "section-list.png", "alt": "Elenco dei moduli di una lezione", "caption": "Una lezione aperta: teoria, indizi e soluzioni si alternano nell'ordine in cui vanno seguiti."},
-        {"file": "lesson-index.png", "alt": "Pagina di indice di una lezione", "caption": "L'indice che apre ogni lezione, con il percorso completo."},
-        {"file": "lesson-video.png", "alt": "Pagina di lezione con video e indice a minutaggi", "caption": "Una pagina nata da un video: indice con i minutaggi e testo delle sezioni."},
-        {"file": "questionbank.png", "alt": "Banca domande del corso", "caption": "I depositi di domande, uno per lezione."},
-        {"file": "quiz-settings.png", "alt": "Struttura della prova d'esame con gli slot casuali", "caption": "La prova vista dall'editor: ogni sezione pesca a caso dal deposito della sua lezione, un punto per domanda, voto massimo 30."}
+        {
+          "file": "course-home.png",
+          "alt": "Home del corso con l'elenco delle sezioni",
+          "caption": "La home del corso: le sette lezioni più il materiale e la sezione degli esami.",
+          "wide": true
+        },
+        {
+          "file": "section-list.png",
+          "alt": "Elenco dei moduli di una lezione",
+          "caption": "Una lezione aperta: teoria, indizi e soluzioni si alternano nell'ordine in cui vanno seguiti."
+        },
+        {
+          "file": "lesson-index.png",
+          "alt": "Pagina di indice di una lezione",
+          "caption": "L'indice che apre ogni lezione, con il percorso completo."
+        },
+        {
+          "file": "lesson-video.png",
+          "alt": "Pagina di lezione con video e indice a minutaggi",
+          "caption": "Una pagina nata da un video: indice con i minutaggi e testo delle sezioni."
+        },
+        {
+          "file": "questionbank.png",
+          "alt": "Banca domande del corso",
+          "caption": "I depositi di domande, uno per lezione."
+        },
+        {
+          "file": "quiz-settings.png",
+          "alt": "Struttura della prova d'esame con gli slot casuali",
+          "caption": "La prova vista dall'editor: ogni sezione pesca a caso dal deposito della sua lezione, un punto per domanda, voto massimo 30."
+        }
       ]
     },
     "excerpts": {
@@ -481,12 +1113,30 @@
         "window_title": "Breve tour dell'app APEX — Lezione VI",
         "intro": "Video introduttivo alla Lezione VI: un tour dell'applicazione Oracle APEX che verrà costruita da questa lezione in poi, a partire dalle conoscenze SQL già acquisite nel corso.",
         "items": [
-          {"label": "Homepage e le tre pagine dell'app", "time": "0:52"},
-          {"label": "Pagina Sospettati: consultare, modificare, aggiungere una foto", "time": "1:40"},
-          {"label": "Ordinare, filtrare e raggruppare i dati", "time": "2:48"},
-          {"label": "Creare ed eliminare un sospettato", "time": "5:18"},
-          {"label": "Ricerca sospettati con filtri combinati", "time": "7:04"},
-          {"label": "L'app anche su mobile", "time": "9:26"}
+          {
+            "label": "Homepage e le tre pagine dell'app",
+            "time": "0:52"
+          },
+          {
+            "label": "Pagina Sospettati: consultare, modificare, aggiungere una foto",
+            "time": "1:40"
+          },
+          {
+            "label": "Ordinare, filtrare e raggruppare i dati",
+            "time": "2:48"
+          },
+          {
+            "label": "Creare ed eliminare un sospettato",
+            "time": "5:18"
+          },
+          {
+            "label": "Ricerca sospettati con filtri combinati",
+            "time": "7:04"
+          },
+          {
+            "label": "L'app anche su mobile",
+            "time": "9:26"
+          }
         ],
         "caption": "Dal video alla pagina: indice con i minutaggi e testo delle sezioni, ricavati dalla trascrizione."
       },
@@ -494,18 +1144,37 @@
         "window_title": "Deposito domande — Lezione III",
         "question": "Quale clausola o costrutto SQL si utilizza per combinare i dati delle tabelle pazienti e parti sulla base di una chiave in comune?",
         "answers": [
-          {"text": "JOIN (o equi-join)", "correct": true, "feedback": "Corretto."},
-          {"text": "GROUP BY", "feedback": "GROUP BY raggruppa righe per calcoli aggregati, non collega tabelle."},
-          {"text": "ORDER BY", "feedback": "ORDER BY ordina il risultato, non collega tabelle."},
-          {"text": "WHERE NOT", "feedback": "NOT nega una condizione, non collega tabelle."}
+          {
+            "text": "JOIN (o equi-join)",
+            "correct": true,
+            "feedback": "Corretto."
+          },
+          {
+            "text": "GROUP BY",
+            "feedback": "GROUP BY raggruppa righe per calcoli aggregati, non collega tabelle."
+          },
+          {
+            "text": "ORDER BY",
+            "feedback": "ORDER BY ordina il risultato, non collega tabelle."
+          },
+          {
+            "text": "WHERE NOT",
+            "feedback": "NOT nega una condizione, non collega tabelle."
+          }
         ],
         "caption": "Una delle venti domande del deposito della Lezione III. Il feedback spiega perché l'alternativa sbagliata è sbagliata."
       },
       "open": {
         "window_title": "Prova di idoneità — esercizi pratici",
         "questions": [
-          {"label": "Esercizio 2 — Query", "text": "Scrivi ed esegui in Oracle APEX una query che, tramite un JOIN tra le tabelle parti e personale, restituisca per ciascuna ostetrica il numero di parti seguiti, ordinando i risultati dal più alto al più basso."},
-          {"label": "Esercizio 2 — Risultato", "text": "Riporta qui il risultato ottenuto eseguendo la query dell'Esercizio 2: nome dell'ostetrica e relativo conteggio, in ordine."}
+          {
+            "label": "Esercizio 2 — Query",
+            "text": "Scrivi ed esegui in Oracle APEX una query che, tramite un JOIN tra le tabelle parti e personale, restituisca per ciascuna ostetrica il numero di parti seguiti, ordinando i risultati dal più alto al più basso."
+          },
+          {
+            "label": "Esercizio 2 — Risultato",
+            "text": "Riporta qui il risultato ottenuto eseguendo la query dell'Esercizio 2: nome dell'ostetrica e relativo conteggio, in ordine."
+          }
         ],
         "note": "Query e risultato sono due domande separate, un punto ciascuna: chi sbaglia la sintassi ma arriva al risultato giusto non perde tutto l'esercizio.",
         "caption": "Quattro esercizi come questo chiudono la prova, sul dataset di pazienti, parti e personale."
@@ -516,12 +1185,30 @@
       "title": "Sei cose che porto al prossimo corso",
       "lead": "Non tutto è filato liscio, e alcune scelte sono diventate regole.",
       "items": [
-        {"title": "I quiz nascono nascosti", "text": "La prova del secondo appello è dichiarata nascosta nel file che la definisce, e ogni riapplicazione rispetta quella scelta. Un compito pubblicato per sbaglio prima della data d'esame è un danno difficile da rimediare."},
-        {"title": "L'assistente non inventa il contenuto", "text": "Le pagine nascono dal materiale reale: slide, trascrizioni, dataset. Quello che scrive va comunque riletto, e la responsabilità di ciò che viene pubblicato resta di chi insegna."},
-        {"title": "La correzione resta una decisione umana", "text": "Per gli esercizi aperti l'assistente propone un punteggio e un commento per ogni risposta; la valutazione finale l'ho confermata io, elaborato per elaborato, prima di riportarla sul registro."},
-        {"title": "Il lavoro della prossima edizione è già fatto per metà", "text": "Il corso è una cartella versionata: cambiano le date, il dataset e le domande nuove. Il resto si riapplica in pochi minuti, con la certezza che nulla viene duplicato."},
-        {"title": "Il tempo si sposta, non sparisce", "text": "Costruire le pagine è diventato veloce; il tempo è passato a decidere che cosa chiedere, a rileggere e a correggere. È uno scambio conveniente, ma non è magia."},
-        {"title": "Gli studenti non vedono nulla di tutto questo", "text": "Trovano un corso ordinato, con un indice per lezione, esercizi con soluzione e prove diverse per ciascuno. Il fatto che sia stato costruito conversando è un dettaglio che riguarda solo chi lo ha scritto."}
+        {
+          "title": "I quiz nascono nascosti",
+          "text": "La prova del secondo appello è dichiarata nascosta nel file che la definisce, e ogni riapplicazione rispetta quella scelta. Un compito pubblicato per sbaglio prima della data d'esame è un danno difficile da rimediare."
+        },
+        {
+          "title": "L'assistente non inventa il contenuto",
+          "text": "Le pagine nascono dal materiale reale: slide, trascrizioni, dataset. Quello che scrive va comunque riletto, e **la responsabilità di ciò che viene pubblicato resta di chi insegna**."
+        },
+        {
+          "title": "La correzione resta una decisione umana",
+          "text": "Per gli esercizi aperti l'assistente propone un punteggio e un commento per ogni risposta; la valutazione finale l'ho confermata io, elaborato per elaborato, prima di riportarla sul registro."
+        },
+        {
+          "title": "Il lavoro della prossima edizione è già fatto per metà",
+          "text": "Il corso è una cartella versionata: cambiano le date, il dataset e le domande nuove. Il resto si riapplica in pochi minuti, con la certezza che nulla viene duplicato."
+        },
+        {
+          "title": "Il tempo si sposta, non sparisce",
+          "text": "Costruire le pagine è diventato veloce; il tempo è passato a decidere che cosa chiedere, a rileggere e a correggere. _È uno scambio conveniente, ma non è magia._"
+        },
+        {
+          "title": "Gli studenti non vedono nulla di tutto questo",
+          "text": "Trovano un corso ordinato, con un indice per lezione, esercizi con soluzione e prove diverse per ciascuno. Il fatto che sia stato costruito conversando è un dettaglio che riguarda solo chi lo ha scritto."
+        }
       ]
     },
     "cta": {

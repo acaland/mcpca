@@ -38,8 +38,55 @@ attesi sono elencati in `case.figures.items` nei due file di contenuto
 `questionbank.png`, `quiz-settings.png`). Mettendo i PNG in quella cartella e
 rilanciando `python build.py`, la sezione appare da sola.
 
-Nessun framework, nessun font esterno, nessun tracciamento: HTML, CSS e un
-JavaScript minimo (tab e menu mobile), tutto funzionante anche senza JS.
+Nessun framework, nessun tracciamento e nessuna richiesta a terzi: HTML, CSS e
+un JavaScript minimo (tab, menu mobile, parola che ruota nel titolo), tutto
+funzionante anche senza JS.
+
+## Font
+
+Inter per il testo e Source Serif 4 per i titoli grandi, **ospitati in locale**
+in `static/fonts/` con le `@font-face` in `static/fonts.css`. Entrambi hanno
+licenza SIL Open Font License 1.1 (`static/fonts/OFL.txt`). Si riscaricano con:
+
+```bash
+python make_fonts.py
+```
+
+Sono in locale di proposito: un `<link>` a Google Fonts passerebbe l'indirizzo
+IP di ogni visitatore a un terzo, e la pagina dichiara di non farlo.
+
+## Evidenziazioni nei testi
+
+I contenuti sono testo semplice, ma accettano quattro marcatori che il build
+converte in HTML (`build.py`, funzione `rich`):
+
+| Marcatore | Risultato | Quando usarlo |
+|---|---|---|
+| `**testo**` | grassetto | il termine portante di un paragrafo |
+| `_testo_` | corsivo | un inciso, una precisazione |
+| `==testo==` | evidenziato in accento | la frase che deve fermare l'occhio |
+| `` `testo` `` | monospaziato | un nome di file, un comando, SQL |
+
+Servono a spezzare i blocchi lunghi. Non è Markdown completo ed è voluto:
+nessun HTML nei file di contenuto, quindi nessun link o markup arbitrario.
+I marcatori non vanno usati nei campi `meta`, che finiscono negli attributi e
+nelle anteprime dei link.
+
+## Chat di esempio con output formattato
+
+Un messaggio nelle chat può avere `text` (una frase) oppure `blocks`, per
+mostrare come l'assistente risponde davvero in Markdown:
+
+```json
+{"role": "agent", "tools": ["create_quiz"], "blocks": [
+  {"type": "title", "text": "Fatto."},
+  {"type": "ul", "items": ["prima voce", "seconda voce"]},
+  {"type": "table", "head": ["Domanda", "Esito"], "rows": [["4", "errata"]]},
+  {"type": "note", "text": "Lo rendo visibile?"}
+]}
+```
+
+Tipi disponibili: `p`, `title`, `ul`, `ol`, `table`, `note`.
 
 ## Sviluppo locale
 

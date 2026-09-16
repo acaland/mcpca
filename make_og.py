@@ -8,6 +8,7 @@ study, reading their titles and descriptions from content/<lang>.json.  Run it
 again after changing any hero title, page title or meta description.
 """
 import json
+import re
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -40,6 +41,14 @@ def font(size, bold=False):
     return ImageFont.load_default()
 
 
+MARKS = re.compile(r"\*\*|==|`")
+
+
+def plain(text):
+    """Toglie i marcatori di evidenziazione: sulle card servono solo le parole."""
+    return MARKS.sub("", text)
+
+
 def wrap(draw, text, f, maxw):
     words, lines, cur = text.split(), [], ""
     for w in words:
@@ -69,6 +78,7 @@ def card(brand, tagline, title, description, chips, out, title_size=72, accent_f
     d.text((MARGIN + 84, 124), tagline, font=font(24), fill=MUTED)
 
     # headline: the first line in ink, the rest in the accent colour
+    title = plain(title)
     tf = font(title_size, True)
     lines = wrap(d, title, tf, TEXT_WIDTH)
     while len(lines) > 2 and title_size > 44:
@@ -83,7 +93,7 @@ def card(brand, tagline, title, description, chips, out, title_size=72, accent_f
     # description, three lines at most
     df = font(28)
     y += 16
-    dl = wrap(d, description, df, TEXT_WIDTH)
+    dl = wrap(d, plain(description), df, TEXT_WIDTH)
     if len(dl) > 3:
         dl = dl[:3]
         dl[2] = dl[2].rstrip(" ,;:") + "…"

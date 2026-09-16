@@ -18,7 +18,7 @@
   </div>
   <div class="chat-body">
     {% for msg in messages %}
-    <div class="msg msg-{{ msg.role }}">
+    <div class="msg msg-{{ msg.role }}{% if msg.get("blocks") %} msg-rich{% endif %}">
       {% if msg.role == 'agent' %}<span class="avatar" aria-hidden="true">{{ icon('spark') }}</span>{% endif %}
       <div class="bubble">
         {% if msg.get("tools") %}
@@ -26,7 +26,25 @@
           {% for tool in msg.tools %}<code class="tool">{{ tool }}</code>{% endfor %}
         </div>
         {% endif %}
+        {% if msg.get("blocks") %}
+        {# L'assistente risponde in Markdown e Moodle lo rende così: elenchi,
+           grassetti, tabelle. I blocchi servono a mostrarlo davvero. #}
+        {% for b in msg.blocks %}
+          {% if b.type == 'p' %}<p>{{ b.text }}</p>
+          {% elif b.type == 'title' %}<span class="bubble-title">{{ b.text }}</span>
+          {% elif b.type == 'ul' %}<ul>{% for i in b["items"] %}<li>{{ i }}</li>{% endfor %}</ul>
+          {% elif b.type == 'ol' %}<ol>{% for i in b["items"] %}<li>{{ i }}</li>{% endfor %}</ol>
+          {% elif b.type == 'note' %}<span class="bubble-note">{{ b.text }}</span>
+          {% elif b.type == 'table' %}
+          <table class="md-table">
+            <thead><tr>{% for h in b.head %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+            <tbody>{% for row in b.rows %}<tr>{% for cell in row %}<td>{{ cell }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+          </table>
+          {% endif %}
+        {% endfor %}
+        {% else %}
         <p>{{ msg.text }}</p>
+        {% endif %}
       </div>
     </div>
     {% endfor %}
