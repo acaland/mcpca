@@ -166,8 +166,50 @@ def build() -> None:
             out.write_text(html, encoding="utf-8")
             print(f"  {lang}/{page['key']}: {out.relative_to(ROOT)} ({out.stat().st_size // 1024} KB)")
 
+    write_sitemap(langs)
+
     if not images:
         print("  note: static/case/ holds no screenshots, so the figure section is skipped")
+
+
+def write_sitemap(langs: list[str]) -> None:
+    """sitemap.xml con tutte le pagine e i rimandi fra le lingue.
+
+    Serve a Search Console: un sito su un sottopercorso di github.io non ha
+    quasi nessun link in entrata, quindi la sitemap è il modo più diretto per
+    farsi trovare dal crawler.
+    """
+    rows = []
+    for page in PAGES:
+        slug = page["slug"]
+        for lang in langs:
+            alts = "".join(
+                f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{page_url(l, slug)}"/>'
+                for l in langs
+            )
+            rows.append(
+                f"  <url>\n    <loc>{page_url(lang, slug)}</loc>{alts}"
+                f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{page_url(PRIMARY, slug)}"/>'
+                f"\n  </url>"
+            )
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+        '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+        + "\n".join(rows)
+        + "\n</urlset>\n"
+    )
+    (DIST / "sitemap.xml").write_text(xml, encoding="utf-8")
+    (DIST / "robots.txt").write_text(
+        "# Il robots.txt che i crawler leggono davvero è quello alla radice del\n"
+        "# dominio (acaland.github.io/robots.txt). Questo vale come promemoria e\n"
+        "# indica la sitemap a chi arriva qui.\n"
+        "User-agent: *\n"
+        "Allow: /\n"
+        f"Sitemap: {SITE_URL}sitemap.xml\n",
+        encoding="utf-8",
+    )
+    print(f"  sitemap: {len(rows)} URL")
 
 
 def diff_shape(a, b, path="") -> list[str]:

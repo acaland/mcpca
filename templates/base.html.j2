@@ -25,8 +25,29 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="{{ root }}static/fonts/source-serif-4-normal-latin.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="{{ root }}static/fonts/inter-normal-latin.woff2">
 <link rel="stylesheet" href="{{ root }}static/fonts.css">
 <link rel="stylesheet" href="{{ root }}static/style.css">
+{# Dati strutturati: dicono a un motore di ricerca che cos'è questa pagina.
+   Solo fatti già scritti nella pagina, nessuna affermazione in più. #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "{{ t.brand.name }}",
+  "alternateName": "MCP Course Authoring for Moodle",
+  "url": "{{ page_url }}",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Moodle 4.3+",
+  "inLanguage": "{{ lang }}",
+  "description": "{{ meta.description }}",
+  "author": {"@type": "Person", "name": "{{ t.footer.author }}", "email": "{{ t.contact.email }}"},
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+}
+</script>
 </head>
 <body>
 {% include 'partials/icons.html.j2' %}

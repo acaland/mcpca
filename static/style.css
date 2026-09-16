@@ -17,7 +17,7 @@
   --chip-text: #4a535f;
   --teacher: #7c3aed;
   --teacher-soft: #efe7fd;
-  --student: #c2410c;
+  --student: #9a3412;
   --student-soft: #fdebe1;
   --dark-bg: #131a21;
   --dark-surface: #1a232c;
@@ -149,7 +149,7 @@ img, svg { display: inline-block; vertical-align: middle; }
 .card p:last-child { margin-bottom: 0; }
 .card h3 { margin-top: 0; }
 .card-sm { padding: 20px 22px; }
-.card-sm h4 { margin-bottom: .35em; }
+.card-sm h3 { font-size: 1.05rem; margin-bottom: .35em; }
 .card-sm p { color: var(--muted); font-size: .98rem; }
 .card-icon p { color: var(--muted); }
 .icon-badge {
@@ -518,7 +518,7 @@ h1 { font-size: clamp(2.2rem, 4.15vw, 3.25rem); line-height: 1.08; margin-bottom
 /* ---------- content excerpt windows ---------- */
 .window { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
 .window-body { padding: 20px 22px; flex: 1; }
-.window-body h4 { margin-bottom: .4em; }
+.window-body h3 { font-size: 1.05rem; margin-bottom: .4em; }
 .window-body > p { color: var(--muted); font-size: .96rem; }
 .window-caption { margin: 0; padding: 12px 22px; border-top: 1px solid var(--border); background: var(--surface-2); font-size: .87rem; color: var(--muted); }
 .excerpts .window { height: 100%; }

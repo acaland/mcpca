@@ -96,7 +96,7 @@
       <article class="window">
         <div class="chat-bar"><span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chat-title">{{ c.excerpts.index.window_title }}</span></div>
         <div class="window-body">
-          <h4>{{ c.excerpts.index.heading }}</h4>
+          <h3>{{ c.excerpts.index.heading }}</h3>
           <p>{{ c.excerpts.index.intro }}</p>
           <ol class="lesson-index">
             {% for i in c.excerpts.index["items"] %}<li>{{ i }}</li>{% endfor %}
@@ -160,7 +160,7 @@
     <div class="grid grid-2">
       {% for l in c.lessons["items"] %}
       <article class="card card-sm">
-        <h4>{{ l.title }}</h4>
+        <h3>{{ l.title }}</h3>
         <p>{{ l.text }}</p>
       </article>
       {% endfor %}

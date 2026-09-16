@@ -61,13 +61,23 @@
     try { words = JSON.parse(el.getAttribute('data-words')); } catch (e) { return; }
     if (!words || words.length < 2) return;
     // Reserve the width of the longest word so the heading does not reflow.
-    var probe = document.createElement('span');
-    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit';
-    el.parentNode.appendChild(probe);
-    var max = 0;
-    words.forEach(function (w) { probe.textContent = w; max = Math.max(max, probe.getBoundingClientRect().width); });
-    probe.remove();
-    if (max) el.style.minWidth = Math.ceil(max) + 'px';
+    // Measured only once the webfont is in place: measuring against the
+    // fallback font gives the wrong width and shifts the page when the real
+    // font arrives.
+    function reserveWidth() {
+      var probe = document.createElement('span');
+      probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit';
+      el.parentNode.appendChild(probe);
+      var max = 0;
+      words.forEach(function (w) { probe.textContent = w; max = Math.max(max, probe.getBoundingClientRect().width); });
+      probe.remove();
+      if (max) el.style.minWidth = Math.ceil(max) + 'px';
+    }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(reserveWidth).catch(reserveWidth);
+    } else {
+      reserveWidth();
+    }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var i = 0;
     setInterval(function () {
