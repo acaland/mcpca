@@ -12,13 +12,31 @@ GPL v3; questo repository contiene solo il sito.
 ## Struttura
 
 ```
-build.py                 # Jinja2: templates + content/<lang>.json -> dist/
-content/it.json          # testi italiani (sorgente primaria)
-content/en.json          # traduzione inglese, stesse chiavi
-templates/index.html.j2  # pagina intera; partials/ per macro e icone SVG
-static/                  # style.css, main.js, favicon.svg, og-*.png
-.github/workflows/       # build + deploy su Pages a ogni push su main
+build.py                    # Jinja2: templates + content/<lang>.json -> dist/
+make_og.py                  # genera le anteprime dei link (static/og-*.png)
+content/it.json             # testi italiani (sorgente primaria)
+content/en.json             # traduzione inglese, stesse chiavi
+templates/base.html.j2      # testata, piede, <head>: condivisi da tutte le pagine
+templates/index.html.j2     # home
+templates/case-study.html.j2 # il caso reale del corso di Ostetricia
+templates/partials/         # macro e sprite delle icone SVG
+static/                     # style.css, main.js, favicon.svg, og-*.png
+static/case/                # screenshot del caso reale (facoltativi, vedi sotto)
+.github/workflows/          # build + deploy su Pages a ogni push su main
 ```
+
+Le pagine pubblicate sono quattro: `/` e `/en/` per la home, `/case-study/` e
+`/en/case-study/` per il caso reale. Per aggiungerne altre basta una voce in
+`PAGES` dentro `build.py` e un template che estende `base.html.j2`.
+
+## Screenshot del caso reale
+
+La sezione con le schermate del corso compare **solo se i file esistono**:
+`build.py` legge `static/case/` e il template salta le figure mancanti. I nomi
+attesi sono elencati in `case.figures.items` nei due file di contenuto
+(`course-home.png`, `section-list.png`, `lesson-index.png`, `lesson-video.png`,
+`questionbank.png`, `quiz-settings.png`). Mettendo i PNG in quella cartella e
+rilanciando `python build.py`, la sezione appare da sola.
 
 Nessun framework, nessun font esterno, nessun tracciamento: HTML, CSS e un
 JavaScript minimo (tab e menu mobile), tutto funzionante anche senza JS.

@@ -1,0 +1,83 @@
+{%- import 'partials/macros.html.j2' as m -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ meta.title }}</title>
+<meta name="description" content="{{ meta.description }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1318" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="{{ page_url }}">
+{% for code, href in alternates.items() %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ href }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ alternates['it'] }}">
+<link rel="icon" href="{{ root }}static/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.brand.name }}">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.description }}">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:locale" content="{{ t.meta.og_locale }}">
+<meta property="og:image" content="{{ site_url }}static/{{ og_image }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+{% include 'partials/icons.html.j2' %}
+
+<a class="skip" href="#main">{{ 'Vai al contenuto' if lang == 'it' else 'Skip to content' }}</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ home_href if home_href else './' }}">
+      <span class="brand-mark" aria-hidden="true">{{ m.icon('mark') }}</span>
+      <span class="brand-text">
+        <span class="brand-name">{{ t.brand.name }}</span>
+        <span class="brand-tag">{{ t.brand.tagline }}</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.nav.menu_label }}">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        {% for item in t.nav["items"] %}
+        <li><a{% if item.href == '@case' %} class="nav-case" href="{{ case_href }}"{% if page_key == 'case' %} aria-current="page"{% endif %}{% else %} href="{{ home_href }}{{ item.href }}"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+      <div class="nav-actions">
+        <a class="lang-switch" href="{{ lang_href }}" hreflang="{{ t.other_lang.code }}" lang="{{ t.other_lang.code }}">{{ m.icon('globe') }} {{ t.other_lang.label }}</a>
+        <a class="btn btn-primary btn-sm" href="mailto:{{ t.contact.email }}">{{ t.nav.cta }}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% if t.get("stub_notice") %}
+<div class="stub-notice container"><p>{{ t.stub_notice }}</p></div>
+{% endif %}
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">{{ m.icon('mark') }}</span> {{ t.brand.name }} <span class="muted">· {{ t.brand.tagline }}</span></p>
+      <p class="muted">{{ t.footer.author }} · <a href="mailto:{{ t.contact.email }}">{{ t.contact.email }}</a></p>
+    </div>
+    <div>
+      <p class="muted small">{{ t.footer.disclaimer }}</p>
+      <p class="muted small">{{ t.footer.no_tracking }} · <a href="{{ lang_href }}" hreflang="{{ t.other_lang.code }}" lang="{{ t.other_lang.code }}">{{ t.other_lang.label }}</a> · © {{ t.footer.year }}</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ root }}static/main.js" defer></script>
+</body>
+</html>

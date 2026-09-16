@@ -1,0 +1,187 @@
+{% extends 'base.html.j2' %}
+{% set c = t.case %}
+{% block main %}
+
+<!-- ============ CASE HERO ============ -->
+<section class="case-hero">
+  <div class="container">
+    <a class="back-link" href="{{ home_href if home_href else './' }}">{{ m.icon('arrow-left') }} {{ c.back }}</a>
+    <div class="case-hero-grid">
+      <div>
+        <p class="badge">{{ m.icon('dot') }} {{ c.kicker }}</p>
+        <h1>{{ c.title }}</h1>
+        <p class="lead">{{ c.lead }}</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="{{ c.link.url }}" rel="noopener">{{ m.icon('arrow') }} {{ c.link.label }}</a>
+        </div>
+        <p class="case-link-note">{{ m.icon('lock') }} {{ c.link.note }}</p>
+      </div>
+      <dl class="case-facts">
+        <p class="case-facts-title">{{ c.facts_title }}</p>
+        {% for f in c.facts %}
+        <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTEXT ============ -->
+<section class="section section--alt">
+  <div class="container container-narrow">
+    {{ m.heading(c.context.kicker, c.context.title) }}
+    {% for p in c.context.paras %}
+    <p class="case-para">{{ p }}</p>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ============ METRICS ============ -->
+<section class="section section--tight">
+  <div class="container">
+    <div class="stats stats--wide">
+      {% for s in c.metrics["items"] %}
+      <div class="stat"><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></div>
+      {% endfor %}
+    </div>
+    <p class="metrics-note">{{ c.metrics.note }}</p>
+  </div>
+</section>
+
+<!-- ============ BUILD STEPS ============ -->
+<section id="come" class="section">
+  <div class="container">
+    {{ m.heading(c.steps.kicker, c.steps.title, c.steps.lead) }}
+    <ol class="case-steps">
+      {% for s in c.steps["items"] %}
+      <li class="case-step">
+        <span class="case-step-num" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+        <div class="case-step-body">
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.text }}</p>
+          {% if s.get('tools') %}
+          <div class="tools">{% for tool in s.tools %}<code class="tool">{{ tool }}</code>{% endfor %}</div>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ============ SCREENSHOTS (rendered only when the image files exist) ============ -->
+{% set shots = c.figures["items"] | selectattr('file', 'in', available_images) | list %}
+{% if shots %}
+<section id="schermate" class="section section--alt">
+  <div class="container">
+    {{ m.heading(c.figures.kicker, c.figures.title, c.figures.lead) }}
+    <div class="shots">
+      {% for f in shots %}
+      <figure class="shot{% if f.get('wide') %} shot--wide{% endif %}">
+        <img src="{{ root }}static/case/{{ f.file }}" alt="{{ f.alt }}" loading="lazy" decoding="async">
+        <figcaption>{{ f.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ============ EXCERPTS ============ -->
+<section id="estratti" class="section{% if not shots %} section--alt{% endif %}">
+  <div class="container">
+    {{ m.heading(c.excerpts.kicker, c.excerpts.title, c.excerpts.lead) }}
+    <div class="grid grid-2 excerpts">
+
+      <article class="window">
+        <div class="chat-bar"><span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chat-title">{{ c.excerpts.index.window_title }}</span></div>
+        <div class="window-body">
+          <h4>{{ c.excerpts.index.heading }}</h4>
+          <p>{{ c.excerpts.index.intro }}</p>
+          <ol class="lesson-index">
+            {% for i in c.excerpts.index["items"] %}<li>{{ i }}</li>{% endfor %}
+          </ol>
+        </div>
+        <p class="window-caption">{{ c.excerpts.index.caption }}</p>
+      </article>
+
+      <article class="window">
+        <div class="chat-bar"><span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chat-title">{{ c.excerpts.video.window_title }}</span></div>
+        <div class="window-body">
+          <div class="video-placeholder" aria-hidden="true">{{ m.icon('play') }}</div>
+          <p>{{ c.excerpts.video.intro }}</p>
+          <ul class="video-index">
+            {% for i in c.excerpts.video["items"] %}
+            <li><span>{{ i.label }}</span><code>{{ i.time }}</code></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <p class="window-caption">{{ c.excerpts.video.caption }}</p>
+      </article>
+
+      <article class="window">
+        <div class="chat-bar"><span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chat-title">{{ c.excerpts.mc.window_title }}</span></div>
+        <div class="window-body">
+          <p class="question-text">{{ c.excerpts.mc.question }}</p>
+          <ul class="answers">
+            {% for a in c.excerpts.mc.answers %}
+            <li class="answer{% if a.get('correct') %} answer--correct{% endif %}">
+              <span class="answer-mark" aria-hidden="true">{{ m.icon('check') if a.get('correct') else m.icon('dot') }}</span>
+              <span><code>{{ a.text }}</code><span class="answer-feedback">{{ a.feedback }}</span></span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <p class="window-caption">{{ c.excerpts.mc.caption }}</p>
+      </article>
+
+      <article class="window">
+        <div class="chat-bar"><span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="chat-title">{{ c.excerpts.open.window_title }}</span></div>
+        <div class="window-body">
+          {% for q in c.excerpts.open.questions %}
+          <div class="open-q">
+            <span class="open-q-label">{{ q.label }}</span>
+            <p class="question-text">{{ q.text }}</p>
+          </div>
+          {% endfor %}
+          <p class="open-note">{{ c.excerpts.open.note }}</p>
+        </div>
+        <p class="window-caption">{{ c.excerpts.open.caption }}</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ LESSONS LEARNED ============ -->
+<section id="lezioni" class="section{% if shots %} section--alt{% endif %}">
+  <div class="container">
+    {{ m.heading(c.lessons.kicker, c.lessons.title, c.lessons.lead) }}
+    <div class="grid grid-2">
+      {% for l in c.lessons["items"] %}
+      <article class="card card-sm">
+        <h4>{{ l.title }}</h4>
+        <p>{{ l.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--cta">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>{{ c.cta.title }}</h2>
+        <p>{{ c.cta.text }}</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary btn-lg" href="mailto:{{ t.contact.email }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
+        <a class="btn btn-ghost" href="{{ home_href if home_href else './' }}">{{ c.cta.back }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
