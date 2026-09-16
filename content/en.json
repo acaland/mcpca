@@ -7,7 +7,7 @@
     "href": "../"
   },
   "meta": {
-    "title": "MCPCA · Your Moodle courses, a conversation away in Teams, Copilot, ChatGPT or Claude",
+    "title": "MCPCA · Your Moodle courses, now inside Teams, Copilot, ChatGPT or Claude",
     "description": "MCPCA is a plugin for Moodle, the platform behind most online training in universities, schools, healthcare organisations and training providers. Teachers, trainers and learners can build and consult courses by talking to the AI assistant they already use.",
     "og_locale": "en_GB"
   },
@@ -56,14 +56,14 @@
   "hero": {
     "badge": "Moodle plugin · Teams and Copilot · ChatGPT · Claude",
     "title_a": "Your Moodle courses,",
-    "title_b_prefix": "a conversation away in",
+    "title_b_prefix": "now inside",
     "title_words": [
       "Teams",
       "Copilot",
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations and training providers all run on it.",
+    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare and training providers all run on it.",
     "lead2": "[[MCPCA]] connects it to the AI assistants already in use. Describe a page, a quiz or a whole course in plain words, and ==find it ready on the platform==: nothing to install, and not one piece of data leaves the organisation.",
     "cta_primary": "See what it can do",
     "cta_case": "The first real deployment",
@@ -126,7 +126,8 @@
           "sub": "courses, materials, assessments"
         }
       ]
-    }
+    },
+    "note": "Everyone signs in with their own **institutional account** and does only what Moodle allows them."
   },
   "what": {
     "kicker": "In brief",

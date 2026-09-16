@@ -9,10 +9,6 @@
       <h1>{{ t.hero.title_a }} <span class="accent">{{ t.hero.title_b_prefix }} <span class="rotate" data-words='{{ t.hero.title_words | tojson }}'>{{ t.hero.title_words[0] }}</span></span></h1>
       <p class="lead lead-intro">{{ t.hero.lead }}</p>
       <p class="lead lead-promise">{{ t.hero.lead2 }}</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#casi">{{ t.hero.cta_primary }} {{ m.icon('arrow') }}</a>
-        <a class="btn btn-ghost" href="{{ case_href }}">{{ t.hero.cta_case }}</a>
-      </div>
       <div class="flow" aria-label="{{ t.hero.flow.caption }}">
         {% for n in t.hero.flow.nodes %}
         <div class="flow-node{% if loop.index == 2 %} flow-node--accent{% endif %}">
@@ -23,6 +19,11 @@
         {% endfor %}
       </div>
       <p class="flow-caption">{{ m.icon('building') }} {{ t.hero.flow.caption }}</p>
+      <p class="hero-note">{{ t.hero.note }}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#casi">{{ t.hero.cta_primary }} {{ m.icon('arrow') }}</a>
+        <a class="btn btn-ghost" href="{{ case_href }}">{{ t.hero.cta_case }}</a>
+      </div>
     </div>
     <div class="hero-visual">
       {{ m.chat(t.hero.chat.window_title, t.hero.chat.messages, t.hero.chat.typing) }}

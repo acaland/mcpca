@@ -126,7 +126,8 @@
           "sub": "corsi, materiali, verifiche"
         }
       ]
-    }
+    },
+    "note": "Ognuno accede con il proprio **account istituzionale** e fa solo ciò che Moodle gli consente."
   },
   "what": {
     "kicker": "In breve",

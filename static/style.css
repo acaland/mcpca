@@ -218,7 +218,7 @@ img, svg { display: inline-block; vertical-align: middle; }
 .stub-notice p { background: var(--student-soft); color: var(--student); border-radius: 10px; padding: 10px 14px; font-weight: 500; margin: 0; }
 
 /* ---------- hero ---------- */
-.hero { padding: 36px 0 52px; position: relative; overflow: hidden; }
+.hero { padding: 26px 0 48px; position: relative; overflow: hidden; }
 .hero::before {
   content: ""; position: absolute; inset: -20% -10% auto -10%; height: 70%; z-index: -1;
   background: radial-gradient(60% 60% at 70% 30%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
@@ -431,7 +431,7 @@ img, svg { display: inline-block; vertical-align: middle; }
 @media (max-width: 1240px) { .brand-tag { display: none; } }
 .flow-node:first-child { flex: 1.6 1 0; }
 /* Titolo più grande e con più aria sotto: è la prima cosa che si legge. */
-h1 { font-size: clamp(2.2rem, 4.15vw, 3.25rem); line-height: 1.08; margin-bottom: .4em; }
+h1 { font-size: clamp(2.2rem, 4.15vw, 3.25rem); line-height: 1.08; margin-bottom: .36em; }
 .hero-copy .lead { margin-top: 0; }
 
 /* The English tagline is longer than the Italian one: keep it on one line,
@@ -612,7 +612,7 @@ em { font-style: italic; }
 
 /* Nell'hero: prima una riga di contesto in sordina, poi la promessa, che si
    apre con il nome del progetto ed è il paragrafo che deve pesare. */
-.hero-copy .lead-intro { font-size: 1.05rem; color: var(--muted); margin-bottom: .55em; }
+.hero-copy .lead-intro { font-size: 1.05rem; color: var(--muted); margin-bottom: .45em; }
 .hero-copy .lead-promise { font-size: 1.22rem; color: var(--text); line-height: 1.5; }
 .hero-copy .lead-promise .product { font-size: 1.06em; }
 
@@ -620,14 +620,39 @@ em { font-style: italic; }
 /* Su un portatile da 13 pollici la prima schermata deve contenere titolo,
    promessa, pulsanti e lo schema dei tre blocchi: è quello schema a spiegare
    in un colpo d'occhio dove gira il plugin. */
-.hero-copy .flow { margin-top: 20px; }
-.hero-copy .flow-caption { margin-top: 6px; }
+.hero-copy .flow { margin-top: 18px; }
+.hero-copy .flow-caption { margin-top: 8px; margin-bottom: 0; }
 .hero-copy .lead { margin-bottom: .7em; }
-.hero-copy .cta-row { margin-top: 20px; }
+.hero-copy .cta-row { margin-top: 16px; }
+/* Riga di raccordo fra lo schema e i pulsanti: dice chi può fare che cosa,
+   completa il "dove gira" della didascalia e tiene separati i due blocchi. */
+.hero-note {
+  margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--border);
+  font-size: .97rem; color: var(--muted);
+}
 .hero-copy .flow-node { padding: 10px 12px; }
 .hero-copy .flow-label { font-size: .88rem; }
 .hero-copy .flow-sub { font-size: .74rem; }
 .hero-visual { gap: 0; }
 @media (max-width: 960px) {
-  .hero-copy .flow { margin-top: 26px; }
+  /* In colonna singola il diagramma è alto: i pulsanti tornano prima, così la
+     chiamata all'azione resta raggiungibile senza scorrere tutto. */
+  .hero-copy { display: flex; flex-direction: column; }
+  .hero-copy .cta-row { order: 1; margin-top: 22px; }
+  .hero-copy .flow { order: 2; margin-top: 26px; }
+  .hero-copy .flow-caption { order: 3; }
+  .hero-copy .hero-note { order: 4; }
+}
+
+
+/* Portatili con schermo basso (13 pollici, 720-780px di altezza utile): l'hero
+   si stringe quel tanto che basta a tenere schema, riga di raccordo e pulsanti
+   sopra la piega. Sui monitor grandi resta arioso. */
+@media (min-width: 961px) and (max-height: 800px) {
+  .hero { padding-top: 18px; }
+  .hero-copy .lead-promise { font-size: 1.16rem; line-height: 1.45; }
+  .hero-copy .flow { margin-top: 14px; }
+  .hero-copy .flow-caption { margin-top: 6px; }
+  .hero-note { margin-top: 12px; padding-top: 12px; }
+  .hero-copy .cta-row { margin-top: 14px; }
 }
