@@ -484,7 +484,8 @@ h1 { font-size: clamp(2.2rem, 4.15vw, 3.25rem); line-height: 1.08; margin-bottom
 .case-link-note .icon { margin-top: .25em; width: .95em; height: .95em; }
 .case-facts { margin: 0; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; box-shadow: var(--shadow); }
 .case-facts-title { font-size: .76rem; text-transform: uppercase; letter-spacing: .09em; color: var(--muted); font-weight: 700; margin: 0 0 14px; }
-.case-facts > div { padding: 9px 0; border-top: 1px solid var(--border); }
+.case-facts dl { margin: 0; }
+.case-facts dl > div { padding: 9px 0; border-top: 1px solid var(--border); }
 .case-facts dt { font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
 .case-facts dd { margin: 2px 0 0; font-size: .96rem; font-weight: 600; }
 @media (max-width: 860px) { .case-hero-grid { grid-template-columns: 1fr; gap: 30px; } }

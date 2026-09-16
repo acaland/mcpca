@@ -16,12 +16,14 @@
         </div>
         <p class="case-link-note">{{ m.icon('lock') }} {{ c.link.note }}</p>
       </div>
-      <dl class="case-facts">
+      <div class="case-facts">
         <p class="case-facts-title">{{ c.facts_title }}</p>
-        {% for f in c.facts %}
-        <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>
-        {% endfor %}
-      </dl>
+        <dl>
+          {% for f in c.facts %}
+          <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>
+          {% endfor %}
+        </dl>
+      </div>
     </div>
   </div>
 </section>
