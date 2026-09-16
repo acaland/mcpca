@@ -1,0 +1,283 @@
+{
+  "lang": "it",
+  "dir": "",
+  "other_lang": {"code": "en", "label": "English", "href": "en/"},
+  "meta": {
+    "title": "MCPCA · I tuoi corsi Moodle, conversando in Teams",
+    "description": "MCPCA è un plugin Moodle che permette a docenti e studenti di creare, leggere e verificare i contenuti dei corsi conversando con l'assistente AI dell'ateneo in Microsoft Teams, con gli stessi permessi di Moodle.",
+    "og_locale": "it_IT"
+  },
+  "brand": {
+    "name": "MCPCA",
+    "tagline": "Moodle Course Authoring con l'assistente AI"
+  },
+  "nav": {
+    "items": [
+      {"href": "#cosa", "label": "Cos'è"},
+      {"href": "#casi", "label": "Casi d'uso"},
+      {"href": "#funzioni", "label": "Funzioni"},
+      {"href": "#dialoghi", "label": "Esempi"},
+      {"href": "#sicurezza", "label": "Sicurezza"},
+      {"href": "#tecnici", "label": "Per i tecnici"},
+      {"href": "#faq", "label": "FAQ"}
+    ],
+    "cta": "Contattami",
+    "menu_label": "Menu"
+  },
+  "hero": {
+    "badge": "Plugin Moodle · Microsoft Teams · Copilot",
+    "title_a": "I tuoi corsi Moodle,",
+    "title_b": "conversando in Teams.",
+    "lead": "MCPCA collega Moodle all'assistente AI che l'ateneo ha già. Un docente descrive a parole una pagina, un quiz o un intero esame, e li ritrova pronti nel corso. Uno studente chiede dei materiali e riceve risposte tratte dal corso vero, non inventate.",
+    "lead2": "Nessun programma da installare per chi lo usa, nessun dato che lasci l'ateneo. Ognuno entra con il proprio account Microsoft e può fare solo ciò che Moodle già gli permette.",
+    "cta_primary": "Vedi cosa può fare",
+    "cta_secondary": "Per i tecnici",
+    "chat": {
+      "window_title": "Assistente Corsi Moodle · Teams",
+      "messages": [
+        {"role": "user", "text": "Trasforma questi appunti in una pagina della sezione 3 di Basi di dati, con spunta di completamento manuale."},
+        {"role": "agent", "tools": ["get_my_courses", "create_page"], "text": "Pagina «Normalizzazione: 1NF, 2NF, 3NF» creata nella sezione 3, con i tre esempi formattati come tabelle e la spunta di completamento. Vuoi che aggiunga un quiz di verifica di 5 domande?"},
+        {"role": "user", "text": "Sì, ma nascosto finché non lo rivedo."}
+      ],
+      "typing": "Sto creando il quiz…"
+    },
+    "flow": {
+      "caption": "Tutto dentro l'infrastruttura dell'ateneo",
+      "nodes": [
+        {"label": "Teams / Copilot", "sub": "l'assistente che avete già"},
+        {"label": "MCPCA", "sub": "plugin dentro Moodle"},
+        {"label": "Moodle di ateneo", "sub": "corsi, quiz, materiali"}
+      ]
+    }
+  },
+  "what": {
+    "kicker": "In due parole",
+    "title": "Cos'è, senza tecnicismi",
+    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma non conoscono i vostri corsi e non possono toccarli. MCPCA è il pezzo che manca.",
+    "cards": [
+      {
+        "icon": "plugin",
+        "title": "È un plugin Moodle",
+        "text": "Si installa come qualunque altro plugin, dentro il Moodle dell'ateneo. Non servono server aggiuntivi né servizi esterni."
+      },
+      {
+        "icon": "chat",
+        "title": "Parla la lingua degli assistenti AI",
+        "text": "Usa MCP, uno standard aperto adottato da Microsoft Copilot, Claude e ChatGPT. L'assistente che l'ateneo ha già può così leggere e scrivere nei corsi, su richiesta di chi lo usa."
+      },
+      {
+        "icon": "shield",
+        "title": "Con i permessi di Moodle",
+        "text": "Ognuno entra con il proprio account Microsoft. Il plugin fa solo quello che quella persona potrebbe fare dall'interfaccia web di Moodle: un docente crea e modifica nei suoi corsi, uno studente legge nei suoi."
+      }
+    ],
+    "glossary_title": "Tre termini che incontrerete",
+    "glossary": [
+      {"term": "MCP (Model Context Protocol)", "def": "Uno standard aperto, del 2024, con cui un assistente AI chiede a un'applicazione «cosa sai fare?» e poi le chiede di farlo. È la stessa tecnologia con cui Copilot si collega a SharePoint o a Jira."},
+      {"term": "Copilot Studio", "def": "Lo strumento Microsoft, incluso nelle licenze di ateneo, con cui si costruisce un assistente e lo si pubblica in Teams e in Microsoft 365 Copilot."},
+      {"term": "Entra ID", "def": "Il servizio di identità Microsoft con cui docenti e studenti già accedono a Teams e alla posta. MCPCA lo usa per riconoscere chi sta parlando."}
+    ]
+  },
+  "usecases": {
+    "kicker": "Casi d'uso",
+    "title": "Cosa cambia, per chi",
+    "lead": "Lo stesso assistente, tre modi di usarlo. Il plugin applica il ruolo di ciascuno: chi può scrivere scrive, chi può solo leggere legge.",
+    "tabs": [
+      {
+        "id": "docenti",
+        "label": "Docenti",
+        "intro": "La parte che ci distingue: non solo leggere Moodle, ma costruire il corso conversando.",
+        "items": [
+          {"title": "Dal materiale alla pagina", "text": "«Trasforma questi appunti in una pagina della sezione 3.» L'assistente formatta, crea la pagina e, se chiesto, attiva il tracciamento del completamento."},
+          {"title": "Quiz in pochi minuti", "text": "«Crea 10 domande a scelta multipla sulla pagina delle join, con feedback per ogni risposta.» Domande in banca, quiz nel corso, soglia di superamento impostata."},
+          {"title": "Esami diversi per ogni studente", "text": "«40 domande in banca e un compito che ne estrae 10 a caso.» Ogni studente riceve una combinazione diversa; la correzione è automatica."},
+          {"title": "Domande a correzione automatica", "text": "Scelta multipla, risposta breve, numerica con tolleranza, Cloze con risposte incorporate. Più saggio a correzione manuale e blocchi descrittivi."},
+          {"title": "Materiali al posto giusto", "text": "«Carica queste slide nella sezione 2, apertura in nuova finestra.» File, etichette, sezioni nuove o rinominate, visibilità."},
+          {"title": "Rilettura e correzione", "text": "«Leggimi le domande della categoria Esame gennaio e correggi la terza.» La banca domande si sfoglia e si modifica a voce, senza cercare nei menu."}
+        ]
+      },
+      {
+        "id": "studenti",
+        "label": "Studenti",
+        "intro": "Sempre in sola lettura, sempre e solo sui corsi a cui sono iscritti.",
+        "items": [
+          {"title": "Orientarsi nei corsi", "text": "«A quali corsi sono iscritto?» «Cosa c'è nella sezione 2 di Basi di dati?» Struttura, materiali e quiz disponibili, dal Teams che usano già."},
+          {"title": "Spiegazioni dal corso vero", "text": "«Spiegami la pagina sulle join con un esempio.» L'assistente legge il contenuto scritto dal docente e risponde su quello, senza inventare."},
+          {"title": "Ripasso guidato", "text": "«Interrogami sulla sezione 2.» Domande costruite sui materiali del corso, con correzione e rimando alla pagina giusta."},
+          {"title": "I propri risultati", "text": "«Come è andato il mio ultimo quiz? Cosa ho sbagliato?» Voto, tentativi e revisione delle proprie risposte. Solo le proprie."}
+        ]
+      },
+      {
+        "id": "ateneo",
+        "label": "Ateneo e tecnici",
+        "intro": "Per chi organizza la piattaforma e per chi deve garantirne il controllo.",
+        "items": [
+          {"title": "Strutture di corso in blocco", "text": "Creazione di categorie e corsi per il semestre, aggiornamento massivo di impostazioni e visibilità, riordino delle sezioni."},
+          {"title": "Verifiche rapide", "text": "Iscritti a un corso, stato delle attività, cosa contiene un corso prima di un audit o di una migrazione."},
+          {"title": "Controllo fine", "text": "Ogni strumento si può disattivare singolarmente nell'assistente. Durante un pilota, ad esempio, si spengono quelli distruttivi."},
+          {"title": "Tracciabilità", "text": "Ogni chiamata è un evento nel registro di Moodle, con utente e strumento. Nessun log da cercare altrove."}
+        ]
+      }
+    ]
+  },
+  "features": {
+    "kicker": "Funzionalità",
+    "title": "Cosa fa oggi",
+    "lead": "Tutto ciò che segue è implementato e provato sull'istanza pilota. Le funzioni in lavorazione sono più sotto, separate.",
+    "groups": [
+      {"icon": "page", "title": "Pagine ed etichette", "items": ["Creazione e modifica", "Testo in Markdown o HTML", "Tracciamento del completamento"]},
+      {"icon": "sections", "title": "Sezioni e struttura", "items": ["Nuove sezioni, in coda o in posizione", "Rinomina, visibilità, ordinamento", "Eliminazione di attività"]},
+      {"icon": "file", "title": "File e risorse", "items": ["Caricamento di file nel corso", "Scelta della modalità di apertura", "Lettura dei file esistenti"]},
+      {"icon": "quiz", "title": "Quiz", "items": ["Creazione e modifica completa", "Comportamento domande, navigazione, valutazione", "Voto massimo, soglia di superamento, date", "Sezioni interne con rimescolamento"]},
+      {"icon": "question", "title": "Sei tipi di domanda", "items": ["Scelta multipla, risposta breve", "Numerica con tolleranza, Cloze", "Saggio, descrizione", "Feedback per risposta, Markdown o HTML"]},
+      {"icon": "bank", "title": "Banca domande", "items": ["Categorie: crea, elenca, elimina", "Elenco domande con definizione completa", "Modifica in place di ogni tipo"]},
+      {"icon": "shuffle", "title": "Esami randomizzati", "items": ["N domande casuali da una categoria", "Sottocategorie incluse", "Punteggio per ogni slot"]},
+      {"icon": "student", "title": "Lettura per gli studenti", "items": ["I miei corsi, struttura, pagine", "Risorse e quiz disponibili", "Propri tentativi, voto migliore, revisione"]},
+      {"icon": "admin", "title": "Amministrazione", "items": ["Corsi e categorie: crea, cerca, aggiorna", "Stato e ordinamento delle sezioni", "Elenco iscritti"]}
+    ],
+    "stats": [
+      {"value": "26", "label": "strumenti propri"},
+      {"value": "22", "label": "funzioni native Moodle"},
+      {"value": "6", "label": "tipi di domanda"},
+      {"value": "0", "label": "server esterni"}
+    ]
+  },
+  "roadmap": {
+    "kicker": "In sviluppo",
+    "title": "Cosa arriva dopo",
+    "lead": "Non ancora disponibile. È l'ordine in cui contiamo di lavorarci, aperto alle richieste dei primi docenti.",
+    "items": [
+      {"title": "Compiti e forum", "text": "Creare consegne e discussioni dalla conversazione, come oggi si fa con pagine e quiz."},
+      {"title": "Riepilogo per il docente", "text": "«Chi non ha ancora completato la sezione 2?» «Com'è andato il quiz, in media?»"},
+      {"title": "Da documento a corso", "text": "Un file Word o PDF trasformato in una sequenza di pagine nella sezione scelta."},
+      {"title": "Scadenze per gli studenti", "text": "«Cosa devo consegnare questa settimana?» con date e link alle attività."},
+      {"title": "Libro e glossario", "text": "Due attività molto usate nei corsi, oggi non ancora coperte."},
+      {"title": "Conferma a due passi lato server", "text": "Oggi la conferma prima di ogni modifica è garantita dalle istruzioni dell'assistente; diventerà un vincolo del plugin."}
+    ]
+  },
+  "dialogues": {
+    "kicker": "Esempi",
+    "title": "Come suona una conversazione",
+    "lead": "Quattro dialoghi rappresentativi. Le pillole grigie indicano quale strumento del plugin l'assistente ha usato: chi non è interessato può ignorarle. In ogni modifica l'assistente prima riassume, poi chiede conferma, poi esegue.",
+    "items": [
+      {
+        "id": "quiz-da-pagina",
+        "audience": "Docente",
+        "title": "Un quiz a partire da una pagina del corso",
+        "messages": [
+          {"role": "user", "text": "Crea un quiz di 10 domande a scelta multipla sulla pagina «Le join SQL» della sezione 3 di Basi di dati, con feedback per ogni risposta."},
+          {"role": "agent", "tools": ["get_my_courses", "core_course_get_contents", "get_page_content"], "text": "Ho letto la pagina «Le join SQL»: INNER, LEFT, RIGHT, FULL, CROSS e self join. Sto per creare in Basi di dati, sezione 3: la categoria «Join SQL» in banca domande con 10 domande a scelta multipla, ognuna con feedback, e il quiz «Verifica: le join SQL» con soglia di superamento 6 su 10. Procedo?"},
+          {"role": "user", "text": "Sì."},
+          {"role": "agent", "tools": ["create_question_category", "create_question ×10", "create_quiz", "add_question_to_quiz"], "text": "Fatto. Il quiz «Verifica: le join SQL» è nella sezione 3, ancora nascosto agli studenti. Le 10 domande sono nella categoria «Join SQL» e restano modificabili dalla banca domande. Vuoi che lo renda visibile?"}
+        ]
+      },
+      {
+        "id": "esame-casuale",
+        "audience": "Docente",
+        "title": "Un esame con domande diverse per ogni studente",
+        "messages": [
+          {"role": "user", "text": "Per l'appello di gennaio voglio 40 domande sui capitoli 1–4 e un compito che ne estragga 10 a caso per ogni studente. Chi fa meno di 6 non passa."},
+          {"role": "agent", "tools": ["get_page_content ×4"], "text": "Riassumo: creo la categoria «Appello gennaio» con 40 domande, 10 per capitolo, tra scelta multipla e numeriche con tolleranza. Poi il quiz «Appello 15 gennaio» con 10 slot casuali dalla categoria, 1 punto ciascuno, voto massimo 10, soglia 6, un solo tentativo, 60 minuti. Confermi?"},
+          {"role": "user", "text": "Confermo, ma lascialo nascosto."},
+          {"role": "agent", "tools": ["create_question_category", "create_question ×40", "create_quiz", "add_random_questions_to_quiz"], "text": "Creato e nascosto. Ogni studente riceverà 10 domande diverse estratte dalle 40; la correzione è automatica. Le domande sono in banca: puoi chiedermi di rileggerle o di correggerne una."}
+        ]
+      },
+      {
+        "id": "ripasso",
+        "audience": "Studente",
+        "title": "Un ripasso costruito sui materiali del docente",
+        "messages": [
+          {"role": "user", "text": "Interrogami sulla sezione 2 di Basi di dati."},
+          {"role": "agent", "tools": ["get_my_courses", "core_course_get_contents", "get_page_content ×2"], "text": "La sezione 2 contiene «Il modello relazionale» e «Chiavi e vincoli». Partiamo. Prima domanda: cosa distingue una chiave primaria da una chiave candidata?"},
+          {"role": "user", "text": "La primaria è quella scelta tra le candidate, e non può essere nulla."},
+          {"role": "agent", "text": "Esatto. Nella pagina del corso il docente aggiunge che deve anche essere minimale. Seconda domanda: cosa succede se elimini una riga referenziata da una chiave esterna con ON DELETE CASCADE?"}
+        ]
+      },
+      {
+        "id": "mio-quiz",
+        "audience": "Studente",
+        "title": "Il proprio risultato, e cosa rivedere",
+        "messages": [
+          {"role": "user", "text": "Come è andato il mio quiz sulle join?"},
+          {"role": "agent", "tools": ["mod_quiz_get_user_best_grade", "mod_quiz_get_user_attempts", "mod_quiz_get_attempt_review"], "text": "Il tuo miglior tentativo è 8 su 10, sopra la soglia di 6. Hai sbagliato la domanda 4 (una LEFT JOIN restituisce anche le righe della tabella sinistra senza corrispondenza) e la 9 (una CROSS JOIN produce il prodotto cartesiano). Vuoi ripassare le join esterne con l'esempio della pagina del corso?"},
+          {"role": "user", "text": "E come sono andati gli altri?"},
+          {"role": "agent", "text": "Non posso mostrare i risultati di altri studenti. Per confronti e statistiche puoi rivolgerti al docente."}
+        ]
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "Attivazione",
+    "title": "Dall'installazione alla prima conversazione",
+    "lead": "Quattro passi, tutti a carico dei servizi informatici. Docenti e studenti non installano nulla: trovano l'assistente in Teams.",
+    "items": [
+      {"num": "01", "title": "Installare il plugin", "text": "Come qualunque plugin Moodle, dall'amministrazione del sito. Richiede Moodle 4.3 o successivo."},
+      {"num": "02", "title": "Registrare l'app in Entra ID", "text": "Uno script fornito crea la registrazione nel tenant dell'ateneo. È ciò che permette il login con l'account Microsoft."},
+      {"num": "03", "title": "Collegare il server in Copilot Studio", "text": "Con il wizard nativo per MCP: si incolla un indirizzo, si scelgono gli strumenti da tenere accesi, si incollano le istruzioni fornite."},
+      {"num": "04", "title": "Pubblicare in Teams", "text": "L'assistente compare in Teams e in Microsoft 365 Copilot per gli utenti scelti: un dipartimento, un corso di studi, tutto l'ateneo."}
+    ]
+  },
+  "security": {
+    "kicker": "Sicurezza e governance",
+    "title": "Le domande che farà il vostro CED",
+    "lead": "Il plugin non aggiunge un sistema di permessi: usa quello di Moodle, che l'ateneo già governa.",
+    "items": [
+      {"icon": "id", "title": "Chi sei", "text": "Login con l'account Microsoft dell'ateneo (Entra ID). Funziona solo per chi ha già fatto accesso a Moodle con Microsoft almeno una volta; nessun account viene creato automaticamente."},
+      {"icon": "lock", "title": "Cosa puoi fare", "text": "Le capability di Moodle, valutate a ogni singola chiamata. Un docente scrive solo nei corsi in cui è docente; uno studente non scrive mai. L'elenco degli strumenti che l'assistente vede è filtrato per ruolo."},
+      {"icon": "building", "title": "Dove vanno i dati", "text": "Il plugin gira dentro Moodle e non chiama servizi esterni. L'unico terzo è il Copilot che l'ateneo già usa, nel proprio tenant Microsoft."},
+      {"icon": "log", "title": "Chi ha fatto cosa", "text": "Ogni chiamata genera un evento nel registro di Moodle, con utente, strumento e parametri. Nessun log da cercare fuori dalla piattaforma."},
+      {"icon": "toggle", "title": "Quanto aprire", "text": "Ogni strumento si attiva o disattiva singolarmente nell'assistente. In un pilota si tengono spenti quelli distruttivi e quelli con dati di terzi."},
+      {"icon": "check", "title": "Prima di modificare", "text": "L'assistente riassume ciò che sta per fare e chiede conferma, una modifica alla volta. Ciò che trova scritto nei contenuti del corso lo tratta come dati, non come istruzioni."}
+    ]
+  },
+  "tech": {
+    "kicker": "Per i tecnici",
+    "title": "Come funziona sotto",
+    "lead": "Un web service plugin Moodle che espone un server MCP, più un adattatore REST e una specifica OpenAPI per i client che non parlano MCP.",
+    "diagram": {
+      "clients_title": "Client",
+      "clients": ["Teams / M365 Copilot", "Copilot Studio", "Claude, ChatGPT, VS Code", "Moodlecraft CLI"],
+      "auth_title": "Identità",
+      "auth": ["Microsoft Entra ID (OAuth 2.0)", "oppure token web service Moodle"],
+      "moodle_title": "Moodle di ateneo",
+      "moodle": ["webservice_mcpca", "API interne Moodle", "Database"]
+    },
+    "specs": [
+      {"k": "Protocollo", "v": "MCP Streamable HTTP, JSON-RPC 2.0. Negozia le versioni 2024-11-05, 2025-03-26 e 2025-06-18."},
+      {"k": "Endpoint", "v": "/webservice/mcpca/server.php (MCP), /rest.php (REST), /openapi.php (OpenAPI 3.0), /token.php (token self-service)."},
+      {"k": "Autenticazione", "v": "Token Entra ID validati per firma, issuer, audience e scope; identità risolta sull'account Moodle collegato via auth_oauth2. In alternativa, token web service Moodle."},
+      {"k": "Autorizzazione", "v": "Capability dedicata webservice/mcpca:use; ogni tool verifica le capability Moodle del contesto (corso, modulo). tools/list filtrato per utente."},
+      {"k": "Strumenti", "v": "26 tool propri (authoring: pagine, sezioni, file, quiz, domande, banca) + 22 funzioni native Moodle esposte come tool, 48 in totale."},
+      {"k": "Requisiti", "v": "Moodle 4.3+, PHP 8.0+, HTTPS raggiungibile dal cloud Microsoft per l'integrazione Copilot Studio. Nessun servizio esterno."},
+      {"k": "Privacy", "v": "Privacy provider dichiarato; il plugin memorizza solo l'ultimo accesso del token e scrive nel log standard di Moodle."},
+      {"k": "Ecosistema", "v": "Lo stesso motore alimenta Moodlecraft, un CLI che applica a Moodle definizioni di corso in YAML e Markdown versionabili, in stile Terraform."}
+    ],
+    "note": "Il codice sarà rilasciato con licenza GPL v3, la stessa di Moodle. Il link al repository comparirà qui alla pubblicazione."
+  },
+  "faq": {
+    "kicker": "Domande frequenti",
+    "title": "In breve",
+    "items": [
+      {"q": "Devo installare qualcosa sul mio computer?", "a": "No. L'assistente compare in Microsoft Teams e in Microsoft 365 Copilot, che usate già. L'installazione riguarda solo il server Moodle e la configurazione in Copilot Studio, a cura dei servizi informatici."},
+      {"q": "Uno studente può modificare un corso?", "a": "No. Il plugin applica i permessi di Moodle a ogni richiesta: uno studente può solo leggere i corsi a cui è iscritto. Anche se chiedesse all'assistente di creare qualcosa, Moodle rifiuterebbe."},
+      {"q": "Dove finiscono i dati dei corsi?", "a": "Restano su Moodle. Il plugin non contatta servizi esterni. Le conversazioni passano per il Copilot dell'ateneo, nel tenant Microsoft che già ospita Teams e la posta."},
+      {"q": "L'assistente può inventare contenuti?", "a": "Le risposte sui corsi sono costruite leggendo i contenuti reali tramite gli strumenti del plugin, e le istruzioni dell'assistente gli impongono di dire quando un'informazione non è nel corso. Come per ogni assistente AI, la revisione del docente su ciò che viene creato resta necessaria: per questo i quiz nascono nascosti."},
+      {"q": "Funziona senza Teams?", "a": "Sì. Qualunque client MCP può collegarsi: Claude, ChatGPT tramite OpenAPI, VS Code, Cursor. Teams e Copilot sono la via consigliata perché gli atenei li hanno già e il login è quello di ateneo."},
+      {"q": "Cosa serve per provarlo nel mio ateneo?", "a": "Un Moodle 4.3 o successivo raggiungibile in HTTPS, il login Microsoft già attivo su Moodle, le licenze Copilot Studio che gli atenei hanno, e qualche ora dei servizi informatici per i quattro passi descritti sopra. Un pilota su un singolo corso è il modo migliore per iniziare."},
+      {"q": "Quanto costa? È open source?", "a": "Il codice sarà rilasciato con licenza GPL v3, la stessa di Moodle, quindi senza costi di licenza. Nella fase pilota è disponibile su richiesta agli atenei interessati."},
+      {"q": "Chi lo mantiene?", "a": "Il progetto è sviluppato da Antonio Calanducci ed è in uso su un'istanza pilota universitaria. Segnalazioni e richieste arrivano all'indirizzo in fondo alla pagina."}
+    ]
+  },
+  "contact": {
+    "title": "Vuoi provarlo nel tuo dipartimento?",
+    "text": "Scrivimi: bastano un corso pilota e un docente disponibile per vedere cosa cambia. Rispondo anche a domande tecniche dei servizi informatici.",
+    "email": "antonio.calanducci@unime.it",
+    "cta": "Scrivi a antonio.calanducci@unime.it"
+  },
+  "footer": {
+    "author": "Antonio Calanducci",
+    "disclaimer": "Moodle è un marchio registrato di Moodle Pty Ltd. Microsoft Teams, Microsoft 365 Copilot, Copilot Studio ed Entra ID sono marchi di Microsoft Corporation. Questo progetto non è affiliato né sponsorizzato da nessuna delle due.",
+    "no_tracking": "Questa pagina non usa cookie né strumenti di tracciamento.",
+    "year": "2026"
+  }
+}

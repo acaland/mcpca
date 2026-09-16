@@ -1,0 +1,41 @@
+{% macro icon(name) -%}
+<svg class="icon icon-{{ name }}" aria-hidden="true" focusable="false"><use href="#i-{{ name }}"/></svg>
+{%- endmacro %}
+
+{% macro heading(kicker, title, lead=None, kicker_class='') -%}
+<div class="section-head">
+  <p class="kicker {{ kicker_class }}">{{ icon('dot') }} {{ kicker }}</p>
+  <h2>{{ title }}</h2>
+  {% if lead %}<p class="section-lead">{{ lead }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro chat(title, messages, typing=None) -%}
+<div class="chat" role="group" aria-label="{{ title }}">
+  <div class="chat-bar">
+    <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="chat-title">{{ title }}</span>
+  </div>
+  <div class="chat-body">
+    {% for msg in messages %}
+    <div class="msg msg-{{ msg.role }}">
+      {% if msg.role == 'agent' %}<span class="avatar" aria-hidden="true">{{ icon('spark') }}</span>{% endif %}
+      <div class="bubble">
+        {% if msg.get("tools") %}
+        <div class="tools" aria-label="tools">
+          {% for tool in msg.tools %}<code class="tool">{{ tool }}</code>{% endfor %}
+        </div>
+        {% endif %}
+        <p>{{ msg.text }}</p>
+      </div>
+    </div>
+    {% endfor %}
+    {% if typing %}
+    <div class="msg msg-agent msg-typing">
+      <span class="avatar" aria-hidden="true">{{ icon('spark') }}</span>
+      <div class="bubble"><span class="typing" aria-hidden="true"><i></i><i></i><i></i></span><span class="visually-hidden">{{ typing }}</span></div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{%- endmacro %}

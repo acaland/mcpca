@@ -1,0 +1,304 @@
+{%- import 'partials/macros.html.j2' as m -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t.meta.title }}</title>
+<meta name="description" content="{{ t.meta.description }}">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1318" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="{{ page_url }}">
+<link rel="alternate" hreflang="it" href="{{ site_url }}">
+<link rel="alternate" hreflang="en" href="{{ site_url }}en/">
+<link rel="alternate" hreflang="x-default" href="{{ site_url }}">
+<link rel="icon" href="{{ root }}static/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ t.brand.name }}">
+<meta property="og:title" content="{{ t.meta.title }}">
+<meta property="og:description" content="{{ t.meta.description }}">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:locale" content="{{ t.meta.og_locale }}">
+<meta property="og:image" content="{{ site_url }}static/og-{{ lang }}.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+{% include 'partials/icons.html.j2' %}
+
+<a class="skip" href="#main">{{ 'Vai al contenuto' if lang == 'it' else 'Skip to content' }}</a>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="{{ root if root else './' }}">
+      <span class="brand-mark" aria-hidden="true">{{ m.icon('mark') }}</span>
+      <span class="brand-text">
+        <span class="brand-name">{{ t.brand.name }}</span>
+        <span class="brand-tag">{{ t.brand.tagline }}</span>
+      </span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="{{ t.nav.menu_label }}">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        {% for item in t.nav["items"] %}<li><a href="{{ item.href }}">{{ item.label }}</a></li>{% endfor %}
+      </ul>
+      <div class="nav-actions">
+        <a class="lang-switch" href="{{ t.other_lang.href }}" hreflang="{{ t.other_lang.code }}" lang="{{ t.other_lang.code }}">{{ m.icon('globe') }} {{ t.other_lang.label }}</a>
+        <a class="btn btn-primary btn-sm" href="mailto:{{ t.contact.email }}">{{ t.nav.cta }}</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+{% if t.get("stub_notice") %}
+<div class="stub-notice container"><p>{{ t.stub_notice }}</p></div>
+{% endif %}
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="badge">{{ m.icon('dot') }} {{ t.hero.badge }}</p>
+      <h1>{{ t.hero.title_a }} <span class="accent">{{ t.hero.title_b }}</span></h1>
+      <p class="lead">{{ t.hero.lead }}</p>
+      <p class="lead lead-secondary">{{ t.hero.lead2 }}</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#casi">{{ t.hero.cta_primary }} {{ m.icon('arrow') }}</a>
+        <a class="btn btn-ghost" href="#tecnici">{{ t.hero.cta_secondary }}</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      {{ m.chat(t.hero.chat.window_title, t.hero.chat.messages, t.hero.chat.typing) }}
+      <div class="flow" aria-label="{{ t.hero.flow.caption }}">
+        {% for n in t.hero.flow.nodes %}
+        <div class="flow-node{% if loop.index == 2 %} flow-node--accent{% endif %}">
+          <span class="flow-label">{{ n.label }}</span>
+          <span class="flow-sub">{{ n.sub }}</span>
+        </div>
+        {% if not loop.last %}<span class="flow-arrow" aria-hidden="true">{{ m.icon('arrow') }}</span>{% endif %}
+        {% endfor %}
+      </div>
+      <p class="flow-caption">{{ m.icon('building') }} {{ t.hero.flow.caption }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT ============ -->
+<section id="cosa" class="section">
+  <div class="container">
+    {{ m.heading(t.what.kicker, t.what.title, t.what.lead) }}
+    <div class="grid grid-3">
+      {% for c in t.what.cards %}
+      <article class="card card-icon">
+        <span class="icon-badge" aria-hidden="true">{{ m.icon(c.icon) }}</span>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="glossary">
+      <h3 class="glossary-title">{{ t.what.glossary_title }}</h3>
+      <dl>
+        {% for g in t.what.glossary %}
+        <div class="glossary-item"><dt>{{ g.term }}</dt><dd>{{ g.def }}</dd></div>
+        {% endfor %}
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============ USE CASES ============ -->
+<section id="casi" class="section section--alt">
+  <div class="container">
+    {{ m.heading(t.usecases.kicker, t.usecases.title, t.usecases.lead) }}
+    <div class="tabs" data-tabs>
+      <div class="tablist" role="tablist" aria-label="{{ t.usecases.title }}">
+        {% for tab in t.usecases.tabs %}
+        <button class="tab" role="tab" id="tab-{{ tab.id }}" aria-controls="panel-{{ tab.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}" tabindex="{{ '0' if loop.first else '-1' }}">{{ tab.label }}</button>
+        {% endfor %}
+      </div>
+      {% for tab in t.usecases.tabs %}
+      <div class="tabpanel" role="tabpanel" id="panel-{{ tab.id }}" aria-labelledby="tab-{{ tab.id }}" {% if not loop.first %}hidden{% endif %}>
+        <h3 class="tabpanel-title">{{ tab.label }}</h3>
+        <p class="tabpanel-intro">{{ tab.intro }}</p>
+        <div class="grid grid-3 grid-tight">
+          {% for it in tab["items"] %}
+          <article class="card card-sm">
+            <h4>{{ it.title }}</h4>
+            <p>{{ it.text }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES ============ -->
+<section id="funzioni" class="section">
+  <div class="container">
+    {{ m.heading(t.features.kicker, t.features.title, t.features.lead) }}
+    <div class="grid grid-3">
+      {% for g in t.features.groups %}
+      <article class="card feature">
+        <span class="icon-badge icon-badge--soft" aria-hidden="true">{{ m.icon(g.icon) }}</span>
+        <h3>{{ g.title }}</h3>
+        <ul class="checklist">
+          {% for i in g["items"] %}<li>{{ m.icon('check') }} {{ i }}</li>{% endfor %}
+        </ul>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="stats">
+      {% for s in t.features.stats %}
+      <div class="stat"><span class="stat-value">{{ s.value }}</span><span class="stat-label">{{ s.label }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROADMAP ============ -->
+<section id="roadmap" class="section section--alt">
+  <div class="container">
+    {{ m.heading(t.roadmap.kicker, t.roadmap.title, t.roadmap.lead, 'kicker--muted') }}
+    <ol class="roadmap">
+      {% for r in t.roadmap["items"] %}
+      <li class="roadmap-item">
+        <span class="roadmap-num" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+        <div><h3>{{ r.title }}</h3><p>{{ r.text }}</p></div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- ============ DIALOGUES ============ -->
+<section id="dialoghi" class="section">
+  <div class="container">
+    {{ m.heading(t.dialogues.kicker, t.dialogues.title, t.dialogues.lead) }}
+    <div class="grid grid-2 dialogues">
+      {% for d in t.dialogues["items"] %}
+      <article class="dialogue">
+        <p class="dialogue-meta"><span class="pill pill-{{ 'teacher' if loop.index <= 2 else 'student' }}">{{ d.audience }}</span> {{ d.title }}</p>
+        {{ m.chat(t.hero.chat.window_title, d.messages) }}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ STEPS ============ -->
+<section id="attivazione" class="section section--alt">
+  <div class="container">
+    {{ m.heading(t.steps.kicker, t.steps.title, t.steps.lead) }}
+    <div class="grid grid-4">
+      {% for s in t.steps["items"] %}
+      <article class="card step">
+        <span class="step-num">{{ s.num }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECURITY ============ -->
+<section id="sicurezza" class="section">
+  <div class="container">
+    {{ m.heading(t.security.kicker, t.security.title, t.security.lead) }}
+    <div class="grid grid-3">
+      {% for s in t.security["items"] %}
+      <article class="card card-icon">
+        <span class="icon-badge" aria-hidden="true">{{ m.icon(s.icon) }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECH ============ -->
+<section id="tecnici" class="section section--dark">
+  <div class="container">
+    {{ m.heading(t.tech.kicker, t.tech.title, t.tech.lead) }}
+    <div class="arch" aria-label="{{ t.tech.title }}">
+      <div class="arch-col">
+        <h3>{{ t.tech.diagram.clients_title }}</h3>
+        <ul>{% for c in t.tech.diagram.clients %}<li>{{ c }}</li>{% endfor %}</ul>
+      </div>
+      <span class="arch-arrow" aria-hidden="true">{{ m.icon('arrow') }}</span>
+      <div class="arch-col arch-col--accent">
+        <h3>{{ t.tech.diagram.auth_title }}</h3>
+        <ul>{% for c in t.tech.diagram.auth %}<li>{{ c }}</li>{% endfor %}</ul>
+      </div>
+      <span class="arch-arrow" aria-hidden="true">{{ m.icon('arrow') }}</span>
+      <div class="arch-col arch-col--stack">
+        <h3>{{ t.tech.diagram.moodle_title }}</h3>
+        <ul class="arch-stack">{% for c in t.tech.diagram.moodle %}<li><code>{{ c }}</code></li>{% endfor %}</ul>
+      </div>
+    </div>
+    <dl class="specs">
+      {% for s in t.tech.specs %}
+      <div class="spec"><dt>{{ s.k }}</dt><dd>{{ s.v }}</dd></div>
+      {% endfor %}
+    </dl>
+    <p class="tech-note">{{ m.icon('code') }} {{ t.tech.note }}</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section">
+  <div class="container container-narrow">
+    {{ m.heading(t.faq.kicker, t.faq.title) }}
+    <div class="faq">
+      {% for f in t.faq["items"] %}
+      <details class="faq-item"{% if loop.first %} open{% endif %}>
+        <summary>{{ f.q }} {{ m.icon('chevron') }}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contatti" class="section section--cta">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>{{ t.contact.title }}</h2>
+        <p>{{ t.contact.text }}</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href="mailto:{{ t.contact.email }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand"><span class="brand-mark" aria-hidden="true">{{ m.icon('mark') }}</span> {{ t.brand.name }} <span class="muted">· {{ t.brand.tagline }}</span></p>
+      <p class="muted">{{ t.footer.author }} · <a href="mailto:{{ t.contact.email }}">{{ t.contact.email }}</a></p>
+    </div>
+    <div>
+      <p class="muted small">{{ t.footer.disclaimer }}</p>
+      <p class="muted small">{{ t.footer.no_tracking }} · <a href="{{ t.other_lang.href }}" hreflang="{{ t.other_lang.code }}" lang="{{ t.other_lang.code }}">{{ t.other_lang.label }}</a> · © {{ t.footer.year }}</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{{ root }}static/main.js" defer></script>
+</body>
+</html>
