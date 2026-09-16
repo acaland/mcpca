@@ -228,7 +228,7 @@
   "case_band": {
     "kicker": "Caso reale",
     "title": "Il primo corso costruito così: SQL e Oracle APEX per Ostetricia",
-    "text": "Laboratorio di Informatica, corso di laurea in Ostetricia dell'Università di Catania, anno accademico 2025/2026. Sette lezioni, 73 pagine, una banca di ottanta domande e due prove d'esame con estrazione casuale, costruite con MCPCA e Moodlecraft e pubblicate sulla piattaforma di ateneo.",
+    "text": "Laboratorio di Informatica, corso di laurea in Ostetricia dell'Università di Catania, anno accademico 2025/2026. Sette lezioni, 73 pagine, un deposito d'esame di ottanta domande e due prove con estrazione casuale, costruite con MCPCA e Moodlecraft e pubblicate sulla piattaforma di ateneo.",
     "bullets": [
       "Lezioni ricavate dalle slide e dai video registrati, con indice e minutaggi",
       "Esercizi e soluzioni su un dataset clinico di pazienti, parti e personale",
@@ -386,7 +386,7 @@
         {"value": "7", "label": "lezioni"},
         {"value": "73", "label": "pagine pubblicate"},
         {"value": "32", "label": "esercizi e soluzioni"},
-        {"value": "80", "label": "domande in banca"},
+        {"value": "80", "label": "domande nel deposito d'esame"},
         {"value": "2", "label": "prove d'esame"},
         {"value": "35", "label": "elaborati corretti"}
       ],
@@ -419,7 +419,7 @@
         },
         {
           "title": "La banca domande",
-          "text": "Quattro depositi, uno per lezione, venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. Le domande restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
+          "text": "Un deposito per lezione, venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. Per ogni appello se ne prepara una serie nuova, così chi ripete l'esame non ritrova le stesse domande. Restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
           "tools": ["create_question_category", "create_question", "list_questions", "update_question"]
         },
         {
@@ -454,7 +454,7 @@
         {"file": "lesson-index.png", "alt": "Pagina di indice di una lezione", "caption": "L'indice che apre ogni lezione, con il percorso completo."},
         {"file": "lesson-video.png", "alt": "Pagina di lezione con video e indice a minutaggi", "caption": "Una pagina nata da un video: indice con i minutaggi e testo delle sezioni."},
         {"file": "questionbank.png", "alt": "Banca domande del corso", "caption": "I depositi di domande, uno per lezione."},
-        {"file": "quiz-settings.png", "alt": "Impostazioni della prova d'esame", "caption": "La prova d'esame: un tentativo, un'ora, idoneità a 18 su 30."}
+        {"file": "quiz-settings.png", "alt": "Struttura della prova d'esame con gli slot casuali", "caption": "La prova vista dall'editor: ogni sezione pesca a caso dal deposito della sua lezione, un punto per domanda, voto massimo 30."}
       ]
     },
     "excerpts": {
@@ -499,7 +499,7 @@
           {"text": "ORDER BY", "feedback": "ORDER BY ordina il risultato, non collega tabelle."},
           {"text": "WHERE NOT", "feedback": "NOT nega una condizione, non collega tabelle."}
         ],
-        "caption": "Una delle ottanta domande in banca. Il feedback spiega perché l'alternativa sbagliata è sbagliata."
+        "caption": "Una delle venti domande del deposito della Lezione III. Il feedback spiega perché l'alternativa sbagliata è sbagliata."
       },
       "open": {
         "window_title": "Prova di idoneità — esercizi pratici",

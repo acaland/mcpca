@@ -228,7 +228,7 @@
   "case_band": {
     "kicker": "Case study",
     "title": "The first course built this way: SQL and Oracle APEX for Midwifery",
-    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026. Seven lessons, 73 pages, a bank of eighty questions and two exam papers with random draws, all built with MCPCA and Moodlecraft and published on the university platform.",
+    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026. Seven lessons, 73 pages, an exam bank of eighty questions and two papers with random draws, all built with MCPCA and Moodlecraft and published on the university platform.",
     "bullets": [
       "Lessons derived from slides and recorded videos, with an index and timestamps",
       "Exercises and solutions on a clinical dataset of patients, births and staff",
@@ -386,7 +386,7 @@
         {"value": "7", "label": "lessons"},
         {"value": "73", "label": "published pages"},
         {"value": "32", "label": "exercises and solutions"},
-        {"value": "80", "label": "questions in the bank"},
+        {"value": "80", "label": "questions in the exam bank"},
         {"value": "2", "label": "exam papers"},
         {"value": "35", "label": "scripts marked"}
       ],
@@ -419,7 +419,7 @@
         },
         {
           "title": "The question bank",
-          "text": "Four banks, one per lesson, twenty multiple-choice questions each, with written feedback for every wrong answer. The questions stay in the course bank and can be read back and corrected by conversation, without opening Moodle's editor.",
+          "text": "One bank per lesson, twenty multiple-choice questions each, with written feedback for every wrong answer. A fresh set is prepared for every exam session, so anyone resitting does not meet the same questions again. They stay in the course bank and can be read back and corrected by conversation, without opening Moodle's editor.",
           "tools": ["create_question_category", "create_question", "list_questions", "update_question"]
         },
         {
@@ -454,7 +454,7 @@
         {"file": "lesson-index.png", "alt": "Index page of a lesson", "caption": "The index that opens every lesson, with the full path through it."},
         {"file": "lesson-video.png", "alt": "Lesson page with a video and a timestamped index", "caption": "A page born from a video: an index with timestamps and the text of each section."},
         {"file": "questionbank.png", "alt": "The course question bank", "caption": "The question banks, one per lesson."},
-        {"file": "quiz-settings.png", "alt": "Settings of the exam paper", "caption": "The exam paper: one attempt, one hour, a pass at 18 out of 30."}
+        {"file": "quiz-settings.png", "alt": "Structure of the exam paper with its random slots", "caption": "The paper seen from the editor: each section draws at random from its own lesson bank, one mark per question, maximum grade 30."}
       ]
     },
     "excerpts": {
@@ -499,7 +499,7 @@
           {"text": "ORDER BY", "feedback": "ORDER BY sorts the result, it does not link tables."},
           {"text": "WHERE NOT", "feedback": "NOT negates a condition, it does not link tables."}
         ],
-        "caption": "One of the eighty questions in the bank. The feedback explains why the wrong option is wrong."
+        "caption": "One of the twenty questions in the Lesson III bank. The feedback explains why the wrong option is wrong."
       },
       "open": {
         "window_title": "Final assessment — practical exercises",
