@@ -394,3 +394,25 @@ img, svg { display: inline-block; vertical-align: middle; }
   .section { padding: 60px 0; }
   .hero-copy .lead { font-size: 1.1rem; }
 }
+
+/* ---------- rotating word in the hero ---------- */
+.rotate { display: inline-block; position: relative; text-align: left; white-space: nowrap; transition: opacity .35s ease, transform .35s ease; }
+.rotate.is-out { opacity: 0; transform: translateY(.35em); }
+@media (prefers-reduced-motion: reduce) { .rotate { transition: none; } .rotate.is-out { transform: none; } }
+
+/* ---------- Moodlecraft ---------- */
+.mc-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+.tree-figure { margin: 0; background: var(--dark-bg); color: var(--dark-text); border-radius: var(--radius); border: 1px solid var(--dark-border); overflow: hidden; }
+.tree-figure figcaption { font-size: .8rem; color: var(--dark-muted); padding: 10px 16px; border-bottom: 1px solid var(--dark-border); background: var(--dark-surface); }
+.tree { margin: 0; padding: 16px 18px; font-family: var(--mono); font-size: .8rem; line-height: 1.55; overflow-x: auto; color: #cfe8ee; }
+.mc-note { margin-top: 28px; display: flex; gap: .6em; align-items: flex-start; color: var(--muted); max-width: 900px; }
+.mc-note .icon { margin-top: .3em; color: var(--accent); }
+@media (max-width: 960px) { .mc-grid { grid-template-columns: 1fr; } }
+.site-nav ul { gap: 16px; }
+.site-nav ul a { font-size: .92rem; }
+.flow-label { font-size: .9rem; line-height: 1.25; }
+.site-nav ul a { white-space: nowrap; }
+.header-inner { gap: 16px; }
+@media (max-width: 1240px) { .brand-tag { display: none; } }
+.flow-node:first-child { flex: 1.6 1 0; }
+h1 { font-size: clamp(2.1rem, 4.4vw, 3rem); }

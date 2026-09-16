@@ -3,8 +3,8 @@
 Landing page bilingue (italiano, inglese) del plugin Moodle **MCPCA**
 (*Moodle Course Authoring con l'assistente AI*), pubblicata su GitHub Pages:
 
-- https://acaland.github.io/mcpca-site/ (italiano)
-- https://acaland.github.io/mcpca-site/en/ (English)
+- https://acaland.github.io/mcpca/ (italiano)
+- https://acaland.github.io/mcpca/en/ (English)
 
 Il plugin stesso vive in un repository separato e sarà rilasciato con licenza
 GPL v3; questo repository contiene solo il sito.

@@ -24,7 +24,7 @@ TEMPLATES = ROOT / "templates"
 STATIC = ROOT / "static"
 DIST = ROOT / "dist"
 
-SITE_URL = "https://acaland.github.io/mcpca-site/"
+SITE_URL = "https://acaland.github.io/mcpca/"
 PRIMARY = "it"
 
 

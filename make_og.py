@@ -51,7 +51,7 @@ for lang in ("it", "en"):
     d.text((164, 78), t["brand"]["name"], font=font(40, True), fill=FG)
     d.text((164, 124), t["brand"]["tagline"], font=font(24), fill=MUTED)
     # title
-    title = f'{t["hero"]["title_a"]} {t["hero"]["title_b"]}'
+    title = f'{t["hero"]["title_a"]} {t["hero"]["title_b_prefix"]} {t["hero"]["title_words"][0]}'
     y = 220
     for i, line in enumerate(wrap(d, title, font(72, True), 1040)):
         d.text((80, y), line, font=font(72, True), fill=ACCENT if i else FG); y += 86

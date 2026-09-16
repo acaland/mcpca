@@ -54,4 +54,27 @@
       if (target) activate(target, false);
     }
   });
+
+  // Rotating word in the hero title (Teams -> Copilot -> ChatGPT -> Claude)
+  document.querySelectorAll('.rotate').forEach(function (el) {
+    var words;
+    try { words = JSON.parse(el.getAttribute('data-words')); } catch (e) { return; }
+    if (!words || words.length < 2) return;
+    // Reserve the width of the longest word so the heading does not reflow.
+    var probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit';
+    el.parentNode.appendChild(probe);
+    var max = 0;
+    words.forEach(function (w) { probe.textContent = w; max = Math.max(max, probe.getBoundingClientRect().width); });
+    probe.remove();
+    if (max) el.style.minWidth = Math.ceil(max) + 'px';
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var i = 0;
+    setInterval(function () {
+      i = (i + 1) % words.length;
+      if (reduce) { el.textContent = words[i]; return; }
+      el.classList.add('is-out');
+      setTimeout(function () { el.textContent = words[i]; el.classList.remove('is-out'); }, 350);
+    }, 2600);
+  });
 })();
