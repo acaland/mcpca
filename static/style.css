@@ -600,6 +600,22 @@ em { font-style: italic; }
 .msg-rich .bubble { padding: 12px 16px; }
 
 
+/* ---------- il nome del progetto dentro il testo ---------- */
+/* Riprende il wordmark della testata: stesso peso, stessa spaziatura, colore
+   d'accento. Non va mai spezzato a fine riga, e non si usa a ogni ricorrenza:
+   solo dove il lettore deve capire chi è il protagonista. */
+.product {
+  font-weight: 750; letter-spacing: .012em;
+  color: var(--accent-ink); white-space: nowrap;
+}
+.section--dark .product { color: #7fd6e6; }
+
+/* Nell'hero: prima una riga di contesto in sordina, poi la promessa, che si
+   apre con il nome del progetto ed è il paragrafo che deve pesare. */
+.hero-copy .lead-intro { font-size: 1.05rem; color: var(--muted); margin-bottom: .55em; }
+.hero-copy .lead-promise { font-size: 1.22rem; color: var(--text); line-height: 1.5; }
+.hero-copy .lead-promise .product { font-size: 1.06em; }
+
 /* ---------- hero: il diagramma sta con il testo, non sotto la chat ---------- */
 /* Su un portatile da 13 pollici la prima schermata deve contenere titolo,
    promessa, pulsanti e lo schema dei tre blocchi: è quello schema a spiegare

@@ -63,8 +63,8 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: atenei, scuole, aziende sanitarie, enti di formazione. MCPCA la collega agli assistenti AI già in uso: descrivi a parole una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==.",
-    "lead2": "Chi lo usa **non installa nulla** e **nessun dato lascia l'organizzazione**.",
+    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano atenei, scuole, aziende sanitarie ed enti di formazione.",
+    "lead2": "[[MCPCA]] la collega agli assistenti AI già in uso. Descrivi a parole una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==: senza installare nulla, senza che un solo dato esca dall'organizzazione.",
     "cta_primary": "Vedi cosa può fare",
     "cta_case": "Il primo caso reale",
     "chat": {
@@ -131,7 +131,7 @@
   "what": {
     "kicker": "In breve",
     "title": "Cos'è, senza tecnicismi",
-    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. MCPCA è il collegamento che manca.",
+    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. [[MCPCA]] è il collegamento che manca.",
     "cards": [
       {
         "icon": "plugin",
@@ -724,7 +724,7 @@
   "moodlecraft": {
     "kicker": "Ecosistema",
     "title": "Alla base di Moodlecraft: interi corsi definiti, versionati, riproducibili",
-    "lead": "MCPCA non è soltanto il tramite per gli assistenti AI. È anche il motore di Moodlecraft, uno strumento a riga di comando che tratta un corso Moodle **come si tratta il codice**: definito in file di testo, versionato, applicabile a qualunque istanza.",
+    "lead": "[[MCPCA]] non è soltanto il tramite per gli assistenti AI. È anche il motore di Moodlecraft, uno strumento a riga di comando che tratta un corso Moodle **come si tratta il codice**: definito in file di testo, versionato, applicabile a qualunque istanza.",
     "items": [
       {
         "title": "Il corso è una cartella",
@@ -889,7 +889,7 @@
     "back": "Torna alla pagina principale",
     "kicker": "Caso reale · Università di Catania",
     "title": "Un corso di gestione dei dati per Ostetricia, costruito conversando",
-    "lead": "Laboratorio di Informatica, corso di laurea in Ostetricia, anno accademico 2025/2026. Il corso insegna **come sono organizzati i dati, come si interrogano e come ci si costruisce sopra una semplice applicazione web**: in concreto, basi di dati, SQL e Oracle APEX. Sette lezioni, 73 pagine, una banca domande e due prove d'esame, tutto costruito con MCPCA e Moodlecraft e pubblicato su Studium, l'installazione Moodle dell'Università di Catania. L'ho tenuto io come docente, ed è ==il primo corso completo nato con questi strumenti==.",
+    "lead": "Laboratorio di Informatica, corso di laurea in Ostetricia, anno accademico 2025/2026. Il corso insegna **come sono organizzati i dati, come si interrogano e come ci si costruisce sopra una semplice applicazione web**: in concreto, basi di dati, SQL e Oracle APEX. Sette lezioni, 73 pagine, una banca domande e due prove d'esame, tutto costruito con [[MCPCA]] e Moodlecraft e pubblicato su Studium, l'installazione Moodle dell'Università di Catania. L'ho tenuto io come docente, ed è ==il primo corso completo nato con questi strumenti==.",
     "facts_title": "La scheda",
     "facts": [
       {

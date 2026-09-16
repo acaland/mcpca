@@ -63,8 +63,8 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations, training providers. MCPCA connects it to the AI assistants already in use: describe a page, a quiz or a whole course in plain words, and ==find it ready on the platform==.",
-    "lead2": "Nobody has to install anything, and **no data leaves the organisation**.",
+    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations and training providers all run on it.",
+    "lead2": "[[MCPCA]] connects it to the AI assistants already in use. Describe a page, a quiz or a whole course in plain words, and ==find it ready on the platform==: nothing to install, and not one piece of data leaves the organisation.",
     "cta_primary": "See what it can do",
     "cta_case": "The first real deployment",
     "chat": {
@@ -131,7 +131,7 @@
   "what": {
     "kicker": "In brief",
     "title": "What it is, without the jargon",
-    "lead": "AI assistants such as Microsoft Copilot can hold a conversation, but **they know nothing about your organisation's courses and cannot act on them**. MCPCA is the missing link.",
+    "lead": "AI assistants such as Microsoft Copilot can hold a conversation, but **they know nothing about your organisation's courses and cannot act on them**. [[MCPCA]] is the missing link.",
     "cards": [
       {
         "icon": "plugin",
@@ -724,7 +724,7 @@
   "moodlecraft": {
     "kicker": "Ecosystem",
     "title": "The engine behind Moodlecraft: whole courses defined, versioned, reproducible",
-    "lead": "MCPCA is not only the bridge for AI assistants. It is also the engine of Moodlecraft, a command-line tool that treats a Moodle course **the way you treat code**: defined in text files, versioned, applicable to any instance.",
+    "lead": "[[MCPCA]] is not only the bridge for AI assistants. It is also the engine of Moodlecraft, a command-line tool that treats a Moodle course **the way you treat code**: defined in text files, versioned, applicable to any instance.",
     "items": [
       {
         "title": "The course is a folder",
@@ -889,7 +889,7 @@
     "back": "Back to the main page",
     "kicker": "Case study · University of Catania",
     "title": "A data-management course for Midwifery students, built by conversation",
-    "lead": "Laboratorio di Informatica, the computing lab of the BSc in Midwifery, academic year 2025/2026. The course teaches **how data is organised, how you query it and how you build a simple web application on top of it**: in practice, databases, SQL and Oracle APEX. Seven lessons, 73 pages, a question bank and two exam papers, all built with MCPCA and Moodlecraft and published on Studium, the University of Catania's Moodle installation. I taught it myself, and it is ==the first complete course born with these tools==.",
+    "lead": "Laboratorio di Informatica, the computing lab of the BSc in Midwifery, academic year 2025/2026. The course teaches **how data is organised, how you query it and how you build a simple web application on top of it**: in practice, databases, SQL and Oracle APEX. Seven lessons, 73 pages, a question bank and two exam papers, all built with [[MCPCA]] and Moodlecraft and published on Studium, the University of Catania's Moodle installation. I taught it myself, and it is ==the first complete course born with these tools==.",
     "facts_title": "The details",
     "facts": [
       {

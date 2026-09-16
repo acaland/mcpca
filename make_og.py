@@ -41,7 +41,7 @@ def font(size, bold=False):
     return ImageFont.load_default()
 
 
-MARKS = re.compile(r"\*\*|==|`")
+MARKS = re.compile(r"\*\*|==|`|\[\[|\]\]")
 
 
 def plain(text):

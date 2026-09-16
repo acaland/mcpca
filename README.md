@@ -66,6 +66,7 @@ converte in HTML (`build.py`, funzione `rich`):
 | `_testo_` | corsivo | un inciso, una precisazione |
 | `==testo==` | evidenziato in accento | la frase che deve fermare l'occhio |
 | `` `testo` `` | monospaziato | un nome di file, un comando, SQL |
+| `[[MCPCA]]` | nome del progetto in evidenza | la prima menzione in una pagina, non tutte |
 
 Servono a spezzare i blocchi lunghi. Non è Markdown completo ed è voluto:
 nessun HTML nei file di contenuto, quindi nessun link o markup arbitrario.

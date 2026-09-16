@@ -42,6 +42,9 @@ PAGES = [
 # lunghi: **portante**, _inciso_, ==frase da notare==, `codice`. Non è Markdown
 # completo ed è di proposito: niente HTML nei contenuti, niente link nascosti.
 INLINE = [
+    # [[MCPCA]] marca il nome del progetto: colore d'accento, peso pieno e mai
+    # spezzato a fine riga. Si usa alla prima menzione di una pagina, non ovunque.
+    (re.compile(r"\[\[(.+?)\]\]"), r'<span class="product">\1</span>'),
     (re.compile(r"\*\*(.+?)\*\*", re.S), r"<strong>\1</strong>"),
     (re.compile(r"==(.+?)==", re.S), r'<span class="hl">\1</span>'),
     (re.compile(r"(?<![\w*])_(.+?)_(?![\w*])", re.S), r"<em>\1</em>"),
