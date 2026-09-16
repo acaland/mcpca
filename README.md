@@ -119,3 +119,48 @@ di anteprima dei link con `python make_og.py`.
 Codice (template, CSS, JS, build) con licenza MIT. I testi del sito sono
 © Antonio Calanducci. Moodle è un marchio di Moodle Pty Ltd; Microsoft Teams,
 Copilot ed Entra ID sono marchi di Microsoft Corporation.
+
+
+## Farsi trovare
+
+Il build genera `sitemap.xml` (tutte le pagine, con i rimandi fra le lingue) e
+un `robots.txt`; ogni pagina ha canonical, `hreflang` e dati strutturati
+JSON-LD. Lighthouse dà 100 su 100 in tutte e quattro le categorie.
+
+Questo però non basta a comparire su Google: un sito su un sottopercorso di
+`github.io`, senza link in entrata, può non essere scoperto per settimane.
+I passi che restano, e che richiedono l'account di Antonio:
+
+1. **Google Search Console** → aggiungi una proprietà di tipo *Prefisso URL*
+   con `https://acaland.github.io/mcpca/`. Per la verifica scegli *file HTML*:
+   scarica il `google….html` che ti propone, mettilo in `static/` e ricostruisci
+   (finisce in `https://acaland.github.io/mcpca/google….html`). In alternativa
+   passa il meta tag e lo aggiungo in `templates/base.html.j2`.
+2. Verificata la proprietà, invia `sitemap.xml` e usa *Controllo URL →
+   Richiedi indicizzazione* sulle due pagine principali.
+3. **Link in entrata**: sono ciò che fa davvero muovere l'indicizzazione.
+   I più facili sono il README del repository del plugin, il profilo GitHub
+   (`acaland/acaland`) e il sito personale `acaland.github.io`.
+
+### Dominio personalizzato
+
+Per poter dettare l'indirizzo a voce conviene un dominio breve (al momento
+risultano liberi `mcpca.it`, `mcpca.eu`, `moodlemcp.it`). Servono tre cose:
+
+1. `SITE_URL` in `build.py` e il file `static/CNAME` con il dominio;
+2. dal registrar: quattro record A verso `185.199.108–111.153` (e i rispettivi
+   AAAA), oppure un CNAME verso `acaland.github.io` per un sottodominio;
+3. su GitHub, *Settings → Pages → Custom domain*, poi *Enforce HTTPS*.
+
+Dopo il cambio vanno rigenerate le anteprime (`python make_og.py`) e il QR,
+perché contengono l'indirizzo assoluto.
+
+### QR
+
+`static/qr.png` punta alla home ed è pubblicato su
+`https://acaland.github.io/mcpca/static/qr.png`. Serve per slide e locandine,
+quando l'indirizzo va mostrato invece che dettato. Si rigenera con:
+
+```bash
+python -c "import segno; segno.make('https://acaland.github.io/mcpca/', error='h').save('static/qr.png', scale=10, border=3, dark='#0e7490', light='white')"
+```
