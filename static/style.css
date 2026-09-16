@@ -105,8 +105,16 @@ img, svg { display: inline-block; vertical-align: middle; }
 .small { font-size: .9rem; }
 .accent { color: var(--accent); }
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.skip { position: absolute; left: 8px; top: -40px; background: var(--accent); color: var(--accent-contrast); padding: 8px 12px; border-radius: 8px; z-index: 100; }
-.skip:focus { top: 8px; }
+/* Il link di salto è per chi naviga da tastiera: deve comparire solo al focus.
+   Con un top negativo fisso sbucava di qualche pixel appena il testo cresceva,
+   quindi lo si sposta di tutta la propria altezza. */
+.skip {
+  position: absolute; left: 8px; top: 8px; z-index: 100;
+  background: var(--accent); color: var(--accent-contrast);
+  padding: 8px 12px; border-radius: 8px;
+  transform: translateY(calc(-100% - 16px));
+}
+.skip:focus { transform: none; }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
 .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
@@ -210,12 +218,12 @@ img, svg { display: inline-block; vertical-align: middle; }
 .stub-notice p { background: var(--student-soft); color: var(--student); border-radius: 10px; padding: 10px 14px; font-weight: 500; margin: 0; }
 
 /* ---------- hero ---------- */
-.hero { padding: 72px 0 64px; position: relative; overflow: hidden; }
+.hero { padding: 36px 0 52px; position: relative; overflow: hidden; }
 .hero::before {
   content: ""; position: absolute; inset: -20% -10% auto -10%; height: 70%; z-index: -1;
   background: radial-gradient(60% 60% at 70% 30%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%);
 }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(0, 1fr); gap: 44px; align-items: start; }
 .hero-copy .lead { font-size: 1.2rem; color: var(--text); }
 .hero-copy .lead-secondary { color: var(--muted); font-size: 1.08rem; }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
@@ -422,7 +430,9 @@ img, svg { display: inline-block; vertical-align: middle; }
 .header-inner { gap: 16px; }
 @media (max-width: 1240px) { .brand-tag { display: none; } }
 .flow-node:first-child { flex: 1.6 1 0; }
-h1 { font-size: clamp(2.1rem, 4.4vw, 3rem); }
+/* Titolo più grande e con più aria sotto: è la prima cosa che si legge. */
+h1 { font-size: clamp(2.2rem, 4.15vw, 3.25rem); line-height: 1.08; margin-bottom: .4em; }
+.hero-copy .lead { margin-top: 0; }
 
 /* The English tagline is longer than the Italian one: keep it on one line,
    and hide it before it can squeeze the nav. */
@@ -588,3 +598,20 @@ em { font-style: italic; }
 /* Le bolle con contenuto formattato respirano un po' di più */
 .msg-rich { max-width: 96%; }
 .msg-rich .bubble { padding: 12px 16px; }
+
+
+/* ---------- hero: il diagramma sta con il testo, non sotto la chat ---------- */
+/* Su un portatile da 13 pollici la prima schermata deve contenere titolo,
+   promessa, pulsanti e lo schema dei tre blocchi: è quello schema a spiegare
+   in un colpo d'occhio dove gira il plugin. */
+.hero-copy .flow { margin-top: 20px; }
+.hero-copy .flow-caption { margin-top: 6px; }
+.hero-copy .lead { margin-bottom: .7em; }
+.hero-copy .cta-row { margin-top: 20px; }
+.hero-copy .flow-node { padding: 10px 12px; }
+.hero-copy .flow-label { font-size: .88rem; }
+.hero-copy .flow-sub { font-size: .74rem; }
+.hero-visual { gap: 0; }
+@media (max-width: 960px) {
+  .hero-copy .flow { margin-top: 26px; }
+}

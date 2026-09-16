@@ -13,9 +13,6 @@
         <a class="btn btn-primary" href="#casi">{{ t.hero.cta_primary }} {{ m.icon('arrow') }}</a>
         <a class="btn btn-ghost" href="{{ case_href }}">{{ t.hero.cta_case }}</a>
       </div>
-    </div>
-    <div class="hero-visual">
-      {{ m.chat(t.hero.chat.window_title, t.hero.chat.messages, t.hero.chat.typing) }}
       <div class="flow" aria-label="{{ t.hero.flow.caption }}">
         {% for n in t.hero.flow.nodes %}
         <div class="flow-node{% if loop.index == 2 %} flow-node--accent{% endif %}">
@@ -26,6 +23,9 @@
         {% endfor %}
       </div>
       <p class="flow-caption">{{ m.icon('building') }} {{ t.hero.flow.caption }}</p>
+    </div>
+    <div class="hero-visual">
+      {{ m.chat(t.hero.chat.window_title, t.hero.chat.messages, t.hero.chat.typing) }}
     </div>
   </div>
 </section>

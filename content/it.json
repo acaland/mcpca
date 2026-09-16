@@ -63,8 +63,8 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano università, istituti scolastici, aziende sanitarie ed enti di formazione professionale. MCPCA la collega agli assistenti AI già in uso, Microsoft Copilot in Teams in primo luogo, ma anche ChatGPT e Claude. Un docente descrive a parole una pagina, un quiz o l'intera struttura di un corso e ==li ritrova pronti sulla piattaforma==. Chi studia chiede dei materiali e riceve risposte tratte dal corso reale, _non inventate_.",
-    "lead2": "Chi lo usa **non installa nulla** e **nessun dato lascia l'organizzazione**. Ognuno accede con il proprio account istituzionale e può compiere soltanto le operazioni che Moodle già gli consente.",
+    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: atenei, scuole, aziende sanitarie, enti di formazione. MCPCA la collega agli assistenti AI già in uso: descrivi a parole una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==.",
+    "lead2": "Chi lo usa **non installa nulla** e **nessun dato lascia l'organizzazione**.",
     "cta_primary": "Vedi cosa può fare",
     "cta_case": "Il primo caso reale",
     "chat": {

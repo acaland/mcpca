@@ -63,8 +63,8 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations and training providers all run on it. MCPCA connects it to the AI assistants already in use, Microsoft Copilot in Teams first of all, but ChatGPT and Claude as well. A teacher describes a page, a quiz or the whole structure of a course in plain words and ==finds it ready on the platform==. A learner asks about the materials and receives answers drawn from the real course, _not invented ones_.",
-    "lead2": "**Nobody has to install anything to use it**, and **no data leaves the organisation**. Each person signs in with their own institutional account and can carry out only the operations Moodle already allows them.",
+    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations, training providers. MCPCA connects it to the AI assistants already in use: describe a page, a quiz or a whole course in plain words, and ==find it ready on the platform==.",
+    "lead2": "Nobody has to install anything, and **no data leaves the organisation**.",
     "cta_primary": "See what it can do",
     "cta_case": "The first real deployment",
     "chat": {
