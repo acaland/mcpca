@@ -67,6 +67,7 @@ converte in HTML (`build.py`, funzione `rich`):
 | `==testo==` | evidenziato in accento | la frase che deve fermare l'occhio |
 | `` `testo` `` | monospaziato | un nome di file, un comando, SQL |
 | `[[MCPCA]]` | nome del progetto in evidenza | la prima menzione in una pagina, non tutte |
+| `[testo](https://…)` | collegamento | l'unico HTML ammesso nei contenuti, solo http/https |
 
 Servono a spezzare i blocchi lunghi. Non è Markdown completo ed è voluto:
 nessun HTML nei file di contenuto, quindi nessun link o markup arbitrario.

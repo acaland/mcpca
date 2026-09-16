@@ -42,6 +42,10 @@ PAGES = [
 # lunghi: **portante**, _inciso_, ==frase da notare==, `codice`. Non è Markdown
 # completo ed è di proposito: niente HTML nei contenuti, niente link nascosti.
 INLINE = [
+    # [testo](https://…) è l'unico modo di mettere un collegamento nei contenuti:
+    # solo http/https, niente altro HTML, così il testo resta testo.
+    (re.compile(r"\[([^\[\]]+)\]\((https?://[^\s)]+)\)"),
+     r'<a href="\2" rel="noopener">\1</a>'),
     # [[MCPCA]] marca il nome del progetto: colore d'accento, peso pieno e mai
     # spezzato a fine riga. Si usa alla prima menzione di una pagina, non ovunque.
     (re.compile(r"\[\[(.+?)\]\]"), r'<span class="product">\1</span>'),

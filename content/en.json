@@ -631,8 +631,8 @@
   },
   "case_band": {
     "kicker": "Case study",
-    "title": "The first course built this way: data management for Midwifery",
-    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026: **designing and querying a database**, and building a simple web application on top of it. Seven lessons, 73 pages, an exam bank of eighty questions and two papers with random draws, built with MCPCA and Moodlecraft.",
+    "title": "The first course built this way: databases for Midwifery",
+    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026: **designing and querying a clinical database**, and building a small web application on top of it. Seven lessons, 73 pages, an exam bank of eighty questions and two papers with random draws, built with MCPCA and Moodlecraft.",
     "bullets": [
       "Lessons derived from slides and recorded videos, with an index and timestamps",
       "Exercises and solutions on a clinical dataset of patients, births and staff",
@@ -883,14 +883,14 @@
   },
   "case": {
     "meta": {
-      "title": "Case study · A data-management course built with MCPCA",
-      "description": "How the Computing Lab of the BSc in Midwifery at the University of Catania was built with MCPCA and Moodlecraft: seven lessons, 73 pages, a question bank and exam papers with random draws.",
+      "title": "Case study · The Midwifery database lab, built with MCPCA",
+      "description": "How the Computing Lab of the BSc in Midwifery at the University of Catania was built with MCPCA and Moodlecraft: databases, SQL and a web app for clinical data, across seven lessons, with a question bank and a pass/fail assessment.",
       "og_locale": "en_GB"
     },
     "back": "Back to the main page",
     "kicker": "Case study · University of Catania",
-    "title": "A data-management course for Midwifery students, built by conversation",
-    "lead": "Laboratorio di Informatica, the computing lab of the BSc in Midwifery, academic year 2025/2026. The course teaches **how data is organised, how you query it and how you build a simple web application on top of it**: in practice, databases, SQL and Oracle APEX. Seven lessons, 73 pages, a question bank and two exam papers, all built with [[MCPCA]] and Moodlecraft and published on Studium, the University of Catania's Moodle installation. I taught it myself, and it is ==the first complete course born with these tools==.",
+    "title": "Databases and clinical data: the Midwifery lab, built by conversation",
+    "lead": "**Seven lab sessions**, around twenty hours, for third-year students, with no computing prerequisites at all. They learn to design a relational database, to query it with SQL and to build a small web application on top of it, working on clinical data. The tools are Oracle APEX and Studium, the University of Catania's Moodle. The course, its exercises and its assessments were built with [[MCPCA]] and Moodlecraft: it is ==the first complete course built with these tools==.",
     "facts_title": "The details",
     "facts": [
       {
@@ -914,6 +914,14 @@
         "v": "2025/2026"
       },
       {
+        "k": "Workload",
+        "v": "Seven lab sessions, about 21 hours, attendance required"
+      },
+      {
+        "k": "Assessment",
+        "v": "Pass/fail, a practical test taken at the computer"
+      },
+      {
         "k": "Platform",
         "v": "Studium, the university's Moodle installation"
       },
@@ -933,10 +941,10 @@
     },
     "context": {
       "kicker": "The starting point",
-      "title": "Teaching databases to future midwives",
+      "title": "Databases inside a healthcare degree",
       "paras": [
-        "The course introduces **data management** to third-year Midwifery students: how a database is designed, how you pull out the information you need, how you build an application on top of it that people use every day. The concrete tools are SQL and Oracle APEX. They are not computer scientists and will not become any: ==the point is that they understand how the clinical data they will work with is organised==, and that they can query it without having to ask someone else.",
-        "The raw material was a set of lecture slides and recorded videos. Turning that into a course you can actually work through, with exercises, solutions and exam papers, is **the work that usually does not get done**: you attach the slides, add a quiz at the end and move on, _because building the rest by hand costs too many hours_.",
+        "The syllabus puts it plainly: by the end, a student must be able to **analyse a real information need in a healthcare professional setting** and to represent it, query it and judge its quality. This is the data they will actually work with: patient records, the register of births, staff rotas. They will not become computer scientists, and the syllabus asks for no programming prerequisites: ==they need to be able to talk about data with the people who design it, and to manage on their own when an answer is needed==.",
+        "The course is taught in person, in a computer lab, and is **mostly practical**: short explanations, then individual exercises inside Oracle APEX. Moodle is the support, and the syllabus says so too: written lessons, screen recordings with transcripts, exercises. Preparing all that material is **the work that usually does not get done**, _because building it by hand costs too many hours_: you attach the slides and move on.",
         "With MCPCA I described in words what I wanted and got it inside Moodle. With Moodlecraft the same course became **a folder of text files under git**: next year it is reapplied by changing the dates and the dataset, ==without starting over==."
       ]
     },
@@ -1018,7 +1026,7 @@
         },
         {
           "title": "The exam papers",
-          "text": "Each paper draws twenty-two questions at random from the four banks — six from Lesson II, six from III, five from IV, five from V — and adds four practical exercises to be solved in Oracle APEX. Thirty marks in total, a pass at eighteen, one attempt, one hour.",
+          "text": "Each paper draws twenty-two questions at random from the four banks — six from Lesson II, six from III, five from IV, five from V — and adds four practical exercises to be solved in Oracle APEX. Thirty marks in total and a pass at 60%, that is eighteen, as the syllabus prescribes; one attempt, one hour. Anyone who prefers can hand in a project instead: a small data-management application built in APEX.",
           "tools": [
             "create_quiz",
             "create_quiz_section",
@@ -1036,7 +1044,7 @@
         },
         {
           "title": "The syllabus",
-          "text": "The course unit description for the staff portal — intended learning outcomes, programme, assessment methods — also came out of the same material, by reading the course as published instead of rewriting everything into a form.",
+          "text": "The [course unit description published by the department](https://www.chirmed.unict.it/corsi/lsnt1/insegnamenti?seuid=DA193AB7-3EEF-41DC-8648-1D27BC1A586F) — intended learning outcomes, the contents of the seven lessons, assessment methods, reading list — also came out of the same material, by reading the course as published instead of rewriting everything into a form.",
           "tools": [
             "core_course_get_contents",
             "get_page_content"
