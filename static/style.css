@@ -416,3 +416,8 @@ img, svg { display: inline-block; vertical-align: middle; }
 @media (max-width: 1240px) { .brand-tag { display: none; } }
 .flow-node:first-child { flex: 1.6 1 0; }
 h1 { font-size: clamp(2.1rem, 4.4vw, 3rem); }
+
+/* The English tagline is longer than the Italian one: keep it on one line,
+   and hide it before it can squeeze the nav. */
+.brand-tag { white-space: nowrap; }
+@media (max-width: 1320px) { .brand-tag { display: none; } }

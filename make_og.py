@@ -57,7 +57,11 @@ for lang in ("it", "en"):
         d.text((80, y), line, font=font(72, True), fill=ACCENT if i else FG); y += 86
     # lead
     y += 16
-    for line in wrap(d, t["meta"]["description"], font(28), 1040)[:3]:
+    lines = wrap(d, t["meta"]["description"], font(28), 1040)
+    if len(lines) > 3:                      # keep the card readable: 3 lines max
+        lines = lines[:3]
+        lines[2] = lines[2].rstrip(" ,;:") + "\u2026"
+    for line in lines:
         d.text((80, y), line, font=font(28), fill=MUTED); y += 40
     # footer chips
     y = H - 84

@@ -39,8 +39,13 @@ Poi apri http://localhost:8000/ e http://localhost:8000/en/.
 
 Tutti i testi stanno nei due file JSON in `content/`. Le chiavi devono
 coincidere; `build.py --check` segnala chiavi mancanti o liste di lunghezza
-diversa. Se `en.json` contiene la chiave `stub_notice`, la pagina inglese
-mostra un avviso di "traduzione in arrivo".
+diversa. Entrambe le lingue sono complete: `build.py --check` deve stampare
+`en: ok`. La chiave facoltativa `stub_notice` in `en.json` fa comparire un
+avviso di "traduzione in arrivo" in cima alla pagina inglese, ed esiste per
+pubblicare una lingua ancora incompleta; oggi non è presente.
+
+Dopo aver cambiato i titoli dell'hero o le descrizioni, rigenera le immagini
+di anteprima dei link con `python make_og.py`.
 
 ## Licenza
 
