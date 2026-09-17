@@ -38,6 +38,10 @@ VERBATIM_KEYS = {"tree"}
 # Da questi campi i marcatori vanno tenuti fuori: finiscono negli attributi HTML
 # e nelle anteprime dei link.
 PLAIN_PREFIXES = ("meta.",)
+# Testi che il template ripete dentro un attributo (alt, aria-label): un
+# marcatore vi genererebbe tag HTML in mezzo alle virgolette.
+ATTRIBUTE_PATHS = {"usecases.title", "tech.title", "hero.flow.caption", "nav.menu_label"}
+ATTRIBUTE_KEYS = {"alt", "window_title"}
 
 MARKER_LINE = re.compile(r"^@ ([A-Za-z_]\w*(?:\[\d+\])*)(?: \[(it|en)\])?\s*$")
 HEADING2 = re.compile(r"^## ([\w.\[\]]+)")
@@ -266,8 +270,13 @@ def validate(path: str, value) -> list[str]:
     for link in LINKISH.findall(value):
         if not GOOD_LINK.fullmatch(link):
             bad.append(f"link non valido: {link[:40]} (serve [testo](https://…))")
-    if path.startswith(PLAIN_PREFIXES) and re.search(r"\*\*|==|\[\[|`", value):
+    markers = re.search(r"\*\*|==|\[\[|`|\]\(", value)
+    if path.startswith(PLAIN_PREFIXES) and markers:
         bad.append("i campi meta non accettano marcatori: finiscono negli attributi")
+    key = path.rpartition(".")[2].split("[")[0]
+    if (path in ATTRIBUTE_PATHS or key in ATTRIBUTE_KEYS) and markers:
+        bad.append("questo testo finisce anche in un attributo HTML (alt, aria-label): "
+                   "niente marcatori")
     return [f"{path}: {b}" for b in bad]
 
 

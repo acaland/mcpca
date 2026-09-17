@@ -136,8 +136,10 @@ prerequisiti, come si verifica — può porle l'assistente al docente.
 L'importazione **non può aggiungere né togliere campi**: può solo cambiare il
 testo di quelli che esistono già. Prima di scrivere controlla che i marcatori
 siano chiusi, che i link abbiano la forma `[testo](https://…)`, che nessun campo
-sia rimasto vuoto e che i campi `meta` non contengano marcatori; se qualcosa non
-va non tocca il JSON e dice cosa correggere. Il diff sul JSON risulta quindi
+sia rimasto vuoto e che non finiscano marcatori nei campi `meta` né in quelli
+che il template ripete dentro un attributo (`alt`, `window_title`,
+`usecases.title`, `tech.title`, `hero.flow.caption`, `nav.menu_label`); se
+qualcosa non va non tocca il JSON e dice cosa correggere. Il diff sul JSON risulta quindi
 limitato alle righe davvero cambiate.
 
 Restano fuori dal foglio i campi che non sono prosa: nomi di icone,
