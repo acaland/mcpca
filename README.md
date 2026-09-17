@@ -102,6 +102,52 @@ python -m http.server -d dist 8000
 
 Poi apri http://localhost:8000/ e http://localhost:8000/en/.
 
+## Rileggere e correggere i testi
+
+Il JSON resta la fonte di verità, ma non è il posto dove rileggere della prosa.
+`content.py` esporta i testi in un foglio Markdown, si corregge quello e le
+modifiche tornano indietro:
+
+```bash
+python content.py export                 # review/it.md, tutti i campi
+python content.py export --lang both     # italiano e inglese affiancati
+python content.py export --lang it --prose   # solo i testi lunghi (115 campi invece di 519)
+python content.py import review/it.md --dry-run
+python content.py import review/it.md
+```
+
+Il foglio ha un solo elemento di struttura, una riga `@ nome` davanti a ogni
+campo; sotto c'è il testo, e **gli a capo non contano**: si può mandare a capo
+dove si vuole, l'importazione ricompone la riga. I titoli `#` e `##` dicono a
+che punto del contenuto ci si trova e servono allo script per rimettere le cose
+al loro posto.
+
+```markdown
+## usecases.tabs[1].items[5] — Quando questa figura non c'è
+
+@ title
+Quando questa figura non c'è
+
+@ text
+È il caso più frequente. Le stesse domande — quali obiettivi, quali
+prerequisiti, come si verifica — può porle l'assistente al docente.
+```
+
+L'importazione **non può aggiungere né togliere campi**: può solo cambiare il
+testo di quelli che esistono già. Prima di scrivere controlla che i marcatori
+siano chiusi, che i link abbiano la forma `[testo](https://…)`, che nessun campo
+sia rimasto vuoto e che i campi `meta` non contengano marcatori; se qualcosa non
+va non tocca il JSON e dice cosa correggere. Il diff sul JSON risulta quindi
+limitato alle righe davvero cambiate.
+
+Restano fuori dal foglio i campi che non sono prosa: nomi di icone,
+identificativi, nomi degli strumenti MCP, percorsi dei file. L'albero di
+cartelle di Moodlecraft viaggia dentro un blocco ``` e conserva gli
+allineamenti. `python content.py roundtrip` verifica che andata e ritorno non
+perdano nulla.
+
+La cartella `review/` è ignorata da git: i fogli si rigenerano quando servono.
+
 ## Aggiungere o modificare testi
 
 Tutti i testi stanno nei due file JSON in `content/`. Le chiavi devono
