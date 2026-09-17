@@ -8,7 +8,7 @@
   },
   "meta": {
     "title": "MCPCA · Crea, aggiorna e ripassa i tuoi corsi Moodle conversando in Teams, Copilot, ChatGPT o Claude",
-    "description": "MCPCA è un plugin per Moodle, la piattaforma di formazione a distanza usata da università, scuole, aziende sanitarie ed enti di formazione. Permette a docenti, formatori e discenti di costruire e consultare i corsi conversando con l'assistente AI già in uso, con gli stessi permessi di Moodle.",
+    "description": "MCPCA è un plugin per Moodle, la piattaforma di formazione a distanza usata da università, scuole, aziende sanitarie ed enti di formazione. Permette a docenti, formatori, instructional designer e discenti di costruire e consultare i corsi conversando con l'assistente AI già in uso, con gli stessi permessi di Moodle.",
     "og_locale": "it_IT"
   },
   "brand": {
@@ -210,6 +210,11 @@
         "icon": "building",
         "title": "Enti pubblici e ordini professionali",
         "text": "Formazione obbligatoria e aggiornamento continuo, con la necessità di dimostrare chi ha seguito cosa e quando."
+      },
+      {
+        "icon": "globe",
+        "title": "MOOC e formazione permanente",
+        "text": "Corsi aperti con centinaia di iscritti e percorsi di **lifelong learning**, dove nessuno può seguire il singolo partecipante: i materiali devono spiegarsi da soli, le autovalutazioni correggersi da sole e l'impianto _va riusato a ogni edizione, non ricostruito_."
       }
     ],
     "note": "In tutti questi contesti il requisito è lo stesso: **un'istanza Moodle raggiungibile in HTTPS e un assistente AI**. Il resto non cambia."
@@ -217,7 +222,7 @@
   "usecases": {
     "kicker": "Casi d'uso",
     "title": "Cosa cambia, per chi",
-    "lead": "Lo stesso assistente, tre modi di usarlo. Il plugin applica il ruolo di ciascuno: **chi può scrivere scrive, chi può soltanto leggere legge**.",
+    "lead": "Lo stesso assistente, quattro modi di usarlo. Il plugin applica il ruolo di ciascuno: **chi può scrivere scrive, chi può soltanto leggere legge**.",
     "tabs": [
       {
         "id": "docenti",
@@ -255,6 +260,37 @@
           {
             "title": "Rilettura e correzione",
             "text": "«Leggimi le domande della categoria «Modulo 3» e correggi la terza.» La banca domande si consulta e si modifica conversando, senza cercare nei menu."
+          }
+        ]
+      },
+      {
+        "id": "design",
+        "label": "Instructional designer",
+        "intro": "Chi progetta i corsi perché portino a **obiettivi di apprendimento definiti**, di solito affiancando il docente o l'esperto di contenuto. ==Il lavoro di impaginazione passa all'assistente e il tempo torna alla progettazione.==",
+        "items": [
+          {
+            "title": "Dall'obiettivo alla struttura",
+            "text": "«Al termine del modulo il partecipante deve saper calcolare una dose pediatrica: proponi sezioni, materiali e verifiche.» L'impianto si discute a parole e si pubblica soltanto quando convince."
+          },
+          {
+            "title": "Verifiche allineate agli obiettivi",
+            "text": "Ogni domanda nasce collegata al risultato di apprendimento che misura. **Un obiettivo senza verifica**, o una verifica che non misura nulla, si vedono subito: l'assistente rilegge il corso pubblicato e li elenca."
+          },
+          {
+            "title": "Revisione di un corso esistente",
+            "text": "«Leggi il corso e dimmi quali sezioni non hanno alcuna autovalutazione e quali materiali non sono richiamati da nessuna attività.» _Un'analisi che a mano costa un pomeriggio._"
+          },
+          {
+            "title": "Con l'esperto di contenuto",
+            "text": "Il docente porta il materiale grezzo — slide, appunti, registrazioni — e l'instructional designer lo trasforma in un percorso. Il passaggio dalla bozza al corso pubblicato **smette di essere copia e incolla**."
+          },
+          {
+            "title": "Modelli da riapplicare",
+            "text": "Con Moodlecraft l'impianto di un corso diventa un file di testo: la stessa struttura si riapplica a un altro modulo, a un'altra edizione o a un altro dipartimento, cambiando contenuti e date."
+          },
+          {
+            "title": "Quando questa figura non c'è",
+            "text": "È il caso più frequente. Le stesse domande — quali obiettivi, quali prerequisiti, come si verifica — può porle l'assistente al docente, e dalle risposte ricavare l'impianto del corso. _È un modo di condurre la conversazione, non un automatismo del plugin._"
           }
         ]
       },

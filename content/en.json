@@ -8,7 +8,7 @@
   },
   "meta": {
     "title": "MCPCA · Build, update and study your Moodle courses inside Teams, Copilot, ChatGPT or Claude",
-    "description": "MCPCA is a plugin for Moodle, the platform behind most online training in universities, schools, healthcare organisations and training providers. Teachers, trainers and learners can build and consult courses by talking to the AI assistant they already use.",
+    "description": "MCPCA is a plugin for Moodle, the platform behind most online training in universities, schools, healthcare organisations and training providers. Teachers, trainers, instructional designers and learners can build and consult courses by talking to the AI assistant they already use.",
     "og_locale": "en_GB"
   },
   "brand": {
@@ -210,6 +210,11 @@
         "icon": "building",
         "title": "Public bodies and professional associations",
         "text": "Mandatory training and continuing professional development, with the need to show who took what, and when."
+      },
+      {
+        "icon": "globe",
+        "title": "MOOCs and lifelong learning",
+        "text": "Open courses with hundreds of participants and **lifelong learning** pathways, where nobody can follow each learner individually: the materials have to explain themselves, the self-assessments have to mark themselves, and the whole design _has to be reused for the next run, not rebuilt_."
       }
     ],
     "note": "In every one of these settings the requirement is the same: **a Moodle instance reachable over HTTPS and an AI assistant**. Nothing else changes."
@@ -217,7 +222,7 @@
   "usecases": {
     "kicker": "Use cases",
     "title": "What changes, and for whom",
-    "lead": "One assistant, three ways of using it. The plugin applies each person's role: **those who may write, write; those who may only read, read**.",
+    "lead": "One assistant, four ways of using it. The plugin applies each person's role: **those who may write, write; those who may only read, read**.",
     "tabs": [
       {
         "id": "docenti",
@@ -255,6 +260,37 @@
           {
             "title": "Review and correction",
             "text": "“Read me the questions in the ‘Module 3’ category and fix the third one.” The question bank can be consulted and edited through conversation, with no menu hunting."
+          }
+        ]
+      },
+      {
+        "id": "design",
+        "label": "Instructional designers",
+        "intro": "The people who design courses so that they reach **defined learning objectives**, usually working alongside the teacher or the subject matter expert. ==The page-building work moves to the assistant, and the time goes back into design.==",
+        "items": [
+          {
+            "title": "From the objective to the structure",
+            "text": "«By the end of the module a participant must be able to calculate a paediatric dose: propose the sections, the materials and the assessments.» The design is discussed in words and published only once it convinces."
+          },
+          {
+            "title": "Assessment aligned to objectives",
+            "text": "Every question is written against the learning outcome it measures. **An objective with no assessment**, or an assessment that measures nothing, shows up at once: the assistant reads the published course back and lists them."
+          },
+          {
+            "title": "Reviewing an existing course",
+            "text": "«Read the course and tell me which sections have no self-assessment at all, and which materials no activity refers to.» _An analysis that takes an afternoon by hand._"
+          },
+          {
+            "title": "With the subject matter expert",
+            "text": "The teacher brings the raw material — slides, notes, recordings — and the instructional designer turns it into a pathway. Going from draft to published course **stops being copy and paste**."
+          },
+          {
+            "title": "Templates to reapply",
+            "text": "With Moodlecraft a course design becomes a text file: the same structure is reapplied to another module, another run or another department, with new content and new dates."
+          },
+          {
+            "title": "When there is no designer",
+            "text": "Which is the common case. The same questions — which objectives, which prerequisites, how it will be assessed — can be put by the assistant to the teacher, and the course design drawn from the answers. _That is a way of running the conversation, not a feature of the plugin._"
           }
         ]
       },

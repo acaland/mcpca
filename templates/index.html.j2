@@ -65,7 +65,7 @@
 <section id="settori" class="section section--alt">
   <div class="container">
     {{ m.heading(t.sectors.kicker, t.sectors.title, t.sectors.lead) }}
-    <div class="grid grid-3">
+    <div class="grid grid-3 grid-orphan-center">
       {% for s in t.sectors["items"] %}
       <article class="card card-sm sector">
         <span class="icon-badge icon-badge--soft" aria-hidden="true">{{ m.icon(s.icon) }}</span>
