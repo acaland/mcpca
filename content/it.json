@@ -7,7 +7,7 @@
     "href": "en/"
   },
   "meta": {
-    "title": "MCPCA · I tuoi corsi Moodle, conversando in Teams, Copilot, ChatGPT o Claude",
+    "title": "MCPCA · Crea, aggiorna e ripassa i tuoi corsi Moodle conversando in Teams, Copilot, ChatGPT o Claude",
     "description": "MCPCA è un plugin per Moodle, la piattaforma di formazione a distanza usata da università, scuole, aziende sanitarie ed enti di formazione. Permette a docenti, formatori e discenti di costruire e consultare i corsi conversando con l'assistente AI già in uso, con gli stessi permessi di Moodle.",
     "og_locale": "it_IT"
   },
@@ -55,7 +55,13 @@
   },
   "hero": {
     "badge": "Plugin Moodle · Teams e Copilot · ChatGPT · Claude",
-    "title_a": "I tuoi corsi Moodle,",
+    "title_verbs": [
+      "Crea",
+      "Aggiorna",
+      "Interroga",
+      "Ripassa"
+    ],
+    "title_a": "i tuoi corsi Moodle,",
     "title_b_prefix": "conversando in",
     "title_words": [
       "Teams",

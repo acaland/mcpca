@@ -124,7 +124,8 @@ for lang in ("it", "en"):
     card(
         brand=t["brand"]["name"],
         tagline=t["brand"]["tagline"],
-        title=f'{t["hero"]["title_a"]} {t["hero"]["title_b_prefix"]} {t["hero"]["title_words"][0]}',
+        title=(f'{t["hero"]["title_verbs"][0]} {t["hero"]["title_a"]} '
+               f'{t["hero"]["title_b_prefix"]} {t["hero"]["title_words"][0]}'),
         description=t["meta"]["description"],
         chips=["Moodle 4.3+", "Microsoft Teams · Copilot", "ChatGPT", "Claude"],
         out=ROOT / "static" / f"og-{lang}.png",

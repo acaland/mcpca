@@ -55,36 +55,55 @@
     }
   });
 
-  // Rotating word in the hero title (Teams -> Copilot -> ChatGPT -> Claude)
-  document.querySelectorAll('.rotate').forEach(function (el) {
-    var words;
-    try { words = JSON.parse(el.getAttribute('data-words')); } catch (e) { return; }
-    if (!words || words.length < 2) return;
-    // Reserve the width of the longest word so the heading does not reflow.
-    // Measured only once the webfont is in place: measuring against the
-    // fallback font gives the wrong width and shifts the page when the real
-    // font arrives.
-    function reserveWidth() {
-      var probe = document.createElement('span');
-      probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit';
-      el.parentNode.appendChild(probe);
-      var max = 0;
-      words.forEach(function (w) { probe.textContent = w; max = Math.max(max, probe.getBoundingClientRect().width); });
-      probe.remove();
-      if (max) el.style.minWidth = Math.ceil(max) + 'px';
+  // Rotating words in the hero title (verb, and the assistant's name).
+  // A single timer drives every slot, so the whole headline re-forms in one
+  // beat: two words changing out of step make the eye jump.
+  (function () {
+    var slots = [].slice.call(document.querySelectorAll('.rotate')).map(function (el) {
+      var words;
+      try { words = JSON.parse(el.getAttribute('data-words')); } catch (e) { return null; }
+      return (words && words.length > 1) ? { el: el, words: words } : null;
+    }).filter(Boolean);
+    if (!slots.length) return;
+
+    // Reserve the width of the longest word in each slot so the heading never
+    // reflows. Measured once the webfont is in place: against the fallback font
+    // the width is wrong and the page shifts when the real font arrives.
+    function reserveWidths() {
+      slots.forEach(function (slot) {
+        var probe = document.createElement('span');
+        probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font:inherit';
+        slot.el.parentNode.appendChild(probe);
+        var max = 0;
+        slot.words.forEach(function (w) {
+          probe.textContent = w;
+          max = Math.max(max, probe.getBoundingClientRect().width);
+        });
+        probe.remove();
+        if (max) slot.el.style.minWidth = Math.ceil(max) + 'px';
+      });
     }
     if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(reserveWidth).catch(reserveWidth);
+      document.fonts.ready.then(reserveWidths).catch(reserveWidths);
     } else {
-      reserveWidth();
+      reserveWidths();
     }
+
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var i = 0;
     setInterval(function () {
-      i = (i + 1) % words.length;
-      if (reduce) { el.textContent = words[i]; return; }
-      el.classList.add('is-out');
-      setTimeout(function () { el.textContent = words[i]; el.classList.remove('is-out'); }, 350);
-    }, 2600);
-  });
+      i += 1;
+      if (reduce) {
+        slots.forEach(function (s) { s.el.textContent = s.words[i % s.words.length]; });
+        return;
+      }
+      slots.forEach(function (s) { s.el.classList.add('is-out'); });
+      setTimeout(function () {
+        slots.forEach(function (s) {
+          s.el.textContent = s.words[i % s.words.length];
+          s.el.classList.remove('is-out');
+        });
+      }, 350);
+    }, 3000);
+  })();
 })();

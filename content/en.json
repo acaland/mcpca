@@ -7,7 +7,7 @@
     "href": "../"
   },
   "meta": {
-    "title": "MCPCA · Your Moodle courses, now inside Teams, Copilot, ChatGPT or Claude",
+    "title": "MCPCA · Build, update and study your Moodle courses inside Teams, Copilot, ChatGPT or Claude",
     "description": "MCPCA is a plugin for Moodle, the platform behind most online training in universities, schools, healthcare organisations and training providers. Teachers, trainers and learners can build and consult courses by talking to the AI assistant they already use.",
     "og_locale": "en_GB"
   },
@@ -55,7 +55,13 @@
   },
   "hero": {
     "badge": "Moodle plugin · Teams and Copilot · ChatGPT · Claude",
-    "title_a": "Your Moodle courses,",
+    "title_verbs": [
+      "Build",
+      "Update",
+      "Search",
+      "Study"
+    ],
+    "title_a": "your Moodle courses,",
     "title_b_prefix": "now inside",
     "title_words": [
       "Teams",

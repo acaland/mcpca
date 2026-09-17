@@ -650,10 +650,17 @@ em { font-style: italic; }
    si stringe quel tanto che basta a tenere schema, riga di raccordo e pulsanti
    sopra la piega. Sui monitor grandi resta arioso. */
 @media (min-width: 961px) and (max-height: 800px) {
-  .hero { padding-top: 18px; }
-  .hero-copy .lead-promise { font-size: 1.16rem; line-height: 1.45; }
-  .hero-copy .flow { margin-top: 14px; }
+  .hero { padding-top: 14px; }
+  /* Con il verbo in testa il titolo occupa tre righe: su uno schermo basso
+     vale la pena rimpicciolirlo un poco per tenere i pulsanti sopra la piega. */
+  .hero h1 { font-size: clamp(2rem, 3.6vw, 2.85rem); margin-bottom: .3em; }
+  .hero-copy .lead-intro { font-size: 1rem; margin-bottom: .4em; }
+  .hero-copy .lead-promise { font-size: 1.12rem; line-height: 1.42; }
+  .hero-copy .flow { margin-top: 12px; }
   .hero-copy .flow-caption { margin-top: 6px; }
-  .hero-note { margin-top: 12px; padding-top: 12px; }
-  .hero-copy .cta-row { margin-top: 14px; }
+  .hero-note { margin-top: 10px; padding-top: 10px; font-size: .94rem; }
+  .hero-copy .cta-row { margin-top: 12px; }
 }
+
+.hero h1 .t-line { display: block; }
+.rotate-verb { text-align: left; }
