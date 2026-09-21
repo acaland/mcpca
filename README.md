@@ -150,6 +150,27 @@ perdano nulla.
 
 La cartella `review/` è ignorata da git: i fogli si rigenerano quando servono.
 
+### Anteprima dal vivo
+
+Per correggere con l'editor da una parte e il browser dall'altra:
+
+```bash
+python watch.py            # http://localhost:8000, --port per cambiarla, --open per aprire il browser
+```
+
+A ogni salvataggio di un foglio in `review/` importa, ricostruisce e ricarica
+le pagine aperte, restando allo stesso punto della pagina e sulla stessa scheda
+dei casi d'uso. Se l'importazione rifiuta il foglio (un `**` rimasto aperto, un
+link malformato) l'errore compare in un riquadro rosso in cima alla pagina e il
+JSON resta com'era; il riquadro sparisce al primo salvataggio corretto. Dopo
+un'importazione riuscita rigenera gli altri fogli di `review/`, così nessuno
+resta indietro rispetto al testo. Ricostruisce anche quando cambiano
+`templates/`, `static/` o i JSON.
+
+Non ha dipendenze oltre alla libreria standard. Lo script che ascolta gli
+aggiornamenti viene aggiunto alle pagine mentre le serve, non finisce in
+`dist/` e quindi non arriva mai al sito pubblicato.
+
 ## Aggiungere o modificare testi
 
 Tutti i testi stanno nei due file JSON in `content/`. Le chiavi devono
