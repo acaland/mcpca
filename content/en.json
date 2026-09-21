@@ -675,7 +675,7 @@
   "case_band": {
     "kicker": "Case study",
     "title": "The first course built this way: databases for Midwifery",
-    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026: **designing and querying a clinical database**, and building a small web application on top of it. Seven lessons, 73 pages, an exam bank of eighty questions and two papers with random draws, built with MCPCA and Moodlecraft.",
+    "text": "Laboratorio di Informatica, BSc in Midwifery at the University of Catania, academic year 2025/2026: **designing and querying a clinical database**, and building a small web application on top of it. Seven lessons, 73 pages, an exam bank of eighty questions and two papers with random draws, produced with MCPCA and Moodlecraft.",
     "bullets": [
       "Lessons derived from slides and recorded videos, with an index and timestamps",
       "Exercises and solutions on a clinical dataset of patients, births and staff",
@@ -853,7 +853,7 @@
       },
       {
         "k": "Clients",
-        "v": "Copilot Studio verified in production use (Teams and M365 Copilot). Any MCP client with OAuth or a token: Claude, ChatGPT, VS Code, Cursor. REST and OpenAPI for ChatGPT Actions and custom integrations."
+        "v": "Copilot Studio verified (Teams and M365 Copilot). Any MCP client with OAuth or a token: Claude, ChatGPT, VS Code, Cursor. REST and OpenAPI for ChatGPT Actions and custom integrations."
       },
       {
         "k": "Requirements",
@@ -908,7 +908,7 @@
       },
       {
         "q": "Who maintains it?",
-        "a": "The project is developed by Antonio Calanducci, computer engineer at the University of Messina and adjunct lecturer in Computer Science at the University of Catania, and is in use on real courses, as documented on the case study page. Reports and requests reach the address at the bottom of this page."
+        "a": "The project is developed by Antonio Calanducci, computer engineer at the University of Messina and adjunct lecturer in Computer Science at the University of Catania, and was used to produce a real course, documented on the case study page. Reports and requests reach the address at the bottom of this page."
       }
     ]
   },
@@ -939,7 +939,7 @@
     "back": "Back to the main page",
     "kicker": "Case study · University of Catania",
     "title": "Computing Lab in Midwifery: a course on databases and app development, built by conversation",
-    "lead": "**Seven lab sessions**, _73 modules_, 21 hours, for third-year students of the BSc in Midwifery. They learn to design a relational database, to populate and query it with SQL and to build a small web application on top of it, working with data of various kinds. The tools are **SQL**, **Oracle APEX** and the _new Studium_, the University of Catania's **Moodle** portal. The course, its exercises and its exam papers were built with [[MCPCA]] and [[Moodlecraft]]: it is ==the first complete course produced with these tools==.",
+    "lead": "**Seven lab sessions**, _73 modules_, 21 hours, for third-year students of the BSc in Midwifery. They learn to design a relational database, to populate and query it with SQL and to build a small web application on top of it, working with data of various kinds. The working tools are **SQL** and **Oracle APEX**; the course is published on the _new Studium_, the University of Catania's **Moodle** portal. [[MCPCA]] and [[Moodlecraft]] made it possible to produce its lessons, exercises and exam papers: it is ==the first complete course produced with these tools==.",
     "facts_title": "The details",
     "facts": [
       {
@@ -971,11 +971,11 @@
         "v": "Multiple-choice quiz and SQL exercises on healthcare data"
       },
       {
-        "k": "Platform",
+        "k": "Published on",
         "v": "Studium, the university's Moodle installation"
       },
       {
-        "k": "Tools",
+        "k": "Built with",
         "v": "MCPCA and Moodlecraft"
       },
       {
@@ -994,7 +994,7 @@
       "paras": [
         "By the end of the course, a student must be able to **analyse a real information need in a healthcare professional setting** and to represent it, query it and evaluate it. This is data they will work with every day: patient records, the register of births, staff rotas. Students on the course will not become computer scientists, and the syllabus requires no programming background: ==they must be able to discuss data with the people who design the applications, and to retrieve the information they need on their own==.",
         "The course is taught in person, in a computer lab, and is **mostly practical**: short explanations followed by individual exercises in Oracle APEX. Moodle provides the support: written lessons, screen recordings with transcripts, exercises. Preparing all that material is **the work that usually does not get done**, _because building and publishing it on Moodle by hand takes too many hours and too many steps_: at most, the slides get uploaded.",
-        "With MCPCA I described the intended result in words and obtained it directly in Moodle. With Moodlecraft the same course became **a folder of text files under git**: next year it is reapplied by changing the dates and the dataset, ==without starting over==."
+        "With MCPCA I described the intended result in words and obtained it in Moodle. With Moodlecraft the same course became **a folder of text files under git**: next year it is reapplied by changing the dates and the dataset, ==without starting over==."
       ]
     },
     "metrics": {
