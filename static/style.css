@@ -658,10 +658,10 @@ em { font-style: italic; }
      vale la pena rimpicciolirlo un poco per tenere i pulsanti sopra la piega. */
   .hero h1 { font-size: clamp(2rem, 3.6vw, 2.85rem); margin-bottom: .3em; }
   .hero-copy .lead-intro { font-size: 1rem; margin-bottom: .4em; }
-  .hero-copy .lead-promise { font-size: 1.12rem; line-height: 1.42; }
-  .hero-copy .flow { margin-top: 12px; }
+  .hero-copy .lead-promise { font-size: 1.05rem; line-height: 1.4; }
+  .hero-copy .flow { margin-top: 8px; }
   .hero-copy .flow-caption { margin-top: 6px; }
-  .hero-note { margin-top: 10px; padding-top: 10px; font-size: .94rem; }
+  .hero-note { margin-top: 6px; padding-top: 6px; font-size: .94rem; }
   .hero-copy .cta-row { margin-top: 12px; }
 }
 

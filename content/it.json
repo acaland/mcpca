@@ -70,7 +70,7 @@
       "Claude"
     ],
     "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano atenei, scuole, aziende sanitarie ed enti di formazione.",
-    "lead2": "[[MCPCA]] la collega agli assistenti AI già in uso. Descrivi a parole una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==: senza installare nulla, senza che un solo dato esca dall'organizzazione.",
+    "lead2": "[[MCPCA]] _collega_ Moodle agli assistenti AI: a partire da materiale esistente o ex novo, descrivi a parole (o a voce) una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==: senza alcun intervento manuale, senza installare nulla. Gli studenti possono a loro volta interagire con i propri corsi per chiarimenti o per ripassare.",
     "cta_primary": "Vedi cosa può fare",
     "cta_case": "Il primo caso reale",
     "chat": {
@@ -138,33 +138,33 @@
   "what": {
     "kicker": "In breve",
     "title": "Cos'è, senza tecnicismi",
-    "lead": "Gli assistenti AI come Microsoft Copilot sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. [[MCPCA]] è il collegamento che manca.",
+    "lead": "Gli assistenti AI come Microsoft Copilot, ChatGPT, Claude sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. [[MCPCA]] è il collegamento che manca.",
     "cards": [
       {
         "icon": "plugin",
         "title": "È un plugin per Moodle",
-        "text": "Moodle è la piattaforma open source su cui si tiene **gran parte della formazione a distanza in Italia**: corsi, materiali, verifiche e tracciamento delle presenze online. MCPCA si installa al suo interno come qualunque altro componente: **nessun server aggiuntivo, nessun servizio esterno**."
+        "text": "Moodle è la piattaforma open source su cui si tiene **gran parte della formazione a distanza in Italia e nel mondo**: interi corsi, materiali, verifiche e tracciamento delle presenze online. MCPCA si installa al suo interno come qualunque altro componente: **nessun server aggiuntivo, nessun servizio esterno**."
       },
       {
         "icon": "chat",
         "title": "Parla la lingua degli assistenti AI",
-        "text": "Usa MCP, uno standard aperto adottato da Microsoft Copilot, ChatGPT e Claude. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle **sui quali l'utente collegato ha i permessi**, e _soltanto su richiesta esplicita di quell'utente_."
+        "text": "Usa MCP (acronimo di Model Context Protocol), uno standard aperto adottato dagli assistenti ed agenti AI come Microsoft Copilot, ChatGPT e Claude. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle **sui quali l'utente corrente ha i permessi**, e _su approvazione esplicita di quell'utente_."
       },
       {
         "icon": "shield",
         "title": "Con i permessi di Moodle",
-        "text": "Ognuno accede con il proprio account istituzionale. Il plugin esegue soltanto le operazioni che quella persona potrebbe compiere dall'interfaccia web di Moodle: **un docente crea e modifica nei corsi che tiene, un discente consulta quelli a cui è iscritto**."
+        "text": "Ogni utente accede con il proprio account istituzionale. Il plugin esegue soltanto le operazioni che quella persona potrebbe compiere dall'interfaccia web di Moodle: **un docente crea e modifica nei corsi che tiene, un discente consulta quelli a cui è iscritto**."
       }
     ],
     "glossary_title": "Quattro termini che incontrerete",
     "glossary": [
       {
         "term": "Moodle",
-        "def": "La piattaforma e-learning open source più diffusa al mondo, usata da atenei, scuole, aziende sanitarie ed enti di formazione. Se nella vostra organizzazione esiste un «portale della formazione», una «piattaforma FAD» o un «portale e-learning», quasi certamente è Moodle."
+        "def": "La piattaforma e-learning open source più diffusa al mondo, usata da atenei, scuole, aziende sanitarie ed enti di formazione. Se nella vostra organizzazione esiste un _portale della formazione_, una _piattaforma FAD o DAD_ o un _portale e-learning_, quasi certamente è basata su Moodle."
       },
       {
         "term": "MCP (Model Context Protocol)",
-        "def": "Uno standard aperto con cui un assistente AI chiede a un'applicazione «cosa sai fare?» e poi le chiede di farlo. È la stessa tecnologia con cui Copilot, ChatGPT e Claude si collegano a SharePoint, Jira o Google Drive."
+        "def": "Uno standard aperto con cui un assistente (o un agente) AI chiede a un'applicazione «cosa sai fare?» e poi le chiede di farlo. È la stessa tecnologia con cui Copilot, ChatGPT e Claude si collegano a SharePoint, Jira o Google Drive."
       },
       {
         "term": "Copilot Studio",
@@ -179,12 +179,12 @@
   "sectors": {
     "kicker": "Dove si usa",
     "title": "Ovunque si faccia formazione a distanza",
-    "lead": "**Il plugin non conosce il settore: conosce Moodle.** Il primo corso è nato in un'università, ma gli stessi strumenti servono chiunque debba produrre e mantenere contenuti didattici online.",
+    "lead": "**Il plugin non conosce il settore: conosce Moodle.** MCPCA è nato per un'esigenza di formazione in università, ma gli stessi strumenti possono essere utilizzati in qualsiasi contesto da chiunque debba produrre e mantenere contenuti didattici online.",
     "items": [
       {
         "icon": "student",
         "title": "Università e ITS",
-        "text": "Corsi di laurea, laboratori, corsi di specializzazione. Materiali da aggiornare ogni anno accademico e prove d'esame da rinnovare a ogni appello."
+        "text": "Corsi di laurea, laboratori, corsi di specializzazione. Materiali da aggiornare ogni anno accademico, prove in itinere e prove d'esame da rinnovare a ogni appello e _diverse_ per ogni studente."
       },
       {
         "icon": "school",
@@ -931,8 +931,8 @@
     },
     "back": "Torna alla pagina principale",
     "kicker": "Caso reale · Università di Catania",
-    "title": "Basi di dati e dati clinici: il laboratorio di Ostetricia, costruito conversando",
-    "lead": "**Sette lezioni in laboratorio**, una ventina di ore, per studentesse e studenti del terzo anno, senza alcun prerequisito di informatica. Si impara a progettare una base di dati relazionale, a interrogarla con SQL e a costruirci sopra una piccola applicazione web, lavorando su dati di ambito clinico. Gli strumenti sono Oracle APEX e Studium, il Moodle dell'Università di Catania. Il corso, i suoi esercizi e le sue prove sono nati con [[MCPCA]] e Moodlecraft: è ==il primo corso completo costruito con questi strumenti==.",
+    "title": "Laboratorio di Informatica in Ostetricia: un corso di Basi di Dati e sviluppo App, costruito conversando",
+    "lead": "**Sette lezioni in laboratorio**, _73 moduli_, una ventina di ore, per studentesse del terzo anno del CdL in Ostetricia. Si impara a progettare una base di dati relazionale, a interrogarla e popolarla con SQL e a costruirci sopra una piccola applicazione web, lavorando su dati di vario genere. Gli strumenti sono **SQL**, **Oracle APEX** ed il _nuovo Studium_, il portale **Moodle** dell'Università di Catania. Il corso, i suoi esercizi e le sue prove d'esame sono stati costruiti con [[MCPCA]] e `Moodlecraft`: è ==il primo corso completo realizzato con questi strumenti==.",
     "facts_title": "La scheda",
     "facts": [
       {
@@ -957,11 +957,11 @@
       },
       {
         "k": "Impegno",
-        "v": "Sette lezioni in laboratorio, circa 21 ore, frequenza obbligatoria"
+        "v": "Sette lezioni in laboratorio, 21 ore, frequenza obbligatoria"
       },
       {
         "k": "Verifica",
-        "v": "Giudizio di idoneità, prova pratica al computer"
+        "v": "Quiz a scelta multipla, esercizi su dati sanitari con query SQL"
       },
       {
         "k": "Piattaforma",
@@ -973,20 +973,20 @@
       },
       {
         "k": "Docente",
-        "v": "Antonio Calanducci"
+        "v": "Ing. Antonio S. Calanducci, PhD"
       }
     ],
     "link": {
       "label": "Apri il corso su Studium",
       "url": "https://elearning.unict.it/course/view.php?id=73591",
-      "note": "Il corso vive nella piattaforma dell'ateneo: l'accesso richiede le credenziali UniCT, quindi da fuori si vede la pagina di login."
+      "note": "Il corso vive nella piattaforma dell'ateneo: l'accesso richiede le credenziali UniCT."
     },
     "context": {
       "kicker": "Il punto di partenza",
       "title": "Basi di dati dentro un corso di laurea sanitario",
       "paras": [
-        "Il syllabus lo dice in modo netto: al termine lo studente deve saper **analizzare un'esigenza informativa reale in ambito professionale sanitario** e saperla rappresentare, interrogare e valutare. Sono i dati con cui lavorerà davvero: l'anagrafica delle pazienti, il registro dei parti, i turni del personale. Non diventeranno informatici, e il syllabus non chiede prerequisiti di programmazione: ==devono poter parlare di dati con chi li progetta, e cavarsela da soli quando serve una risposta==.",
-        "Il corso si svolge in presenza, in laboratorio, ed è **prevalentemente pratico**: spiegazioni brevi e poi esercizi individuali dentro Oracle APEX. Moodle è il supporto, e anche questo sta scritto nel syllabus: lezioni testuali, video-registrazioni con trascrizione, esercizi. Preparare tutto quel materiale è **il lavoro che di solito non si fa** _perché costruirlo a mano costa troppe ore_: si allegano le slide e si va avanti.",
+        "Al termine del corso lo studente deve saper **analizzare un'esigenza informativa reale in ambito professionale sanitario** e saperla rappresentare, interrogare e valutare. Con i dati avrà a che fare tutti i giorni nella sua vita lavorativa: l'anagrafica delle pazienti, il registro dei parti, i turni del personale, etc. Gli studenti non diventeranno informatici, e il syllabus non chiede prerequisiti di programmazione: ==devono poter parlare di dati con chi progetta gli applicativi, e _cavarsela da soli_ quando serve una risposta==.",
+        "Il corso si svolge in presenza, in un laboratorio, ed è **prevalentemente pratico**: mini lezioni con spiegazioni brevi e poi esercizi individuali su Oracle APEX. Moodle è il supporto: lezioni testuali, video-registrazioni con trascrizione, esercizi. Preparare tutto quel materiale è **il lavoro che di solito non si fa** _perché costruirlo a mano (e pubblicarlo su Moodle) costa troppe ore, troppi click_: si allegano al più le slide e si va avanti.",
         "Con MCPCA ho descritto a parole quello che volevo e l'ho ottenuto dentro Moodle. Con Moodlecraft lo stesso corso è diventato **una cartella di file di testo versionata con git**: l'anno prossimo si riapplica cambiando le date e il dataset, ==senza ricominciare da capo==."
       ]
     },
@@ -1022,11 +1022,11 @@
     "steps": {
       "kicker": "Come è stato costruito",
       "title": "Dalla slide alla prova d'esame, passo per passo",
-      "lead": "Ogni passaggio è una conversazione con l'assistente oppure un comando di Moodlecraft. Le pillole indicano gli strumenti del plugin usati in quel passaggio.",
+      "lead": "Ogni passaggio è una conversazione con l'assistente oppure un comando di `Moodlecraft`. Le pillole indicano gli strumenti del plugin usati in quel passaggio.",
       "items": [
         {
           "title": "Dalle slide alle lezioni",
-          "text": "Le slide di ciascuna lezione sono diventate pagine Markdown: un argomento per pagina, con tabelle, esempi di codice e riepiloghi. Ogni lezione si apre con un indice cliccabile che elenca le sue pagine nell'ordine in cui vanno seguite.",
+          "text": "Le slide di ciascuna lezione sono diventate pagine Markdown su Moodle: un argomento per pagina, con tabelle, esempi di codice formattato e riepiloghi. Ogni lezione si apre con un indice cliccabile che elenca le sue pagine nell'ordine in cui vanno seguite.",
           "tools": [
             "create_section",
             "create_page",
@@ -1043,22 +1043,22 @@
         },
         {
           "title": "Un filo narrativo per gli esercizi",
-          "text": "La Lezione II è un caso investigativo: una tabella di 500 sospetti e una serie di indizi da tradurre in query, fino a restringere la lista a un solo nome. Quindici esercizi e diciassette soluzioni, ciascuno una pagina, creati insieme al testo della lezione.",
+          "text": "La Lezione II è un caso investigativo: una tabella di 500 sospetti di vari crimini e una serie di indizi da tradurre in query, fino a restringere la lista a un solo nome. Quindici esercizi e diciassette soluzioni, ciascuno una pagina, creati insieme al testo della lezione.",
           "tools": [
             "create_page"
           ]
         },
         {
           "title": "Il dataset clinico",
-          "text": "Per gli esercizi d'esame ho usato un dataset di ambito ostetrico: pazienti, parti, personale. Il file SQL è caricato nel corso come risorsa scaricabile, così ognuno ricrea le tabelle nel proprio ambiente Oracle APEX.",
+          "text": "Per gli esercizi d'esame ho usato un dataset di ambito ostetrico: pazienti, parti, personale. Il file SQL su cui lavorare è caricato nel corso come risorsa scaricabile, così ognuno ricrea le tabelle nel proprio ambiente Oracle APEX.",
           "tools": [
             "create_resource",
             "core_files_upload"
           ]
         },
         {
-          "title": "La banca domande",
-          "text": "Un deposito per lezione, venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. **Per ogni appello se ne prepara una serie nuova**, così chi ripete l'esame non ritrova le stesse domande. Restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
+          "title": "Il deposito domande",
+          "text": "Un gruppo di domande per lezione: venti domande a scelta multipla ciascuno, con un feedback scritto per ogni risposta sbagliata. **Per ogni appello se ne prepara una serie nuova**, così chi ripete l'esame non ritrova le stesse domande. Restano nella banca del corso e si rileggono e si correggono conversando, senza aprire l'editor di Moodle.",
           "tools": [
             "create_question_category",
             "create_question",
@@ -1078,7 +1078,7 @@
         },
         {
           "title": "La correzione",
-          "text": "Le domande a scelta multipla le corregge Moodle da sé, con il feedback già scritto in banca. Per gli esercizi pratici ho esportato le risposte in un foglio di calcolo, le ho valutate una per una con punteggio e commento, e le ho reimportate nel registro: trentacinque elaborati, otto risposte ciascuno. _L'esportazione e la reimportazione le fanno gli script del progetto, non il plugin._",
+          "text": "Le domande a scelta multipla le corregge Moodle da sé, con il feedback fornito agli studenti. Per gli esercizi pratici ho esportato le risposte in un foglio di calcolo, le ho valutate una per una con punteggio e commento, e le ho reimportate nel registro: trentacinque elaborati, otto risposte ciascuno. _L'esportazione e la reimportazione, al momento, le fa uno script del progetto._",
           "tools": [
             "mod_quiz_get_user_attempts",
             "mod_quiz_get_attempt_review"
@@ -1086,7 +1086,7 @@
         },
         {
           "title": "Il syllabus",
-          "text": "Anche la [scheda dell'insegnamento pubblicata dal dipartimento](https://www.chirmed.unict.it/corsi/lsnt1/insegnamenti?seuid=DA193AB7-3EEF-41DC-8648-1D27BC1A586F) — risultati di apprendimento attesi, contenuti delle sette lezioni, modalità di verifica, testi di riferimento — è nata dallo stesso materiale, rileggendo il corso già pubblicato invece di riscrivere tutto dentro un modulo da compilare.",
+          "text": "Anche la [scheda dell'insegnamento pubblicata dal dipartimento](https://www.chirmed.unict.it/corsi/lsnt1/insegnamenti?seuid=DA193AB7-3EEF-41DC-8648-1D27BC1A586F) — risultati di apprendimento attesi, contenuti delle sette lezioni, modalità di verifica, testi di riferimento — è nata dallo stesso materiale, rileggendo il corso già pubblicato invece di riscrivere tutto dentro un modulo da compilare: [[MCPCA]] aveva accesso a tutto il materiale del corso, e l'assistente AI ha redatto il testo, pubblicato poi da un altro script su **SmartEdu**.",
           "tools": [
             "core_course_get_contents",
             "get_page_content"
@@ -1094,7 +1094,7 @@
         },
         {
           "title": "Tutto versionato",
-          "text": "Il corso è una cartella con git: `plan` mostra che cosa cambierebbe, `apply` applica solo le differenze. La prova del secondo appello è dichiarata nascosta nel file, ==così nessuna riapplicazione può pubblicarla per sbaglio prima della data d'esame==.",
+          "text": "Il corso è una cartella gestita da git (un sistema di versionamento di sorgenti): `plan` mostra che cosa cambierebbe, `apply` applica solo le differenze.",
           "tools": [
             "moodlecraft plan",
             "moodlecraft apply"
@@ -1130,7 +1130,7 @@
         },
         {
           "file": "questionbank.png",
-          "alt": "Banca domande del corso",
+          "alt": "Deposito domande del corso",
           "caption": "I depositi di domande, uno per lezione."
         },
         {
@@ -1237,10 +1237,6 @@
       "lead": "Non tutto è filato liscio, e alcune scelte sono diventate regole.",
       "items": [
         {
-          "title": "I quiz nascono nascosti",
-          "text": "La prova del secondo appello è dichiarata nascosta nel file che la definisce, e ogni riapplicazione rispetta quella scelta. Un compito pubblicato per sbaglio prima della data d'esame è un danno difficile da rimediare."
-        },
-        {
           "title": "L'assistente non inventa il contenuto",
           "text": "Le pagine nascono dal materiale reale: slide, trascrizioni, dataset. Quello che scrive va comunque riletto, e **la responsabilità di ciò che viene pubblicato resta di chi insegna**."
         },
@@ -1249,16 +1245,20 @@
           "text": "Per gli esercizi aperti l'assistente propone un punteggio e un commento per ogni risposta; la valutazione finale l'ho confermata io, elaborato per elaborato, prima di riportarla sul registro."
         },
         {
-          "title": "Il lavoro della prossima edizione è già fatto per metà",
+          "title": "Il lavoro della prossima edizione è già fatto per più di metà",
           "text": "Il corso è una cartella versionata: cambiano le date, il dataset e le domande nuove. Il resto si riapplica in pochi minuti, con la certezza che nulla viene duplicato."
         },
         {
           "title": "Il tempo si sposta, non sparisce",
-          "text": "Costruire le pagine è diventato veloce; il tempo è passato a decidere che cosa chiedere, a rileggere e a correggere. _È uno scambio conveniente, ma non è magia._"
+          "text": "Costruire le pagine di un corso è diventato veloce; il tempo è passato a decidere su cosa chiedere, a rileggere e a correggere."
         },
         {
           "title": "Gli studenti non vedono nulla di tutto questo",
           "text": "Trovano un corso ordinato, con un indice per lezione, esercizi con soluzione e prove diverse per ciascuno. Il fatto che sia stato costruito conversando è un dettaglio che riguarda solo chi lo ha scritto."
+        },
+        {
+          "title": "I quiz nascono nascosti",
+          "text": "La prova del secondo appello è dichiarata nascosta nel file che la definisce, e ogni riapplicazione rispetta quella scelta."
         }
       ]
     },
