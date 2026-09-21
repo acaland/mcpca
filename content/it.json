@@ -69,7 +69,7 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano atenei, scuole, aziende sanitarie ed enti di formazione.",
+    "lead": "Moodle è **la piattaforma di formazione a distanza più diffusa**: la usano atenei, scuole, aziende sanitarie, enti di formazione.",
     "lead2": "[[MCPCA]] _collega_ Moodle agli assistenti AI: a partire da materiale esistente o ex novo, descrivi a parole (o a voce) una pagina, un quiz o un intero corso, e ==li ritrovi pronti sulla piattaforma==: senza alcun intervento manuale, senza installare nulla. Gli studenti possono a loro volta interagire con i propri corsi per chiarimenti o per ripassare.",
     "cta_primary": "Vedi cosa può fare",
     "cta_case": "Il primo caso reale",
@@ -138,7 +138,7 @@
   "what": {
     "kicker": "In breve",
     "title": "Cos'è, senza tecnicismi",
-    "lead": "Gli assistenti AI come Microsoft Copilot, ChatGPT, Claude sanno conversare, ma **non conoscono i corsi della tua organizzazione e non possono intervenirvi**. [[MCPCA]] è il collegamento che manca.",
+    "lead": "Gli assistenti AI come Microsoft Copilot, ChatGPT, Claude sanno conversare, ma **non conoscono i contenuti dei corsi della tua organizzazione e non possono intervenirvi**. [[MCPCA]] è il collegamento che mancava.",
     "cards": [
       {
         "icon": "plugin",
@@ -148,7 +148,7 @@
       {
         "icon": "chat",
         "title": "Parla la lingua degli assistenti AI",
-        "text": "Usa MCP (acronimo di Model Context Protocol), uno standard aperto adottato dagli assistenti ed agenti AI come Microsoft Copilot, ChatGPT e Claude. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle **sui quali l'utente corrente ha i permessi**, e _su approvazione esplicita di quell'utente_."
+        "text": "Usa MCP (acronimo di _Model Context Protocol_), uno standard aperto adottato dagli assistenti ed agenti AI come _Microsoft Copilot, ChatGPT e Claude_. L'assistente può così leggere e scrivere nei corsi pubblicati su Moodle **sui quali l'utente corrente ha i permessi**, e _su approvazione esplicita di quell'utente_."
       },
       {
         "icon": "shield",
@@ -235,7 +235,7 @@
           },
           {
             "title": "Su un corso già esistente",
-            "text": "«Aggiungi alla sezione 4 una pagina sulle scale di valutazione del dolore e sposta il quiz in fondo.» Si interviene su ciò che c'è, senza rifare nulla."
+            "text": "«Aggiungi alla sezione 4 una pagina sulle scale di valutazione del dolore (con un diagramma) e sposta il quiz in fondo.» Si interviene su ciò che c'è, senza rifare nulla."
           },
           {
             "title": "Dagli appunti alla pagina",
@@ -345,7 +345,7 @@
   "features": {
     "kicker": "Funzionalità",
     "title": "Disponibili oggi",
-    "lead": "Tutto ciò che segue è **implementato e provato sul campo**: il corso descritto più sotto è stato costruito con questi strumenti. Le funzioni in lavorazione sono più avanti, separate.",
+    "lead": "Tutto ciò che segue è **implementato e provato sul campo**: il corso descritto più sotto è stato costruito con questi strumenti. Le funzioni in lavorazione sono descritte sotto.",
     "groups": [
       {
         "icon": "page",
@@ -767,7 +767,7 @@
   "moodlecraft": {
     "kicker": "Ecosistema",
     "title": "Alla base di Moodlecraft: interi corsi definiti, versionati, riproducibili",
-    "lead": "[[MCPCA]] non è soltanto il tramite per gli assistenti AI. È anche il motore di Moodlecraft, uno strumento a riga di comando che tratta un corso Moodle **come si tratta il codice**: definito in file di testo, versionato, applicabile a qualunque istanza.",
+    "lead": "[[MCPCA]] non è soltanto il tramite per gli assistenti AI. È anche il motore su cui è stato costruto [[`Moodlecraft`]], uno strumento a riga di comando che tratta un corso Moodle **come si tratta il codice**: definito in file di testo, versionato, applicabile a qualunque istanza su cui c'è [[MCPCA]].",
     "items": [
       {
         "title": "Il corso è una cartella",
@@ -775,7 +775,7 @@
       },
       {
         "title": "Prima plan, poi apply",
-        "text": "Come Terraform per l'infrastruttura: Moodlecraft confronta la definizione con lo stato del corso su Moodle, mostra che cosa cambierebbe e applica soltanto le differenze. _Rieseguirlo non duplica nulla._"
+        "text": "Come `Terraform` per l'infrastruttura cloud: Moodlecraft confronta la definizione con lo stato del corso su Moodle, mostra che cosa cambierebbe e applica soltanto le differenze. _Rieseguirlo non duplica nulla._"
       },
       {
         "title": "Versionato con git",
@@ -871,7 +871,7 @@
     "items": [
       {
         "q": "Devo installare qualcosa sul mio computer?",
-        "a": "No. L'assistente compare in Microsoft Teams e in Microsoft 365 Copilot, già in uso in molte organizzazioni. Chi preferisce ChatGPT o Claude collega il server MCP dalle impostazioni del proprio assistente, con l'accesso istituzionale. L'installazione riguarda soltanto il server Moodle e la configurazione in Copilot Studio, a cura di chi gestisce i sistemi."
+        "a": "No. L'assistente appare come una chat in Microsoft Teams e in Microsoft 365 Copilot, già in uso in molte organizzazioni. Chi preferisce ChatGPT o Claude collega il server MCP dalle impostazioni del proprio assistente, con l'accesso istituzionale. L'installazione riguarda soltanto il server Moodle e la configurazione in Copilot Studio, a cura di chi gestisce i sistemi."
       },
       {
         "q": "Serve solo alle università?",
@@ -879,7 +879,7 @@
       },
       {
         "q": "Posso creare un corso da zero?",
-        "a": "Sì. Partendo da un corso vuoto, l'assistente costruisce sezioni, pagine, materiali e verifiche in un'unica conversazione; oppure interviene su un corso che esiste già. La creazione del contenitore del corso dipende dai permessi: in molte organizzazioni è riservata all'amministrazione, che lo predispone in pochi secondi. Per corsi da versionare e replicare a ogni edizione c'è Moodlecraft."
+        "a": "Sì. Partendo da un corso vuoto, l'assistente costruisce sezioni, pagine, materiali e verifiche in un'unica conversazione; oppure interviene su un corso che esiste già. La creazione del contenitore del corso dipende dai permessi: in molte organizzazioni è riservata all'amministrazione, che lo predispone in pochi secondi. Per corsi da versionare e replicare a ogni edizione c'è [[Moodlecraft]]."
       },
       {
         "q": "Un discente può modificare un corso?",
@@ -907,18 +907,18 @@
       },
       {
         "q": "Chi lo mantiene?",
-        "a": "Il progetto è sviluppato da Antonio Calanducci ed è in uso su corsi reali. Segnalazioni e richieste arrivano all'indirizzo in fondo alla pagina."
+        "a": "Il progetto è sviluppato da Antonio Calanducci, ingegnere informatico presso l'Università di Messina e docente a contratto di Informatica presso l'Università di Catania, ed è in uso su corsi reali (come descritto nel caso d'uso). Segnalazioni e richieste arrivano all'indirizzo in fondo alla pagina."
       }
     ]
   },
   "contact": {
     "title": "Vuoi provarlo nella tua organizzazione?",
     "text": "Contattami: bastano un corso pilota e una persona disponibile a costruirlo per valutare che cosa cambia. Rispondo anche alle domande tecniche di chi gestisce la piattaforma.",
-    "email": "antonio.calanducci@unime.it",
-    "cta": "Scrivi a antonio.calanducci@unime.it"
+    "email": "antonio.calanducci@unict.it",
+    "cta": "Scrivi a antonio.calanducci@unict.it"
   },
   "footer": {
-    "author": "Antonio Calanducci",
+    "author": "Ing. Antonio Calanducci, P",
     "disclaimer": "Moodle è un marchio registrato di Moodle Pty Ltd. Microsoft Teams, Microsoft 365 Copilot, Copilot Studio ed Entra ID sono marchi di Microsoft Corporation. ChatGPT è un marchio di OpenAI; Claude è un marchio di Anthropic. Oracle e Oracle APEX sono marchi di Oracle Corporation. Questo progetto non è affiliato né sponsorizzato da alcuno di essi.",
     "no_tracking": "Questa pagina non usa cookie né strumenti di tracciamento.",
     "year": "2026"
