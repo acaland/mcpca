@@ -69,8 +69,8 @@
       "ChatGPT",
       "Claude"
     ],
-    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare and training providers all run on it.",
-    "lead2": "[[MCPCA]] connects it to the AI assistants already in use. Describe a page, a quiz or a whole course in plain words, and ==find it ready on the platform==: nothing to install, and not one piece of data leaves the organisation.",
+    "lead": "Moodle is **the most widely used distance-learning platform**: universities, schools, healthcare organisations and training providers all run on it.",
+    "lead2": "[[MCPCA]] _connects_ Moodle to AI assistants: from existing material or from scratch, describe a page, a quiz or a whole course, typed or spoken, and ==find it ready on the platform==, without Moodle's editor and with nothing to install. Students, in turn, query their own courses for clarification and revision.",
     "cta_primary": "See what it can do",
     "cta_case": "The first real deployment",
     "chat": {
@@ -133,22 +133,22 @@
         }
       ]
     },
-    "note": "Everyone signs in with their own **institutional account** and does only what Moodle allows them."
+    "note": "Everyone signs in with their own **institutional account** and acts only within the permissions Moodle grants them."
   },
   "what": {
     "kicker": "In brief",
     "title": "What it is, without the jargon",
-    "lead": "AI assistants such as Microsoft Copilot can hold a conversation, but **they know nothing about your organisation's courses and cannot act on them**. [[MCPCA]] is the missing link.",
+    "lead": "AI assistants such as Microsoft Copilot, ChatGPT and Claude can hold a conversation, but **they know nothing about the content of your organisation's courses and cannot act on it**. [[MCPCA]] is the missing link.",
     "cards": [
       {
         "icon": "plugin",
         "title": "A plugin for Moodle",
-        "text": "Moodle is the open source platform behind **a large share of online training**: courses, materials, assessments and completion tracking. MCPCA installs inside it like any other component: **no extra servers, no external services**."
+        "text": "Moodle is the open source platform behind **a large share of online training, in Italy and worldwide**: courses, materials, assessments and activity tracking. MCPCA installs inside it like any other component: **no extra servers, no external services**."
       },
       {
         "icon": "chat",
         "title": "It speaks the language of AI assistants",
-        "text": "It uses MCP, an open standard adopted by Microsoft Copilot, ChatGPT and Claude. The assistant can therefore read and write in the courses published on Moodle **for which the signed-in user holds the relevant permissions**, and _only when that user explicitly asks_."
+        "text": "It uses MCP (_Model Context Protocol_), an open standard adopted by AI assistants and agents such as _Microsoft Copilot, ChatGPT and Claude_. The assistant can therefore read and write in the courses published on Moodle **for which the signed-in user holds the relevant permissions**, and _only with that user's explicit approval_."
       },
       {
         "icon": "shield",
@@ -160,11 +160,11 @@
     "glossary": [
       {
         "term": "Moodle",
-        "def": "The most widely used open source e-learning platform, run by universities, schools, healthcare organisations and training providers. If your organisation has a “training portal”, a “distance-learning platform” or an “e-learning portal”, it is almost certainly Moodle."
+        "def": "The most widely used open source e-learning platform, run by universities, schools, healthcare organisations and training providers. If your organisation has a _training portal_, a _distance-learning platform_ or an _e-learning portal_, it is almost certainly built on Moodle."
       },
       {
         "term": "MCP (Model Context Protocol)",
-        "def": "An open standard through which an AI assistant asks an application “what can you do?” and then asks it to do those things. It is the same technology Copilot, ChatGPT and Claude use to connect to SharePoint, Jira or Google Drive."
+        "def": "An open standard through which an AI assistant (or agent) asks an application “what can you do?” and then asks it to do those things. It is the same technology Copilot, ChatGPT and Claude use to connect to SharePoint, Jira or Google Drive."
       },
       {
         "term": "Copilot Studio",
@@ -179,22 +179,22 @@
   "sectors": {
     "kicker": "Where it fits",
     "title": "Anywhere training happens at a distance",
-    "lead": "**The plugin knows nothing about your sector: it knows Moodle.** The first course was born in a university, but the same tools serve anyone who has to produce and maintain teaching content online.",
+    "lead": "**The plugin knows nothing about your sector: it knows Moodle.** MCPCA grew out of a university teaching need, but the same tools apply wherever teaching content has to be produced and maintained online.",
     "items": [
       {
         "icon": "student",
         "title": "Universities and higher technical institutes",
-        "text": "Degree programmes, labs, specialisation courses. Materials to refresh every academic year and exams to rebuild for every session."
+        "text": "Degree programmes, labs, specialisation courses. Materials to refresh every academic year, mid-term and final exams to renew for every session, _different_ for every student."
       },
       {
         "icon": "school",
         "title": "Schools",
-        "text": "Virtual classrooms, catch-up work, homework and tests. The teacher describes the lesson in words and finds it published, without going through ten configuration screens."
+        "text": "Virtual classrooms, remedial work, homework and tests. The teacher describes the lesson and finds it published, without working through the platform's configuration screens."
       },
       {
         "icon": "hospital",
         "title": "Healthcare organisations, public and private",
-        "text": "Staff training, procedures and protocols, credit-bearing courses. **Completion tracking** and **assessments that differ for every participant** are exactly what is needed here."
+        "text": "Staff training, procedures and protocols, continuing medical education. **Completion tracking** and **assessments that differ for every participant** meet the requirements of this setting directly."
       },
       {
         "icon": "award",
@@ -235,11 +235,11 @@
           },
           {
             "title": "On a course that already exists",
-            "text": "“Add a page on pain assessment scales to section 4 and move the quiz to the end.” You work on what is already there, without redoing anything."
+            "text": "“Add a page on pain assessment scales, with a diagram, to section 4 and move the quiz to the end.” You work on what is already there, without redoing anything."
           },
           {
-            "title": "From notes to a page",
-            "text": "“Turn these notes into a page in section 3.” The assistant formats the text, creates the page and, if asked, enables completion tracking."
+            "title": "Well-formatted pages, not pasted text",
+            "text": "“Turn these notes into a page in section 3.” The page comes out **laid out with the platform's styles**: paragraphs and subsections, lists, tables, formatted code, links, images and diagrams; longer lessons open with a clickable index. If requested, completion tracking is already on."
           },
           {
             "title": "Quizzes in minutes",
@@ -247,7 +247,7 @@
           },
           {
             "title": "A different paper for every participant",
-            "text": "“40 questions in the bank and a test that draws 10 of them at random.” Everyone gets a different combination and marking is automatic. This is the ordinary way to run an exam or an end-of-module test."
+            "text": "“40 questions in the bank and a test that draws 10 of them at random.” Everyone gets a different combination and marking is automatic: the standard arrangement for an exam or an end-of-module test."
           },
           {
             "title": "Automatically marked questions",
@@ -270,7 +270,7 @@
         "items": [
           {
             "title": "From the objective to the structure",
-            "text": "«By the end of the module a participant must be able to calculate a paediatric dose: propose the sections, the materials and the assessments.» The design is discussed in words and published only once it convinces."
+            "text": "“By the end of the module a participant must be able to calculate a paediatric dose: propose the sections, the materials and the assessments.” The design is discussed in words and published only once it convinces."
           },
           {
             "title": "Assessment aligned to objectives",
@@ -278,11 +278,11 @@
           },
           {
             "title": "Reviewing an existing course",
-            "text": "«Read the course and tell me which sections have no self-assessment at all, and which materials no activity refers to.» _An analysis that takes an afternoon by hand._"
+            "text": "“Read the course and tell me which sections have no self-assessment at all, and which materials no activity refers to.” _An analysis that takes hours when done by hand._"
           },
           {
             "title": "With the subject matter expert",
-            "text": "The teacher brings the raw material — slides, notes, recordings — and the instructional designer turns it into a pathway. Going from draft to published course **stops being copy and paste**."
+            "text": "The teacher provides the raw material — slides, notes, recordings — and the instructional designer turns it into a pathway. Getting from draft to published course **no longer goes through copy and paste**."
           },
           {
             "title": "Templates to reapply",
@@ -332,7 +332,7 @@
           },
           {
             "title": "Fine-grained control",
-            "text": "Every tool can be switched off individually in the assistant. During a pilot, for example, the destructive ones are disabled."
+            "text": "Every tool can be switched off individually in the assistant: during a pilot, for example, the ones that delete content are disabled."
           },
           {
             "title": "Traceability",
@@ -345,7 +345,7 @@
   "features": {
     "kicker": "Features",
     "title": "Available today",
-    "lead": "Everything below is **implemented and proven in the field**: the course described further down was built with these tools. Features still being built come later, kept separate.",
+    "lead": "Everything below is **implemented and proven in the field**: the course described further down was built with these tools. Features still in development are listed in the next section.",
     "groups": [
       {
         "icon": "page",
@@ -353,6 +353,7 @@
         "items": [
           "Creation and editing",
           "Text in Markdown or HTML",
+          "Headings, tables, code, images, diagrams",
           "Completion tracking"
         ]
       },
@@ -453,15 +454,15 @@
   "roadmap": {
     "kicker": "In development",
     "title": "What comes next",
-    "lead": "Not available yet. This is the order we expect to work in, open to what the people using it ask for.",
+    "lead": "Not yet available, listed in the order in which they are planned. The order remains open to requests from those using the plugin.",
     "items": [
       {
         "title": "Assignments and forums",
         "text": "Creating submissions and discussions from the conversation, as pages and quizzes already work today."
       },
       {
-        "title": "Summaries for whoever runs the course",
-        "text": "“Who has not completed the mandatory module yet?” “What is the average on the last assessment?”"
+        "title": "Learning analytics",
+        "text": "Student progress and completion, queried from the conversation: “Who has not completed the mandatory module yet?” “Which questions in the last test had the most errors?”"
       },
       {
         "title": "From document to course",
@@ -472,8 +473,8 @@
         "text": "“What do I have to hand in this week?” with dates and links to the activities."
       },
       {
-        "title": "Book and glossary",
-        "text": "Two activities widely used in courses, not yet covered."
+        "title": "H5P and other activities",
+        "text": "Interactive **H5P** content — animations, interactive presentations, videos with embedded questions — generated from the conversation; then book and glossary."
       },
       {
         "title": "Server-side two-step confirmation",
@@ -484,7 +485,7 @@
   "dialogues": {
     "kicker": "Examples",
     "title": "Sample conversations",
-    "lead": "Four representative exchanges, from university and healthcare training. The grey pills show which plugin tool the assistant used: readers who are not interested can ignore them. Before every change the assistant summarises, asks for confirmation, and only then acts.",
+    "lead": "Four representative exchanges, from university and healthcare training. The grey labels show which plugin tool the assistant used; readers not interested in the technical detail can ignore them. Before every change the assistant summarises the operation, asks for confirmation and only then carries it out.",
     "items": [
       {
         "id": "quiz-da-pagina",
@@ -755,7 +756,7 @@
       {
         "icon": "toggle",
         "title": "Scope",
-        "text": "Every tool can be enabled or disabled individually in the assistant. In a pilot, the destructive ones and those exposing third-party data are kept off."
+        "text": "Every tool can be enabled or disabled individually in the assistant. In a pilot, the tools that delete content and those that expose third-party data are kept off."
       },
       {
         "icon": "check",
@@ -767,7 +768,7 @@
   "moodlecraft": {
     "kicker": "Ecosystem",
     "title": "The engine behind Moodlecraft: whole courses defined, versioned, reproducible",
-    "lead": "[[MCPCA]] is not only the bridge for AI assistants. It is also the engine of Moodlecraft, a command-line tool that treats a Moodle course **the way you treat code**: defined in text files, versioned, applicable to any instance.",
+    "lead": "[[MCPCA]] is not only the bridge to AI assistants: it is also the engine on which [[Moodlecraft]] is built, a command-line tool that treats a Moodle course **as source code**: defined in text files, versioned, applicable to any Moodle instance where MCPCA is installed.",
     "items": [
       {
         "title": "The course is a folder",
@@ -775,7 +776,7 @@
       },
       {
         "title": "Plan first, then apply",
-        "text": "Like Terraform for infrastructure: Moodlecraft compares the definition with the course as it stands on Moodle, shows what would change and applies only the differences. _Running it again duplicates nothing._"
+        "text": "Like `Terraform` for cloud infrastructure: Moodlecraft compares the definition with the course as it stands on Moodle, shows what would change and applies only the differences. _Running it again duplicates nothing._"
       },
       {
         "title": "Versioned with git",
@@ -783,7 +784,7 @@
       },
       {
         "title": "Reproducible",
-        "text": "The same course on the test instance and on production, or ==replicated for the next run by changing only the dates==. Randomly drawn exam questions, diagrams and highlighted code all come from the same definition."
+        "text": "The same course on the test instance and on production, or ==replicated for the next run by changing only the dates==. Randomly drawn exam questions, diagrams and formatted code all come from the same definition."
       }
     ],
     "tree_title": "A course, as Moodlecraft sees it",
@@ -871,7 +872,7 @@
     "items": [
       {
         "q": "Do I have to install anything on my computer?",
-        "a": "No. The assistant appears in Microsoft Teams and Microsoft 365 Copilot, already in use in many organisations. Anyone who prefers ChatGPT or Claude connects the MCP server from their assistant's settings, signing in with their institutional account. Installation concerns only the Moodle server and the Copilot Studio configuration, both handled by whoever runs the systems."
+        "a": "No. The assistant appears as a chat in Microsoft Teams and Microsoft 365 Copilot, already in use in many organisations. Anyone who prefers ChatGPT or Claude connects the MCP server from their assistant's settings, signing in with their institutional account. Installation concerns only the Moodle server and the Copilot Studio configuration, both handled by whoever runs the systems."
       },
       {
         "q": "Is this only for universities?",
@@ -879,7 +880,7 @@
       },
       {
         "q": "Can I create a course from scratch?",
-        "a": "Yes. Starting from an empty course, the assistant builds sections, pages, materials and assessments in a single conversation; or it works on a course that already exists. Creating the course container itself depends on permissions: in many organisations it is reserved to the administration, which sets it up in seconds. For courses you want to version and replicate for every run, there is Moodlecraft."
+        "a": "Yes. Starting from an empty course, the assistant builds sections, pages, materials and assessments in a single conversation; or it works on a course that already exists. Creating the course container itself depends on permissions: in many organisations it is reserved to the administration, which sets it up in seconds. For courses you want to version and replicate for every run, there is [[Moodlecraft]]."
       },
       {
         "q": "Can a learner modify a course?",
@@ -907,32 +908,32 @@
       },
       {
         "q": "Who maintains it?",
-        "a": "The project is developed by Antonio Calanducci and is in use on real courses. Reports and requests reach the address at the bottom of this page."
+        "a": "The project is developed by Antonio Calanducci, computer engineer at the University of Messina and adjunct lecturer in Computer Science at the University of Catania, and is in use on real courses, as documented on the case study page. Reports and requests reach the address at the bottom of this page."
       }
     ]
   },
   "contact": {
     "title": "Would you like to try it in your organisation?",
-    "text": "Get in touch: a pilot course and one person willing to build it are enough to see what changes. I am also glad to answer technical questions from whoever runs the platform.",
-    "email": "antonio.calanducci@unime.it",
-    "cta": "Email antonio.calanducci@unime.it"
+    "text": "A pilot course and one teacher willing to build it are enough to assess the impact. I am also glad to answer technical questions from whoever runs the platform.",
+    "email": "antonio.calanducci@unict.it",
+    "cta": "Email antonio.calanducci@unict.it"
   },
   "footer": {
-    "author": "Antonio Calanducci",
+    "author": "Antonio Calanducci, PhD",
     "disclaimer": "Moodle is a registered trademark of Moodle Pty Ltd. Microsoft Teams, Microsoft 365 Copilot, Copilot Studio and Entra ID are trademarks of Microsoft Corporation. ChatGPT is a trademark of OpenAI; Claude is a trademark of Anthropic. Oracle and Oracle APEX are trademarks of Oracle Corporation. This project is neither affiliated with nor sponsored by any of them.",
     "no_tracking": "This page uses no cookies and no tracking tools.",
     "year": "2026"
   },
   "case": {
     "meta": {
-      "title": "Case study · The Midwifery database lab, built with MCPCA",
-      "description": "How the Computing Lab of the BSc in Midwifery at the University of Catania was built with MCPCA and Moodlecraft: databases, SQL and a web app for clinical data, across seven lessons, with a question bank and a pass/fail assessment.",
+      "title": "Case study · Computing Lab in Midwifery, built with MCPCA",
+      "description": "How the Computing Lab of the BSc in Midwifery at the University of Catania was built with MCPCA and Moodlecraft: databases, SQL and a web application for clinical data, across seven lessons, with a question bank and exam papers.",
       "og_locale": "en_GB"
     },
     "back": "Back to the main page",
     "kicker": "Case study · University of Catania",
-    "title": "Databases and clinical data: the Midwifery lab, built by conversation",
-    "lead": "**Seven lab sessions**, around twenty hours, for third-year students, with no computing prerequisites at all. They learn to design a relational database, to query it with SQL and to build a small web application on top of it, working on clinical data. The tools are Oracle APEX and Studium, the University of Catania's Moodle. The course, its exercises and its assessments were built with [[MCPCA]] and Moodlecraft: it is ==the first complete course built with these tools==.",
+    "title": "Computing Lab in Midwifery: a course on databases and app development, built by conversation",
+    "lead": "**Seven lab sessions**, _73 modules_, 21 hours, for third-year students of the BSc in Midwifery. They learn to design a relational database, to populate and query it with SQL and to build a small web application on top of it, working with data of various kinds. The tools are **SQL**, **Oracle APEX** and the _new Studium_, the University of Catania's **Moodle** portal. The course, its exercises and its exam papers were built with [[MCPCA]] and [[Moodlecraft]]: it is ==the first complete course produced with these tools==.",
     "facts_title": "The details",
     "facts": [
       {
@@ -957,11 +958,11 @@
       },
       {
         "k": "Workload",
-        "v": "Seven lab sessions, about 21 hours, attendance required"
+        "v": "Seven lab sessions, 21 hours, attendance required"
       },
       {
         "k": "Assessment",
-        "v": "Pass/fail, a practical test taken at the computer"
+        "v": "Multiple-choice quiz and SQL exercises on healthcare data"
       },
       {
         "k": "Platform",
@@ -973,21 +974,21 @@
       },
       {
         "k": "Teacher",
-        "v": "Antonio Calanducci"
+        "v": "Antonio S. Calanducci, PhD"
       }
     ],
     "link": {
       "label": "Open the course on Studium",
       "url": "https://elearning.unict.it/course/view.php?id=73591",
-      "note": "The course lives on the university platform: it needs UniCT credentials, so from outside you will see the login page."
+      "note": "The course lives on the university platform: access requires UniCT credentials."
     },
     "context": {
       "kicker": "The starting point",
       "title": "Databases inside a healthcare degree",
       "paras": [
-        "The syllabus puts it plainly: by the end, a student must be able to **analyse a real information need in a healthcare professional setting** and to represent it, query it and judge its quality. This is the data they will actually work with: patient records, the register of births, staff rotas. They will not become computer scientists, and the syllabus asks for no programming prerequisites: ==they need to be able to talk about data with the people who design it, and to manage on their own when an answer is needed==.",
-        "The course is taught in person, in a computer lab, and is **mostly practical**: short explanations, then individual exercises inside Oracle APEX. Moodle is the support, and the syllabus says so too: written lessons, screen recordings with transcripts, exercises. Preparing all that material is **the work that usually does not get done**, _because building it by hand costs too many hours_: you attach the slides and move on.",
-        "With MCPCA I described in words what I wanted and got it inside Moodle. With Moodlecraft the same course became **a folder of text files under git**: next year it is reapplied by changing the dates and the dataset, ==without starting over==."
+        "By the end of the course, a student must be able to **analyse a real information need in a healthcare professional setting** and to represent it, query it and evaluate it. This is data they will work with every day: patient records, the register of births, staff rotas. Students on the course will not become computer scientists, and the syllabus requires no programming background: ==they must be able to discuss data with the people who design the applications, and to retrieve the information they need on their own==.",
+        "The course is taught in person, in a computer lab, and is **mostly practical**: short explanations followed by individual exercises in Oracle APEX. Moodle provides the support: written lessons, screen recordings with transcripts, exercises. Preparing all that material is **the work that usually does not get done**, _because building and publishing it on Moodle by hand takes too many hours and too many steps_: at most, the slides get uploaded.",
+        "With MCPCA I described the intended result in words and obtained it directly in Moodle. With Moodlecraft the same course became **a folder of text files under git**: next year it is reapplied by changing the dates and the dataset, ==without starting over==."
       ]
     },
     "metrics": {
@@ -1022,11 +1023,11 @@
     "steps": {
       "kicker": "How it was built",
       "title": "From slide deck to exam paper, step by step",
-      "lead": "Each step is either a conversation with the assistant or a Moodlecraft command. The pills name the plugin tools used at that step.",
+      "lead": "Each step is either a conversation with the assistant or a Moodlecraft command. The labels name the plugin tools used at that step.",
       "items": [
         {
           "title": "From slides to lessons",
-          "text": "Each lesson's slides became Markdown pages: one topic per page, with tables, code examples and summaries. Every lesson opens with a clickable index listing its pages in the order they should be followed.",
+          "text": "Each lesson's slides became Markdown pages on Moodle: one topic per page, with tables, formatted code examples and summaries. Every lesson opens with a clickable index listing its pages in the order they should be followed.",
           "tools": [
             "create_section",
             "create_page",
@@ -1043,14 +1044,14 @@
         },
         {
           "title": "A storyline for the exercises",
-          "text": "Lesson II is a detective case: a table of 500 suspects and a series of clues to be turned into queries, narrowing the list down to a single name. Fifteen exercises and seventeen solutions, one page each, created alongside the text of the lesson.",
+          "text": "Lesson II is a detective case: a table of 500 suspects of various crimes and a series of clues to be turned into queries, narrowing the list down to a single name. Fifteen exercises and seventeen solutions, one page each, created alongside the text of the lesson.",
           "tools": [
             "create_page"
           ]
         },
         {
           "title": "The clinical dataset",
-          "text": "For the exam exercises I used a dataset from the midwifery domain: patients, births, staff. The SQL file is uploaded to the course as a downloadable resource, so everyone recreates the tables in their own Oracle APEX environment.",
+          "text": "For the exam exercises I used a dataset from the midwifery domain: patients, births, staff. The SQL file to work on is uploaded to the course as a downloadable resource, so everyone recreates the tables in their own Oracle APEX environment.",
           "tools": [
             "create_resource",
             "core_files_upload"
@@ -1058,7 +1059,7 @@
         },
         {
           "title": "The question bank",
-          "text": "One bank per lesson, twenty multiple-choice questions each, with written feedback for every wrong answer. **A fresh set is prepared for every exam session**, so anyone resitting does not meet the same questions again. They stay in the course bank and can be read back and corrected by conversation, without opening Moodle's editor.",
+          "text": "One group of questions per lesson: twenty multiple-choice questions each, with written feedback for every wrong answer. **A fresh set is prepared for every exam session**, so anyone resitting does not meet the same questions again. They stay in the course bank and can be read back and corrected by conversation, without opening Moodle's editor.",
           "tools": [
             "create_question_category",
             "create_question",
@@ -1078,7 +1079,7 @@
         },
         {
           "title": "The marking",
-          "text": "Moodle marks the multiple-choice questions on its own, using the feedback already written in the bank. For the practical exercises I exported the answers to a spreadsheet, assessed them one by one with a mark and a comment, and imported them back into the gradebook: thirty-five scripts, eight answers each. _The export and re-import are done by the project's own scripts, not by the plugin._",
+          "text": "Moodle marks the multiple-choice questions on its own, with feedback shown to the students. For the practical exercises I exported the answers to a spreadsheet, assessed them one by one with a mark and a comment, and imported them back into the gradebook: thirty-five scripts, eight answers each. _The export and re-import are currently handled by a project script._",
           "tools": [
             "mod_quiz_get_user_attempts",
             "mod_quiz_get_attempt_review"
@@ -1086,7 +1087,7 @@
         },
         {
           "title": "The syllabus",
-          "text": "The [course unit description published by the department](https://www.chirmed.unict.it/corsi/lsnt1/insegnamenti?seuid=DA193AB7-3EEF-41DC-8648-1D27BC1A586F) — intended learning outcomes, the contents of the seven lessons, assessment methods, reading list — also came out of the same material, by reading the course as published instead of rewriting everything into a form.",
+          "text": "The [course unit description published by the department](https://www.chirmed.unict.it/corsi/lsnt1/insegnamenti?seuid=DA193AB7-3EEF-41DC-8648-1D27BC1A586F) — intended learning outcomes, the contents of the seven lessons, assessment methods, reading list — also came out of the same material, by reading the published course instead of rewriting everything into a form: through [[MCPCA]] the AI assistant read the entire course and drafted the text, which was then published on **SmartEdu** by a dedicated script.",
           "tools": [
             "core_course_get_contents",
             "get_page_content"
@@ -1094,7 +1095,7 @@
         },
         {
           "title": "All of it versioned",
-          "text": "The course is a folder under git: `plan` shows what would change, `apply` applies only the differences. The second exam paper is declared hidden in its file, ==so no reapplication can publish it by accident before the exam date==.",
+          "text": "The course is a folder under version control with git: `plan` shows what would change, `apply` applies only the differences.",
           "tools": [
             "moodlecraft plan",
             "moodlecraft apply"
@@ -1234,37 +1235,37 @@
     "lessons": {
       "kicker": "What I learned",
       "title": "Six things I am taking to the next course",
-      "lead": "Not everything went smoothly, and some choices have become rules.",
+      "lead": "Not everything worked the first time, and some choices have become rules.",
       "items": [
-        {
-          "title": "Quizzes are born hidden",
-          "text": "The second exam paper is declared hidden in the file that defines it, and every reapplication respects that choice. A paper published by accident before the exam date is hard to undo."
-        },
         {
           "title": "The assistant does not invent the content",
           "text": "Pages come out of the real material: slides, transcripts, dataset. What it writes still has to be read back, and **responsibility for what gets published stays with whoever teaches**."
         },
         {
           "title": "Marking stays a human decision",
-          "text": "For the open exercises the assistant proposes a mark and a comment for each answer; the final assessment I confirmed myself, script by script, before putting it in the gradebook."
+          "text": "For the open exercises the assistant proposes a mark and a comment for each answer; I confirmed the final assessment myself, script by script, before entering it in the gradebook."
         },
         {
-          "title": "Half of next year's work is already done",
-          "text": "The course is a versioned folder: the dates change, the dataset changes, new questions get added. The rest is reapplied in minutes, with the certainty that nothing gets duplicated."
+          "title": "More than half of next year's work is already done",
+          "text": "The course is a versioned folder: the dates, the dataset and the new questions change. The rest is reapplied in minutes, with the certainty that nothing is duplicated."
         },
         {
           "title": "Time moves, it does not disappear",
-          "text": "Building the pages became fast; the time went into deciding what to ask for, reading it back and correcting it. _It is a good trade, but it is not magic._"
+          "text": "Building the pages of a course has become quick; the time has shifted to choosing what to ask for, reading back and correcting."
         },
         {
           "title": "Students see none of this",
-          "text": "They find a tidy course, with an index per lesson, exercises with solutions and a different paper each. That it was built by conversation is a detail that concerns only the person who wrote it."
+          "text": "They find a well-organised course, with an index per lesson, exercises with solutions and a different paper for each student. That it was built by conversation is a detail that concerns only its author."
+        },
+        {
+          "title": "Quizzes are born hidden",
+          "text": "The second exam paper is declared hidden in the file that defines it, and every reapplication respects that choice."
         }
       ]
     },
     "cta": {
-      "title": "Want to see how it works underneath?",
-      "text": "I can show you the course, the files that generate it and how the exam papers were put together. If you teach or you are responsible for training, one pilot course is enough to tell whether this makes sense for you too.",
+      "title": "Interested in how it is built?",
+      "text": "I can show you the course, the files that generate it and how the exam papers were put together. If you teach or are responsible for training, one pilot course is enough to assess whether the approach suits your context.",
       "back": "Back to the main page"
     }
   }

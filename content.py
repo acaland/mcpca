@@ -209,7 +209,8 @@ def cmd_export(args) -> int:
     text = render(langs, data, minchars, args.page)
     out.write_text(text, encoding="utf-8")
     fields = sum(1 for line in text.splitlines() if line.startswith("@ ")) // len(langs)
-    print(f"{out.relative_to(ROOT)}: {fields} campi, {len(langs)} lingua/e, "
+    shown = out.resolve().relative_to(ROOT) if out.resolve().is_relative_to(ROOT) else out
+    print(f"{shown}: {fields} campi, {len(langs)} lingua/e, "
           f"{out.stat().st_size // 1024} KB")
     return 0
 
