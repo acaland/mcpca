@@ -193,14 +193,22 @@ def json_digest() -> str:
 
 
 def export_args(sheet: Path) -> list[str] | None:
-    """Ricostruisce le opzioni di export dal nome del foglio (it.md, it-en-prosa.md…)."""
+    """Ricostruisce le opzioni di export dal nome del foglio.
+
+    it.md, it-prosa.md, it-en.md          → home
+    caso-it.md, caso-it-en-prosa.md, …    → pagina del caso reale
+    tutto-it.md, …                        → tutto il sito
+    """
     stem = sheet.stem
+    page = "home"
+    for prefix, name in (("caso-", "caso"), ("tutto-", "tutto")):
+        if stem.startswith(prefix):
+            page, stem = name, stem.removeprefix(prefix)
     prose = stem.endswith("-prosa")
-    langs = stem.removesuffix("-prosa")
-    lang = {"it": "it", "en": "en", "it-en": "both"}.get(langs)
+    lang = {"it": "it", "en": "en", "it-en": "both"}.get(stem.removesuffix("-prosa"))
     if not lang:
-        return None
-    return ["export", "--lang", lang] + (["--prose"] if prose else [])
+        return None  # un nome scelto a mano con --out: non so rigenerarlo
+    return ["export", "--lang", lang, "--page", page] + (["--prose"] if prose else [])
 
 
 def run(*args: str) -> subprocess.CompletedProcess:

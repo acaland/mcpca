@@ -109,12 +109,23 @@ Il JSON resta la fonte di verità, ma non è il posto dove rileggere della prosa
 modifiche tornano indietro:
 
 ```bash
-python content.py export                 # review/it.md, tutti i campi
+python content.py export                 # review/it.md, tutti i campi della home
 python content.py export --lang both     # italiano e inglese affiancati
-python content.py export --lang it --prose   # solo i testi lunghi (115 campi invece di 519)
+python content.py export --lang it --prose   # solo i testi lunghi (85 campi invece di 369)
+python content.py export --page caso --prose # la pagina del caso reale: review/caso-it-prosa.md
 python content.py import review/it.md --dry-run
 python content.py import review/it.md
 ```
+
+Un foglio per pagina: `--page home` (predefinita, comprende anche menu, piede
+e marchio, che sono condivisi), `--page caso` per il caso reale, `--page tutto`
+per l'intero sito in un solo file. Il nome del file dice cosa contiene:
+
+| Foglio | Pagina | Contenuto |
+|---|---|---|
+| `it-prosa.md` / `caso-it-prosa.md` | home / caso reale | solo i testi lunghi, per rileggere |
+| `it.md` / `caso-it.md` | home / caso reale | tutti i campi, etichette comprese |
+| `it-en.md` / `caso-it-en.md` | home / caso reale | italiano e inglese affiancati |
 
 Il foglio ha un solo elemento di struttura, una riga `@ nome` davanti a ogni
 campo; sotto c'è il testo, e **gli a capo non contano**: si può mandare a capo

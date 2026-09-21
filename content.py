@@ -43,6 +43,15 @@ PLAIN_PREFIXES = ("meta.",)
 ATTRIBUTE_PATHS = {"usecases.title", "tech.title", "hero.flow.caption", "nav.menu_label"}
 ATTRIBUTE_KEYS = {"alt", "window_title"}
 
+# Una pagina del sito per foglio. Il caso reale vive tutto sotto «case»; menu,
+# piede e marchio sono condivisi e stanno con la home.
+PAGES = {
+    "home": lambda top: top != "case",
+    "caso": lambda top: top == "case",
+    "tutto": lambda top: True,
+}
+PAGE_PREFIX = {"home": "", "caso": "caso-", "tutto": "tutto-"}
+
 MARKER_LINE = re.compile(r"^@ ([A-Za-z_]\w*(?:\[\d+\])*)(?: \[(it|en)\])?\s*$")
 HEADING2 = re.compile(r"^## ([\w.\[\]]+)")
 LINKISH = re.compile(r"\[[^\[\]]+\]\([^)]*\)")
@@ -73,6 +82,15 @@ def leaves(node, path=""):
                 # lista di stringhe: il contenitore è chi possiede la lista
                 head, _, name = path.rpartition(".")
                 yield head, f"{name}[{i}]", v
+
+
+def top_of(container: str, name: str) -> str:
+    return container.split(".")[0].split("[")[0] if container else name
+
+
+def scoped(data, page: str):
+    keep = PAGES[page]
+    return ((c, n, v) for c, n, v in leaves(data) if keep(top_of(c, n)))
 
 
 def get_in(data, container: str, name: str):
@@ -132,10 +150,11 @@ def hint_for(data, container: str) -> str:
 
 
 # --------------------------------------------------------------- esportazione --
-def render(langs: list[str], data: dict[str, dict], minchars: int = 0) -> str:
+def render(langs: list[str], data: dict[str, dict], minchars: int = 0,
+           page: str = "home") -> str:
     base = data[langs[0]]
     out: list[str] = [
-        f"<!-- generato da content.py · lingue: {', '.join(langs)}"
+        f"<!-- generato da content.py · lingue: {', '.join(langs)} · pagina: {page}"
         f"{' · parziale' if minchars else ''} -->",
         "<!-- si modifica solo il testo sotto i marcatori @; i titoli ## e i",
         "     marcatori @ servono allo script per rimettere tutto al suo posto -->",
@@ -144,7 +163,7 @@ def render(langs: list[str], data: dict[str, dict], minchars: int = 0) -> str:
     section = None
     container_now = object()
 
-    for container, name, value in leaves(base):
+    for container, name, value in scoped(base, page):
         if minchars and (isinstance(value, list) or len(value) < minchars):
             continue
         top = container.split(".")[0].split("[")[0] if container else name
@@ -185,8 +204,9 @@ def cmd_export(args) -> int:
     REVIEW.mkdir(exist_ok=True)
     minchars = args.min_chars if args.prose else 0
     suffix = "-prosa" if minchars else ""
-    out = Path(args.out) if args.out else REVIEW / f"{'-'.join(langs)}{suffix}.md"
-    text = render(langs, data, minchars)
+    name = f"{PAGE_PREFIX[args.page]}{'-'.join(langs)}{suffix}.md"
+    out = Path(args.out) if args.out else REVIEW / name
+    text = render(langs, data, minchars, args.page)
     out.write_text(text, encoding="utf-8")
     fields = sum(1 for line in text.splitlines() if line.startswith("@ ")) // len(langs)
     print(f"{out.relative_to(ROOT)}: {fields} campi, {len(langs)} lingua/e, "
@@ -195,7 +215,8 @@ def cmd_export(args) -> int:
 
 
 # -------------------------------------------------------------- importazione --
-HEADER_LANGS = re.compile(r"<!-- generato da content\.py · lingue: ([a-z, ]+?)( · parziale)? -->")
+HEADER_LANGS = re.compile(r"<!-- generato da content\.py · lingue: ([a-z, ]+?)"
+                          r"(?: · pagina: (\w+))?( · parziale)? -->")
 
 
 def parse(text: str):
@@ -206,8 +227,13 @@ def parse(text: str):
         errors.append("manca l'intestazione generata da content.py: non so di che lingua si tratta")
         return values, errors
     default_lang = header.group(1).split(",")[0].strip()
-    partial = bool(header.group(2))
-    values[("__partial__", "", "")] = partial
+    # i fogli generati prima delle pagine contenevano tutto il sito
+    page = header.group(2) or "tutto"
+    if page not in PAGES:
+        errors.append(f"pagina sconosciuta nell'intestazione: {page}")
+        return values, errors
+    values[("__partial__", "", "")] = bool(header.group(3))
+    values[("__page__", "", "")] = page
     container, marker, buf, fence = "", None, [], False
 
     def flush():
@@ -285,11 +311,13 @@ def cmd_import(args) -> int:
     text = src.read_text(encoding="utf-8")
     values, errors = parse(text)
     partial = values.pop(("__partial__", "", ""), False)
+    page = values.pop(("__page__", "", ""), "tutto")
     langs = sorted({lang for lang, _, _ in values})
     data = {l: json.loads((CONTENT / f"{l}.json").read_text(encoding="utf-8"))
             for l in langs}
 
     known = {l: {(c, n) for c, n, _ in leaves(data[l])} for l in langs}
+    expected = {l: {(c, n) for c, n, _ in scoped(data[l], page)} for l in langs}
     changes, problems = [], list(errors)
 
     for (lang, container, name), new in sorted(values.items()):
@@ -310,7 +338,7 @@ def cmd_import(args) -> int:
 
     if not partial:
         for lang in langs:
-            missing = known[lang] - {(c, n) for l, c, n in values if l == lang}
+            missing = expected[lang] - {(c, n) for l, c, n in values if l == lang}
             for container, name in sorted(missing):
                 problems.append(f"[{lang}] {container}.{name}: campo assente dal foglio")
 
@@ -352,21 +380,35 @@ def cmd_roundtrip(args) -> int:
     data = {l: json.loads((CONTENT / f"{l}.json").read_text(encoding="utf-8"))
             for l in ("it", "en")}
     bad = 0
-    for langs in (["it"], ["en"], ["it", "en"]):
-        values, errors = parse(render(langs, data))
-        values.pop(("__partial__", "", ""), None)
-        for (lang, container, name), new in values.items():
-            old = get_in(data[lang], container, name)
-            if old != new:
-                bad += 1
-                print(f"  ✗ [{lang}] {container}.{name}\n      − {old!r}\n      + {new!r}")
-        covered = {(l, c, n) for l, c, n in values}
-        for lang in langs:
-            for c, n, _ in leaves(data[lang]):
-                if (lang, c, n) not in covered:
-                    bad += 1
-                    print(f"  ✗ [{lang}] {c}.{n}: perso nell'esportazione")
-        print(f"  {'-'.join(langs)}: {len(values)} campi, {len(errors)} errori di lettura")
+    for page in PAGES:
+        for langs in (["it"], ["en"], ["it", "en"]):
+            for minchars in (0, 120):
+                values, errors = parse(render(langs, data, minchars, page))
+                values.pop(("__partial__", "", ""), None)
+                values.pop(("__page__", "", ""), None)
+                bad += len(errors)
+                for (lang, container, name), new in values.items():
+                    old = get_in(data[lang], container, name)
+                    if old != new:
+                        bad += 1
+                        print(f"  ✗ [{lang}] {container}.{name}\n      − {old!r}\n      + {new!r}")
+                if minchars:
+                    continue  # il foglio di prosa è parziale per definizione
+                covered = {(l, c, n) for l, c, n in values}
+                for lang in langs:
+                    for c, n, _ in scoped(data[lang], page):
+                        if (lang, c, n) not in covered:
+                            bad += 1
+                            print(f"  ✗ [{lang}] {c}.{n}: perso nell'esportazione")
+            print(f"  {page:5} {'-'.join(langs):5}: {len(values)} campi nella prosa, errori {len(errors)}")
+    # ogni campo sta in una e una sola pagina
+    for lang in ("it", "en"):
+        home = {(c, n) for c, n, _ in scoped(data[lang], "home")}
+        caso = {(c, n) for c, n, _ in scoped(data[lang], "caso")}
+        tutto = {(c, n) for c, n, _ in scoped(data[lang], "tutto")}
+        if home & caso or (home | caso) != tutto:
+            bad += 1
+            print(f"  ✗ [{lang}] home e caso non si spartiscono esattamente i campi")
     print("andata e ritorno senza perdite" if not bad else f"{bad} differenze")
     return 1 if bad else 0
 
@@ -379,6 +421,8 @@ def main() -> int:
     e = sub.add_parser("export", help="scrive il foglio di revisione")
     e.add_argument("--lang", choices=["it", "en", "both"], default="it")
     e.add_argument("--out")
+    e.add_argument("--page", choices=list(PAGES), default="home",
+                   help="home (default), caso (la pagina del caso reale) o tutto")
     e.add_argument("--prose", action="store_true",
                    help="solo i testi lunghi: una rilettura di prosa, senza etichette e voci di menu")
     e.add_argument("--min-chars", type=int, default=120,
