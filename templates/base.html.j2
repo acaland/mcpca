@@ -44,7 +44,7 @@
   "operatingSystem": "Moodle 4.3+",
   "inLanguage": "{{ lang }}",
   "description": "{{ meta.description }}",
-  "author": {"@type": "Person", "name": "{{ t.footer.author }}", "email": "{{ t.contact.email }}"},
+  "author": {"@type": "Person", "name": "{{ t.footer.author }}"},
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
 }
 </script>
@@ -74,7 +74,7 @@
       </ul>
       <div class="nav-actions">
         <a class="lang-switch" href="{{ lang_href }}" hreflang="{{ t.other_lang.code }}" lang="{{ t.other_lang.code }}">{{ m.icon('globe') }} {{ t.other_lang.label }}</a>
-        <a class="btn btn-primary btn-sm" href="mailto:{{ t.contact.email }}">{{ t.nav.cta }}</a>
+        <a class="btn btn-primary btn-sm js-mail" href="{{ home_href }}#contatti" data-u="{{ t.contact.user }}" data-d="{{ t.contact.domains[0] }}">{{ t.nav.cta }}</a>
       </div>
     </nav>
   </div>
@@ -91,7 +91,7 @@
   <div class="container footer-grid">
     <div>
       <p class="footer-brand"><span class="brand-mark" aria-hidden="true">{{ m.icon('mark') }}</span> {{ t.brand.name }} <span class="muted">· {{ t.brand.tagline }}</span></p>
-      <p class="muted">{{ t.footer.author }} · <a href="mailto:{{ t.contact.email }}">{{ t.contact.email }}</a></p>
+      <p class="muted">{{ t.footer.author }} · <span class="mail-shown">{{ t.contact.shown }}</span></p>
     </div>
     <div>
       <p class="muted small">{{ t.footer.disclaimer }}</p>

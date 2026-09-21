@@ -915,11 +915,17 @@
   "contact": {
     "title": "Would you like to try it in your organisation?",
     "text": "A pilot course and one teacher willing to build it are enough to assess the impact. I am also glad to answer technical questions from whoever runs the platform.",
-    "email": "antonio.calanducci@unict.it",
-    "cta": "Email antonio.calanducci@unict.it"
+    "user": "antonio.calanducci",
+    "domains": [
+      "unict.it",
+      "unime.it"
+    ],
+    "shown": "antonio.calanducci AT (unict, unime).it",
+    "hint": "The same address works at unict.it and unime.it: replace AT with @.",
+    "cta": "Send an email"
   },
   "footer": {
-    "author": "Antonio Calanducci, PhD",
+    "author": "Antonio S. Calanducci, PhD",
     "disclaimer": "Moodle is a registered trademark of Moodle Pty Ltd. Microsoft Teams, Microsoft 365 Copilot, Copilot Studio and Entra ID are trademarks of Microsoft Corporation. ChatGPT is a trademark of OpenAI; Claude is a trademark of Anthropic. Oracle and Oracle APEX are trademarks of Oracle Corporation. This project is neither affiliated with nor sponsored by any of them.",
     "no_tracking": "This page uses no cookies and no tracking tools.",
     "year": "2026"

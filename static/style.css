@@ -394,6 +394,15 @@ img, svg { display: inline-block; vertical-align: middle; }
 .cta-band h2 { margin-bottom: .35em; }
 .cta-band p { margin: 0; color: var(--muted); max-width: 560px; }
 @media (max-width: 640px) { .cta-band { padding: 28px 22px; } }
+/* L'indirizzo è scritto per le persone, non per i raccoglitori: nessun mailto
+   nel sorgente, lo ricompone main.js al clic sul pulsante. */
+.mail-shown { font-family: var(--mono); font-size: .92em; white-space: nowrap; }
+.cta-band .contact-mail { margin-top: 14px; display: flex; flex-direction: column; gap: 2px; }
+.cta-band .contact-mail .mail-shown { color: var(--text); }
+.contact-hint { font-size: .9rem; }
+/* Su un telefono l'indirizzo in monospaziato non sta su una riga: va a capo
+   agli spazi, e in ultima istanza ovunque, piuttosto che allargare la pagina. */
+@media (max-width: 640px) { .mail-shown { white-space: normal; overflow-wrap: anywhere; font-size: .88em; } }
 
 /* ---------- footer ---------- */
 .site-footer { border-top: 1px solid var(--border); padding: 36px 0 44px; background: var(--bg-alt); }

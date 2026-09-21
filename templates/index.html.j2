@@ -287,8 +287,9 @@
       <div>
         <h2>{{ t.contact.title }}</h2>
         <p>{{ t.contact.text }}</p>
+        <p class="contact-mail"><span class="mail-shown">{{ t.contact.shown }}</span> <span class="contact-hint">{{ t.contact.hint }}</span></p>
       </div>
-      <a class="btn btn-primary btn-lg" href="mailto:{{ t.contact.email }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
+      <a class="btn btn-primary btn-lg js-mail" href="#contatti" data-u="{{ t.contact.user }}" data-d="{{ t.contact.domains[0] }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
     </div>
   </div>
 </section>

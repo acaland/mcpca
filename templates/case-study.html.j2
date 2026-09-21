@@ -171,15 +171,16 @@
 </section>
 
 <!-- ============ CONTACT ============ -->
-<section class="section section--cta">
+<section id="contatto" class="section section--cta">
   <div class="container">
     <div class="cta-band">
       <div>
         <h2>{{ c.cta.title }}</h2>
         <p>{{ c.cta.text }}</p>
+        <p class="contact-mail"><span class="mail-shown">{{ t.contact.shown }}</span> <span class="contact-hint">{{ t.contact.hint }}</span></p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-primary btn-lg" href="mailto:{{ t.contact.email }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
+        <a class="btn btn-primary btn-lg js-mail" href="#contatto" data-u="{{ t.contact.user }}" data-d="{{ t.contact.domains[0] }}">{{ m.icon('mail') }} {{ t.contact.cta }}</a>
         <a class="btn btn-ghost" href="{{ home_href if home_href else './' }}">{{ c.cta.back }}</a>
       </div>
     </div>

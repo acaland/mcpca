@@ -31,7 +31,7 @@ REVIEW = ROOT / "review"
 # Campi che non sono testo da rileggere: nomi di icone, identificativi, nomi di
 # strumenti MCP, percorsi di file. Restano nel JSON e non compaiono nel foglio.
 SKIP_KEYS = {"icon", "id", "type", "role", "file", "href", "tools",
-             "wide", "correct", "og_locale"}
+             "wide", "correct", "og_locale", "user", "domains"}
 SKIP_PATHS = {"lang", "dir"}
 # Liste da preservare carattere per carattere: gli allineamenti contano.
 VERBATIM_KEYS = {"tree"}

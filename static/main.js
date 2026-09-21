@@ -106,4 +106,14 @@
       }, 350);
     }, 3000);
   })();
+
+  /* Email: nel sorgente ci sono solo utente e dominio, in attributi separati,
+     così chi raccoglie indirizzi dal codice HTML non ne trova. Il mailto nasce
+     al clic; senza JavaScript il link porta alla sezione con l'indirizzo. */
+  document.querySelectorAll('a.js-mail').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.location.href = 'mailto:' + a.getAttribute('data-u') + '@' + a.getAttribute('data-d');
+    });
+  });
 })();
